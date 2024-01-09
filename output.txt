@@ -1,0 +1,95 @@
+cancer: anal sac carcinoma; neuroendocrine carcinoma; thyroid carcinoma; soft tissue sarcoma; hepatocellular carcinoma; hemangiosarcoma; pulmonary carcinoma; urothelial carcinoma
+
+  gene: TP53; PIK3CA; KRAS; NRAS; BRAF; KIT; EGFR; ERBB2
+
+  genecancer_links: TP53-anal sac carcinoma; TP53-neuroendocrine carcinoma; TP53-thyroid carcinoma; TP53-soft tissue sarcoma; TP53-hepatocellular carcinoma; TP53-hemangiosarcoma; TP53-pulmonary carcinoma; TP53-urothelial carcinoma; PIK3CA-hemangiosarcoma; KRAS-hemangiosarcoma; NRAS-hemangiosarcoma; BRAF-urothelial carcinoma; ERBB2-pulmonary carcinoma
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  gene: <the value for gene>
+  cancer: <the value for cancer>
+
+
+  Text:
+  ERBB2-pulmonary carcinoma
+
+  ===
+
+extracted_object:
+  cancer: 
+    AUTO:anal%20sac%20carcinoma%3B%20neuroendocrine%20carcinoma%3B%20thyroid%20carcinoma%3B%20soft%20tissue%20sarcoma%3B%20hepatocellular%20carcinoma%3B%20hemangiosarcoma%3B%20pulmonary%20carcinoma%3B%20urothelial%20carcinoma
+  gene:
+    - HGNC:11998
+    - HGNC:8975
+    - HGNC:6407
+    - HGNC:7989
+    - HGNC:1097
+    - HGNC:6342
+    - HGNC:3236
+    - HGNC:3430
+  genecancer_links:
+    - gene: HGNC:11998
+      cancer: AUTO:anal%20sac%20carcinoma
+    - gene: HGNC:11998
+      cancer: MONDO:0002120
+    - gene: HGNC:11998
+      cancer: MESH:M0333546
+    - gene: HGNC:11998
+      cancer: MONDO:0018078
+    - gene: HGNC:11998
+      cancer: MESH:D006528
+    - gene: HGNC:11998
+      cancer: MESH:D006394
+    - gene: HGNC:11998
+      cancer: AUTO:pulmonary%20carcinoma
+    - gene: HGNC:11998
+      cancer: MONDO:0040679
+    - gene: HGNC:8975
+      cancer: MESH:D006394
+    - gene: HGNC:6407
+      cancer: MESH:D006394
+    - gene: HGNC:7989
+      cancer: MESH:D006394
+    - gene: HGNC:1097
+      cancer: MONDO:0040679
+    - gene: HGNC:3430
+      cancer: AUTO:pulmonary%20carcinoma
+named_entities:
+  - id: 
+      AUTO:anal%20sac%20carcinoma%3B%20neuroendocrine%20carcinoma%3B%20thyroid%20carcinoma%3B%20soft%20tissue%20sarcoma%3B%20hepatocellular%20carcinoma%3B%20hemangiosarcoma%3B%20pulmonary%20carcinoma%3B%20urothelial%20carcinoma
+    label: anal sac carcinoma; neuroendocrine carcinoma; thyroid carcinoma; soft tissue
+      sarcoma; hepatocellular carcinoma; hemangiosarcoma; pulmonary carcinoma; urothelial
+      carcinoma
+  - id: HGNC:11998
+    label: TP53
+  - id: HGNC:8975
+    label: PIK3CA
+  - id: HGNC:6407
+    label: KRAS
+  - id: HGNC:7989
+    label: NRAS
+  - id: HGNC:1097
+    label: BRAF
+  - id: HGNC:6342
+    label: KIT
+  - id: HGNC:3236
+    label: EGFR
+  - id: HGNC:3430
+    label: ERBB2
+  - id: AUTO:anal%20sac%20carcinoma
+    label: anal sac carcinoma
+  - id: MONDO:0002120
+    label: neuroendocrine carcinoma
+  - id: MESH:M0333546
+    label: thyroid carcinoma
+  - id: MONDO:0018078
+    label: soft tissue sarcoma
+  - id: MESH:D006528
+    label: hepatocellular carcinoma
+  - id: MESH:D006394
+    label: hemangiosarcoma
+  - id: AUTO:pulmonary%20carcinoma
+    label: pulmonary carcinoma
+  - id: MONDO:0040679
+    label: urothelial carcinoma
+

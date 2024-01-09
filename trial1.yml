@@ -1,0 +1,65 @@
+#phenotypes or tissue types
+id:  "id"
+name: trial1
+title: trial1
+description: >-
+  A template to start working with
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  linkml: https://w3id.org/linkml/
+  t1: "id"
+
+default_prefix: t1
+default_range: string
+
+imports:
+  - linkml:types
+  - core
+
+classes:
+  CancerGenes:
+    tree_root: true
+    attributes:
+      cancer:
+        description: a semicolon-separated list of types of cancer
+        range: Cancer
+      gene:
+        description: a semicolon-separated list of the names of the gene that causes the cancer
+        multivalued: true
+        range: Gene
+      genecancer_links:
+        description: semicolon-separated list of links, where each link is a triple connecting two entities via a relationship type
+        multivalued: true
+        range: GeneCancer
+
+    
+
+  Gene:
+    is_a: NamedEntity
+    id_prefixes:
+      - HGNC
+    annotations:
+      annotators: gilda:, bioportal:hgnc-nr, sqlite:obo:pr
+
+  Cancer:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:mesh, sqlite:obo:mondo
+
+  GeneCancer:
+    is_a:   CompoundExpression
+    attributes:
+      gene:
+        range: Gene
+      cancer:
+        range: Cancer
+  
+
+      
+  
+  
+  
+  
+
+
+      
