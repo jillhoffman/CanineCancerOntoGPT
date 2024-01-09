@@ -32,7 +32,60 @@ classes:
         multivalued: true
         range: GeneCancer
 
-    
+      label:
+        description: the name of the biological process
+      description:
+        description: a textual description of the biological process
+      synonyms:
+        description: alternative names of the biological process
+        multivalued: true
+      inputs:
+        description: the inputs of the biological process
+        multivalued: true
+        range: ChemicalEntity
+      outputs:
+        description: the outputs of the biological process
+        multivalued: true
+        range: ChemicalEntity
+      steps:
+        description: the steps involved in this biological process
+        multivalued: true
+        range: MolecularActivity
+      genes:
+        range: Gene
+        multivalued: true
+      gene_activities:
+        description: semicolon-separated list of gene and cancer to molecular activity relationships
+        multivalued: true
+        range: GeneMolecularActivityRelationship
+
+  CellType:
+    is_a: NamedEntity
+    id_prefixes:
+      - CL
+    annotations:
+      annotators: sqlite:obo:cl
+
+  MolecularActivity:
+    is_a: NamedEntity
+    id_prefixes:
+      - GO
+    annotations:
+      annotators: sqlite:obo:go
+
+  ChemicalEntity:
+    is_a: NamedEntity
+    id_prefixes:
+      - CHEBI
+    annotations:
+      annotators: sqlite:obo:chebi
+
+  GeneMolecularActivityRelationship:
+    attributes:
+      gene:
+        range: Gene
+      molecular_activity:
+        range: MolecularActivity
 
   Gene:
     is_a: NamedEntity
@@ -54,7 +107,13 @@ classes:
       cancer:
         range: Cancer
   
-
+  CancerBioProcess:
+    is_a: CompoundExpression
+    attributes:
+      cancer:
+        range: Cancer
+      genemole:
+        range: GeneMolecularActivityRelationship
       
   
   

@@ -2,16 +2,32 @@ cancer: anal sac carcinoma; neuroendocrine carcinoma; thyroid carcinoma; soft ti
 
   gene: TP53; PIK3CA; KRAS; NRAS; BRAF; KIT; EGFR; ERBB2
 
-  genecancer_links: TP53-anal sac carcinoma; TP53-neuroendocrine carcinoma; TP53-thyroid carcinoma; TP53-soft tissue sarcoma; TP53-hepatocellular carcinoma; TP53-hemangiosarcoma; TP53-pulmonary carcinoma; TP53-urothelial carcinoma; PIK3CA-hemangiosarcoma; KRAS-hemangiosarcoma; NRAS-hemangiosarcoma; BRAF-urothelial carcinoma; ERBB2-pulmonary carcinoma
+  genecancer_links: TP53 - anal sac carcinoma, neuroendocrine carcinoma, thyroid carcinoma, soft tissue sarcoma, hepatocellular carcinoma, hemangiosarcoma, pulmonary carcinoma, urothelial carcinoma; PIK3CA - hemangiosarcoma; NRAS - hemangiosarcoma; ERBB2 - pulmonary carcinoma; BRAF - urothelial carcinoma
+
+  label: biological process
+
+  description: Bidirectional interactions between malignant cells and their local environment are key regulators of tumor growth and progression. Recent studies have focused on understanding how specific components of the hemangiosarcoma tumor microenvironment enhance tumor growth and survival or promote migration of tumor cells.
+
+  synonyms: None given
+
+  inputs: components of the hemangiosarcoma tumor microenvironment
+
+  outputs: tumor growth and progression
+
+  steps: None given
+
+  genes: TP53; PIK3CA; KRAS; NRAS; BRAF; KIT; EGFR; ERBB2
+
+  gene_activities: TP53 - most commonly mutated gene; PIK3CA - hotspot mutation in hemangiosarcoma; NRAS - hotspot mutation in hemangiosarcoma; ERBB2 - hotspot mutation in pulmonary carcinoma; BRAF - hotspot mutation in urothelial carcinoma
 prompt: |+
   Split the following piece of text into fields in the following format:
 
   gene: <the value for gene>
-  cancer: <the value for cancer>
+  molecular_activity: <the value for molecular_activity>
 
 
   Text:
-  ERBB2-pulmonary carcinoma
+  BRAF - hotspot mutation in urothelial carcinoma
 
   ===
 
@@ -29,31 +45,50 @@ extracted_object:
     - HGNC:3430
   genecancer_links:
     - gene: HGNC:11998
-      cancer: AUTO:anal%20sac%20carcinoma
-    - gene: HGNC:11998
-      cancer: MONDO:0002120
-    - gene: HGNC:11998
-      cancer: MESH:M0333546
-    - gene: HGNC:11998
-      cancer: MONDO:0018078
-    - gene: HGNC:11998
-      cancer: MESH:D006528
-    - gene: HGNC:11998
-      cancer: MESH:D006394
-    - gene: HGNC:11998
-      cancer: AUTO:pulmonary%20carcinoma
-    - gene: HGNC:11998
-      cancer: MONDO:0040679
+      cancer: 
+        AUTO:anal%20sac%20carcinoma%2C%20neuroendocrine%20carcinoma%2C%20thyroid%20carcinoma%2C%20soft%20tissue%20sarcoma%2C%20hepatocellular%20carcinoma%2C%20hemangiosarcoma%2C%20pulmonary%20carcinoma%2C%20urothelial%20carcinoma
     - gene: HGNC:8975
-      cancer: MESH:D006394
-    - gene: HGNC:6407
       cancer: MESH:D006394
     - gene: HGNC:7989
       cancer: MESH:D006394
-    - gene: HGNC:1097
-      cancer: MONDO:0040679
     - gene: HGNC:3430
       cancer: AUTO:pulmonary%20carcinoma
+    - gene: HGNC:1097
+      cancer: MONDO:0040679
+  label: biological process
+  description: Bidirectional interactions between malignant cells and their local
+    environment are key regulators of tumor growth and progression. Recent studies
+    have focused on understanding how specific components of the hemangiosarcoma tumor
+    microenvironment enhance tumor growth and survival or promote migration of tumor
+    cells.
+  synonyms:
+    - None given
+  inputs:
+    - AUTO:components%20of%20the%20hemangiosarcoma%20tumor%20microenvironment
+  outputs:
+    - AUTO:tumor%20growth%20and%20progression
+  steps:
+    - AUTO:None%20given
+  genes:
+    - HGNC:11998
+    - HGNC:8975
+    - HGNC:6407
+    - HGNC:7989
+    - HGNC:1097
+    - HGNC:6342
+    - HGNC:3236
+    - HGNC:3430
+  gene_activities:
+    - gene: HGNC:11998
+      molecular_activity: AUTO:most%20commonly%20mutated
+    - gene: HGNC:8975
+      molecular_activity: AUTO:hotspot%20mutation
+    - gene: HGNC:7989
+      molecular_activity: AUTO:hotspot%20mutation
+    - gene: HGNC:3430
+      molecular_activity: AUTO:hotspot%20mutation
+    - gene: HGNC:1097
+      molecular_activity: AUTO:hotspot%20mutation%20in%20urothelial%20carcinoma
 named_entities:
   - id: 
       AUTO:anal%20sac%20carcinoma%3B%20neuroendocrine%20carcinoma%3B%20thyroid%20carcinoma%3B%20soft%20tissue%20sarcoma%3B%20hepatocellular%20carcinoma%3B%20hemangiosarcoma%3B%20pulmonary%20carcinoma%3B%20urothelial%20carcinoma
@@ -76,20 +111,26 @@ named_entities:
     label: EGFR
   - id: HGNC:3430
     label: ERBB2
-  - id: AUTO:anal%20sac%20carcinoma
-    label: anal sac carcinoma
-  - id: MONDO:0002120
-    label: neuroendocrine carcinoma
-  - id: MESH:M0333546
-    label: thyroid carcinoma
-  - id: MONDO:0018078
-    label: soft tissue sarcoma
-  - id: MESH:D006528
-    label: hepatocellular carcinoma
+  - id: 
+      AUTO:anal%20sac%20carcinoma%2C%20neuroendocrine%20carcinoma%2C%20thyroid%20carcinoma%2C%20soft%20tissue%20sarcoma%2C%20hepatocellular%20carcinoma%2C%20hemangiosarcoma%2C%20pulmonary%20carcinoma%2C%20urothelial%20carcinoma
+    label: anal sac carcinoma, neuroendocrine carcinoma, thyroid carcinoma, soft tissue
+      sarcoma, hepatocellular carcinoma, hemangiosarcoma, pulmonary carcinoma, urothelial
+      carcinoma
   - id: MESH:D006394
     label: hemangiosarcoma
   - id: AUTO:pulmonary%20carcinoma
     label: pulmonary carcinoma
   - id: MONDO:0040679
     label: urothelial carcinoma
+  - id: AUTO:components%20of%20the%20hemangiosarcoma%20tumor%20microenvironment
+    label: components of the hemangiosarcoma tumor microenvironment
+  - id: AUTO:tumor%20growth%20and%20progression
+    label: tumor growth and progression
+  - id: AUTO:None%20given
+    label: None given
+  - id: AUTO:most%20commonly%20mutated
+    label: most commonly mutated
+  - id: AUTO:hotspot%20mutation
+    label: hotspot mutation
+  - id: AUTO:hotspot%20mutation%20in%20urothelial%20carcinoma
 
