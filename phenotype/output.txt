@@ -1,25 +1,12 @@
 input_text: |
-  Naturally occurring canine cancers have remarkable similarities to their human counterparts. To
-  better understand these similarities, we investigated 671 client-owned dogs from 96 breeds with
-  23 common tumor types, including those whose mutation profile are unknown (anal sac carcinoma
-  and neuroendocrine carcinoma) or understudied (thyroid carcinoma, soft tissue sarcoma and
-  hepatocellular carcinoma). We discovered mutations in 50 well-established oncogenes and tumor
-  suppressors, and compared them to those reported in human cancers. As in human cancer, TP53 is
-  the most commonly mutated gene, detected in 22.5% of canine tumors overall. Canine tumors share
-  mutational hotspots with human tumors in oncogenes including PIK3CA, KRAS, NRAS, BRAF, KIT and
-  EGFR. Hotspot mutations with significant association to tumor type include NRAS G61R and PIK3CA
-  H1047R in hemangiosarcoma, ERBB2 V659E in pulmonary carcinoma, and BRAF V588E (equivalent
-  of V600E in humans) in urothelial carcinoma. Our findings better position canines as a translational model of human cancer to investigate a wide spectrum of targeted therapies.
-
-  “Dogs with the most common splenic form of hemangiosarcoma will usually arrive at an emergency clinic having suddenly collapsed and with pale gums due to internal bleeding from a previously undetected and now ruptured tumor,” says Kelly Sams, lab manager at the Coonrod Lab at Cornell College of Veterinary Medicine’s Baker Institute for Animal Health. Internal bleeding sometimes results in sudden death.
-
-  By the time a dog shows any symptoms of this cancer, according to Sams, the disease has progressed and usually spread. Symptoms include loss of appetite, ataxia (instability), fatigue, weakness, and pale gums. There can be little or no sign of the disease before the dog may suddenly collapse or even die.
+  Mammary neoplasms are a heterogeneous form of disease, and in order to determine its course and biological features with more accuracy, investigations based on tumor phenotypes are required. The PIK3CA gene has been identified as being the most commonly mutated gene in canine mammary tumors. The aim of the present study was to propose and validate a phenotypic classification for canine mammary tumors and to assess any association between clinicopathological characteristics, survival and prognosis. For the immunohistochemistry analysis, the primary antibodies against estrogen receptor-α, progesterone receptor, human epidermal growth factor receptor 2 (HER-2)/neu and E-cadherin were used. A total of 110 canine mammary tumors were investigated; 42 tumors were classified as; luminal A, 41 as luminal B, 17 as triple-negative and 10 as HER-2-positive. The luminal A and B phenotypes were associated with improved prognosis, whereas HER-2positive and triple-negative tumors were more aggressive, and exhibited a significant association with the occurrence of metastasis, a worse Tumor-Node-Metastasis classification and shorter survival time (P<0.05). In addition, there were different levels of E-cadherin expression intensity observed among the four tumor profiles investigated. Luminal A and B phenotypes presented an upregulation of E-cadherin compared with the HER-2 positive and triple-negative phenotypes (P<0.05). From the results of the present study, the proposed immunohistochemical panel and phenotypic classification techniques could be useful diagnostic tools with a good technical applicability in veterinary oncology. The analysis of E-cadherin expression in the panel of tumor markers allowed a more accurate classification for determining the biological features of the mammary tumor.
 raw_completion_output: |-
-  cancer: anal sac carcinoma; neuroendocrine carcinoma; thyroid carcinoma; soft tissue sarcoma; hepatocellular carcinoma; hemangiosarcoma; pulmonary carcinoma; urothelial carcinoma
-  gene: TP53; PIK3CA; KRAS; NRAS; BRAF; KIT; EGFR; ERBB2
-  phenotype: loss of appetite; ataxia (instability); fatigue; weakness; pale gums
-  anatomical_entity: splenic
-  genecancer_links: TP53-hemangiosarcoma; PIK3CA-hemangiosarcoma; NRAS-hemangiosarcoma; ERBB2-pulmonary carcinoma; BRAF-urothelial carcinoma
+  cancer: mammary neoplasms; canine mammary tumors
+  gene: PIK3CA
+  quality: tumor phenotypes; clinicopathological characteristics; survival; prognosis; E-cadherin expression intensity
+  anatomical_entity: mammary tumors
+  chemical_entity: estrogen receptor-α; progesterone receptor; human epidermal growth factor receptor 2 (HER-2)/neu; E-cadherin
+  genecancer_links: PIK3CA-causes-mammary neoplasms
 prompt: |+
   Split the following piece of text into fields in the following format:
 
@@ -29,73 +16,41 @@ prompt: |+
 
 
   Text:
-  BRAF-urothelial carcinoma
+  PIK3CA-causes-mammary neoplasms
 
   ===
 
 extracted_object:
-  cancer: 
-    AUTO:anal%20sac%20carcinoma%3B%20neuroendocrine%20carcinoma%3B%20thyroid%20carcinoma%3B%20soft%20tissue%20sarcoma%3B%20hepatocellular%20carcinoma%3B%20hemangiosarcoma%3B%20pulmonary%20carcinoma%3B%20urothelial%20carcinoma
+  cancer: AUTO:mammary%20neoplasms%3B%20canine%20mammary%20tumors
   gene:
-    - HGNC:11998
     - HGNC:8975
-    - HGNC:6407
-    - HGNC:7989
-    - HGNC:1097
-    - HGNC:6342
-    - HGNC:3236
-    - HGNC:3430
-  phenotype: 
-    AUTO:loss%20of%20appetite%3B%20ataxia%20%28instability%29%3B%20fatigue%3B%20weakness%3B%20pale%20gums
-  anatomical_entity: AUTO:splenic
+  quality: 
+    AUTO:tumor%20phenotypes%3B%20clinicopathological%20characteristics%3B%20survival%3B%20prognosis%3B%20E-cadherin%20expression%20intensity
+  anatomical_entity: AUTO:mammary%20tumors
+  chemical_entity: 
+    AUTO:estrogen%20receptor-%CE%B1%3B%20progesterone%20receptor%3B%20human%20epidermal%20growth%20factor%20receptor%202%20%28HER-2%29/neu%3B%20E-cadherin
   genecancer_links:
-    - gene: HGNC:11998
-      cancer: MESH:D006394
-      phenotype: AUTO:N/A
     - gene: HGNC:8975
-      cancer: MESH:D006394
-      phenotype: AUTO:N/A
-    - gene: HGNC:7989
-      cancer: MESH:D006394
-      phenotype: AUTO:N/A
-    - gene: HGNC:3430
-      cancer: AUTO:pulmonary%20carcinoma
-    - gene: HGNC:1097
-      cancer: MONDO:0040679
-      phenotype: AUTO:N/A
+      cancer: MONDO:0007254
+      phenotype: AUTO:none
 named_entities:
-  - id: 
-      AUTO:anal%20sac%20carcinoma%3B%20neuroendocrine%20carcinoma%3B%20thyroid%20carcinoma%3B%20soft%20tissue%20sarcoma%3B%20hepatocellular%20carcinoma%3B%20hemangiosarcoma%3B%20pulmonary%20carcinoma%3B%20urothelial%20carcinoma
-    label: anal sac carcinoma; neuroendocrine carcinoma; thyroid carcinoma; soft tissue
-      sarcoma; hepatocellular carcinoma; hemangiosarcoma; pulmonary carcinoma; urothelial
-      carcinoma
-  - id: HGNC:11998
-    label: TP53
+  - id: AUTO:mammary%20neoplasms%3B%20canine%20mammary%20tumors
+    label: mammary neoplasms; canine mammary tumors
   - id: HGNC:8975
     label: PIK3CA
-  - id: HGNC:6407
-    label: KRAS
-  - id: HGNC:7989
-    label: NRAS
-  - id: HGNC:1097
-    label: BRAF
-  - id: HGNC:6342
-    label: KIT
-  - id: HGNC:3236
-    label: EGFR
-  - id: HGNC:3430
-    label: ERBB2
   - id: 
-      AUTO:loss%20of%20appetite%3B%20ataxia%20%28instability%29%3B%20fatigue%3B%20weakness%3B%20pale%20gums
-    label: loss of appetite; ataxia (instability); fatigue; weakness; pale gums
-  - id: AUTO:splenic
-    label: splenic
-  - id: MESH:D006394
-    label: hemangiosarcoma
-  - id: AUTO:N/A
-    label: N/A
-  - id: AUTO:pulmonary%20carcinoma
-    label: pulmonary carcinoma
-  - id: MONDO:0040679
-    label: urothelial carcinoma
+      AUTO:tumor%20phenotypes%3B%20clinicopathological%20characteristics%3B%20survival%3B%20prognosis%3B%20E-cadherin%20expression%20intensity
+    label: tumor phenotypes; clinicopathological characteristics; survival; prognosis;
+      E-cadherin expression intensity
+  - id: AUTO:mammary%20tumors
+    label: mammary tumors
+  - id: 
+      AUTO:estrogen%20receptor-%CE%B1%3B%20progesterone%20receptor%3B%20human%20epidermal%20growth%20factor%20receptor%202%20%28HER-2%29/neu%3B%20E-cadherin
+    label: estrogen receptor-α; progesterone receptor; human epidermal growth factor
+      receptor 2 (HER-2)/neu; E-cadherin
+  - id: MONDO:0007254
+    label: mammary neoplasms
+  - id: AUTO:none
+    label: none
+
 
