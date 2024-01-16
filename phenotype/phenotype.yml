@@ -27,28 +27,29 @@ classes:
       cancer:
         description: a semicolon-separated list of types of cancer
         range: Cancer
-
+      
       gene:
         description: a semicolon-separated list of the names of the gene that causes the cancer
         multivalued: true
         range: Gene
-      
-      phenotype:
-        description: physical symptoms related to the specific cancer type
-        annotations: 
-          prompt.example: amount, fatigue, weakness, bleeding
-        range: Phenotype
+
+      quality:
+        description: The property being measured, or changes in this property, for example, amount, level, increased amount, decreased concentration
+        annotations:
+          prompt.example: amount, level, increased amount, decreased concentration
+        range: Quality
 
       anatomical_entity:
-        description: The anatomical location that the phenotype is in
+        description: The anatomical location that the chemical entity is measured in
         range: AnatomicalEntity
         annotations:
           prompt.example: liver, heart, brain, finger
-      
-      # cancerphenotypelinks:
-      #   description: semicolon-separated list of links, where each link is a triple connecting two entities via a relationship type
-      #   multivalued: true
-      #   range: CancerPhenotype
+
+      chemical_entity:
+        description: The chemical entity that is being measured
+        range: ChemicalEntity
+        annotations:
+          prompt.example: lysine, metabolite
 
       genecancer_links:
         description: semicolon-separated list of links, where each link is a triple connecting three entities via a relationship type
@@ -57,12 +58,20 @@ classes:
 
       
       
-  Phenotype:
+  Quality:
     is_a: NamedEntity
     id_prefixes:
       - PATO
     annotations:
       annotators: sqlite:obo:pato
+
+  ChemicalEntity:
+    is_a: NamedEntity
+    id_prefixes:
+      - CHEBI
+      - PR
+    annotations:
+      annotators: sqlite:obo:chebi
 
   AnatomicalEntity:
     is_a: NamedEntity
@@ -70,7 +79,6 @@ classes:
       - UBERON
     annotations:
       annotators: sqlite:obo:uberon
-
 
   Gene:
     is_a: NamedEntity
@@ -93,7 +101,7 @@ classes:
       cancer:
         range: Cancer
       phenotype:
-        range: Phenotype
+        range: Quality
   
 
 
