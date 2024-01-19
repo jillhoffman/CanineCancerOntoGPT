@@ -1,7 +1,4 @@
-#phenotypes or tissue types
-#ERROR:root:Line 'TP53 - hemangiosarcoma; pulmonary carcinoma; urothelial carcinoma' does not contain a colon; ignoring
-#ERROR:root:Cannot ground None annotation, cls=CancerGenes
-#TRY USING JUST PHENOTYPE TEMPLATE
+#include quality and phenotype
 
 id:  "id"
 name: trial1
@@ -32,9 +29,16 @@ classes:
         description: a semicolon-separated list of the names of the gene that causes the cancer
         multivalued: true
         range: Gene
+      
+      phenotype:
+        description: a comma separated list of physical symptoms related to the specific cancer type
+        annotations:
+          prompt: physical attributes and consequences of the cancer
+          prompt.example: fatigue, weakness, bleeding
+        range: Phenotype
 
       quality:
-        description: The property being measured, or changes in this property, for example, amount, level, increased amount, decreased concentration
+        description: a comma separated list of properties being measured, or changes in this property, for example, amount, level, increased amount, decreased concentration and what the property is
         annotations:
           prompt.example: amount, level, increased amount, decreased concentration
         range: Quality
@@ -52,12 +56,18 @@ classes:
           prompt.example: lysine, metabolite
 
       genecancer_links:
-        description: semicolon-separated list of links, where each link is a triple connecting three entities via a relationship type
+        description: semicolon-separated list of links, where each link is a quadrouple connecting four entities via a relationship type
         multivalued: true
         range: GeneCancerPhenotype
 
       
-      
+  Phenotype:
+    is_a: NamedEntity
+    id_prefixes:
+      - UPHENO
+    annotations:
+      annotators: sqlite:obo:upheno
+
   Quality:
     is_a: NamedEntity
     id_prefixes:
@@ -96,12 +106,22 @@ classes:
   GeneCancerPhenotype:
     is_a: CompoundExpression
     attributes:
-      gene:
-        range: Gene
       cancer:
         range: Cancer
-      phenotype:
+        annotations:
+          prompt: name of the cancer being described
+      gene:
+        range: Gene
+        annotations:
+          prompt: a list of genes related to the cancer
+      quality:
         range: Quality
+        annotations:
+          prompt: measurable attribute or quality and how it is presented in cancer
+      phenotype:
+        range: Phenotype
+        annotations:
+          prompt: a list of phenotypes related to the cancer, for example bleeding
   
 
 
