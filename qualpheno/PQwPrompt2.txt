@@ -1,0 +1,67 @@
+---
+input_text: |
+  Mammary neoplasms are a heterogeneous form of disease, and in order to determine its course and biological features with more accuracy, investigations based on tumor phenotypes are required. The PIK3CA gene has been identified as being the most commonly mutated gene in canine mammary tumors. The aim of the present study was to propose and validate a phenotypic classification for canine mammary tumors and to assess any association between clinicopathological characteristics, survival and prognosis. For the immunohistochemistry analysis, the primary antibodies against estrogen receptor-α, progesterone receptor, human epidermal growth factor receptor 2 (HER-2)/neu and E-cadherin were used. A total of 110 canine mammary tumors were investigated; 42 tumors were classified as; luminal A, 41 as luminal B, 17 as triple-negative and 10 as HER-2-positive. The luminal A and B phenotypes were associated with improved prognosis, whereas HER-2positive and triple-negative tumors were more aggressive, and exhibited a significant association with the occurrence of metastasis, a worse Tumor-Node-Metastasis classification and shorter survival time (P<0.05). In addition, there were different levels of E-cadherin expression intensity observed among the four tumor profiles investigated. Luminal A and B phenotypes presented an upregulation of E-cadherin compared with the HER-2 positive and triple-negative phenotypes (P<0.05). From the results of the present study, the proposed immunohistochemical panel and phenotypic classification techniques could be useful diagnostic tools with a good technical applicability in veterinary oncology. The analysis of E-cadherin expression in the panel of tumor markers allowed a more accurate classification for determining the biological features of the mammary tumor.
+
+  The most common clinical sign of a malignant mammary tumor is one (or more) palpable masses underneath the skin of the abdomen. They may be next to or within the nipple and follow along the mammary chain (see illustration). The size of the mass(es) and their appearance may vary, but they are usually firm and nodular. Occasionally, the skin over the mass may ulcerate (open) and bleed, and the affected area may feel warm to the touch and become painful. The mammary gland may even produce a discharge.
+
+  If the tumor has metastasized (spread to other areas of the body), other signs may become evident. Your dog may generally feel unwell, eat less, become lethargic, and lose weight. If the lungs are involved, your dog may have problems with breathing or develop a cough.
+raw_completion_output: |-
+  cancer: mammary neoplasms; canine mammary tumors
+  gene: PIK3CA
+  phenotype: luminal A, luminal B, triple-negative, HER-2-positive
+  quality: improved prognosis, more aggressive, occurrence of metastasis, worse Tumor-Node-Metastasis classification, shorter survival time, upregulation of E-cadherin
+  anatomical_entity: skin, abdomen, mammary gland, lungs
+  chemical_entity: estrogen receptor-α, progesterone receptor, human epidermal growth factor receptor 2 (HER-2)/neu, E-cadherin
+  genecancer_links: PIK3CA:canine mammary tumors:mutation relationship
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  cancer: <name of the cancer being described>
+  gene: <a list of genes related to the cancer>
+  quality: <measurable attribute or quality and how it is presented in cancer>
+  phenotype: <a list of phenotypes related to the cancer, for example bleeding>
+
+
+  Text:
+  PIK3CA:canine mammary tumors:mutation relationship
+
+  ===
+
+extracted_object:
+  cancer: AUTO:mammary%20neoplasms%3B%20canine%20mammary%20tumors
+  gene:
+    - HGNC:8975
+  phenotype: AUTO:luminal%20A%2C%20luminal%20B%2C%20triple-negative%2C%20HER-2-positive
+  quality: 
+    AUTO:improved%20prognosis%2C%20more%20aggressive%2C%20occurrence%20of%20metastasis%2C%20worse%20Tumor-Node-Metastasis%20classification%2C%20shorter%20survival%20time%2C%20upregulation%20of%20E-cadherin
+  anatomical_entity: AUTO:skin%2C%20abdomen%2C%20mammary%20gland%2C%20lungs
+  chemical_entity: 
+    AUTO:estrogen%20receptor-%CE%B1%2C%20progesterone%20receptor%2C%20human%20epidermal%20growth%20factor%20receptor%202%20%28HER-2%29/neu%2C%20E-cadherin
+  genecancer_links:
+    - cancer: AUTO:canine%20mammary%20tumors
+      gene: HGNC:8975
+      quality: AUTO:mutation%20relationship
+      phenotype: AUTO:%28not%20provided%29
+named_entities:
+  - id: AUTO:mammary%20neoplasms%3B%20canine%20mammary%20tumors
+    label: mammary neoplasms; canine mammary tumors
+  - id: HGNC:8975
+    label: PIK3CA
+  - id: AUTO:luminal%20A%2C%20luminal%20B%2C%20triple-negative%2C%20HER-2-positive
+    label: luminal A, luminal B, triple-negative, HER-2-positive
+  - id: 
+      AUTO:improved%20prognosis%2C%20more%20aggressive%2C%20occurrence%20of%20metastasis%2C%20worse%20Tumor-Node-Metastasis%20classification%2C%20shorter%20survival%20time%2C%20upregulation%20of%20E-cadherin
+    label: improved prognosis, more aggressive, occurrence of metastasis, worse Tumor-Node-Metastasis
+      classification, shorter survival time, upregulation of E-cadherin
+  - id: AUTO:skin%2C%20abdomen%2C%20mammary%20gland%2C%20lungs
+    label: skin, abdomen, mammary gland, lungs
+  - id: 
+      AUTO:estrogen%20receptor-%CE%B1%2C%20progesterone%20receptor%2C%20human%20epidermal%20growth%20factor%20receptor%202%20%28HER-2%29/neu%2C%20E-cadherin
+    label: estrogen receptor-α, progesterone receptor, human epidermal growth factor
+      receptor 2 (HER-2)/neu, E-cadherin
+  - id: AUTO:canine%20mammary%20tumors
+    label: canine mammary tumors
+  - id: AUTO:mutation%20relationship
+    label: mutation relationship
+  - id: AUTO:%28not%20provided%29
+    label: (not provided)

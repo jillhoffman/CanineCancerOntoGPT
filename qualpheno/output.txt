@@ -1,0 +1,56 @@
+input_text: |
+  Mammary neoplasms are a heterogeneous form of disease, and in order to determine its course and biological features with more accuracy, investigations based on tumor phenotypes are required. The PIK3CA gene has been identified as being the most commonly mutated gene in canine mammary tumors. The aim of the present study was to propose and validate a phenotypic classification for canine mammary tumors and to assess any association between clinicopathological characteristics, survival and prognosis. For the immunohistochemistry analysis, the primary antibodies against estrogen receptor-α, progesterone receptor, human epidermal growth factor receptor 2 (HER-2)/neu and E-cadherin were used. A total of 110 canine mammary tumors were investigated; 42 tumors were classified as; luminal A, 41 as luminal B, 17 as triple-negative and 10 as HER-2-positive. The luminal A and B phenotypes were associated with improved prognosis, whereas HER-2positive and triple-negative tumors were more aggressive, and exhibited a significant association with the occurrence of metastasis, a worse Tumor-Node-Metastasis classification and shorter survival time (P<0.05). In addition, there were different levels of E-cadherin expression intensity observed among the four tumor profiles investigated. Luminal A and B phenotypes presented an upregulation of E-cadherin compared with the HER-2 positive and triple-negative phenotypes (P<0.05). From the results of the present study, the proposed immunohistochemical panel and phenotypic classification techniques could be useful diagnostic tools with a good technical applicability in veterinary oncology. The analysis of E-cadherin expression in the panel of tumor markers allowed a more accurate classification for determining the biological features of the mammary tumor.
+raw_completion_output: |-
+  cancer: mammary neoplasms; canine mammary tumors
+  gene: PIK3CA
+  quality: tumor phenotypes; clinicopathological characteristics; survival; prognosis; E-cadherin expression intensity
+  anatomical_entity: mammary tumors
+  chemical_entity: estrogen receptor-α; progesterone receptor; human epidermal growth factor receptor 2 (HER-2)/neu; E-cadherin
+  genecancer_links: PIK3CA-causes-mammary neoplasms
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  gene: <the value for gene>
+  cancer: <the value for cancer>
+  phenotype: <the value for phenotype>
+
+
+  Text:
+  PIK3CA-causes-mammary neoplasms
+
+  ===
+
+extracted_object:
+  cancer: AUTO:mammary%20neoplasms%3B%20canine%20mammary%20tumors
+  gene:
+    - HGNC:8975
+  quality: 
+    AUTO:tumor%20phenotypes%3B%20clinicopathological%20characteristics%3B%20survival%3B%20prognosis%3B%20E-cadherin%20expression%20intensity
+  anatomical_entity: AUTO:mammary%20tumors
+  chemical_entity: 
+    AUTO:estrogen%20receptor-%CE%B1%3B%20progesterone%20receptor%3B%20human%20epidermal%20growth%20factor%20receptor%202%20%28HER-2%29/neu%3B%20E-cadherin
+  genecancer_links:
+    - gene: HGNC:8975
+      cancer: MONDO:0007254
+      phenotype: AUTO:none
+named_entities:
+  - id: AUTO:mammary%20neoplasms%3B%20canine%20mammary%20tumors
+    label: mammary neoplasms; canine mammary tumors
+  - id: HGNC:8975
+    label: PIK3CA
+  - id: 
+      AUTO:tumor%20phenotypes%3B%20clinicopathological%20characteristics%3B%20survival%3B%20prognosis%3B%20E-cadherin%20expression%20intensity
+    label: tumor phenotypes; clinicopathological characteristics; survival; prognosis;
+      E-cadherin expression intensity
+  - id: AUTO:mammary%20tumors
+    label: mammary tumors
+  - id: 
+      AUTO:estrogen%20receptor-%CE%B1%3B%20progesterone%20receptor%3B%20human%20epidermal%20growth%20factor%20receptor%202%20%28HER-2%29/neu%3B%20E-cadherin
+    label: estrogen receptor-α; progesterone receptor; human epidermal growth factor
+      receptor 2 (HER-2)/neu; E-cadherin
+  - id: MONDO:0007254
+    label: mammary neoplasms
+  - id: AUTO:none
+    label: none
+
+

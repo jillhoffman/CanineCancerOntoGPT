@@ -1,0 +1,138 @@
+#include quality and phenotype
+
+id:  "id"
+name: trial1
+title: trial1
+description: >-
+  A template to start working with
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  linkml: https://w3id.org/linkml/
+  t1: "id"
+
+default_prefix: t1
+default_range: string
+
+imports:
+  - linkml:types
+  - core
+
+classes:
+  CancerGenes:
+    tree_root: true
+    attributes:
+      cancer:
+        description: a semicolon-separated list of types of cancer
+        range: Cancer
+      
+      gene:
+        description: a semicolon-separated list of the names of the gene that causes the cancer
+        multivalued: true
+        range: Gene
+      
+      phenotype:
+        description: a comma separated list of physical symptoms related to the specific cancer type
+        annotations:
+          prompt: physical attributes and consequences of the cancer
+          prompt.example: fatigue, weakness, bleeding
+        range: Phenotype
+
+      quality:
+        description: a comma separated list of properties being measured, or changes in this property, for example, amount, level, increased amount, decreased concentration and what the property is
+        annotations:
+          prompt.example: amount, level, increased amount, decreased concentration
+        range: Quality
+
+      anatomical_entity:
+        description: The anatomical location that the chemical entity is measured in
+        range: AnatomicalEntity
+        annotations:
+          prompt.example: liver, heart, brain, finger
+
+      chemical_entity:
+        description: The chemical entity that is being measured
+        range: ChemicalEntity
+        annotations:
+          prompt.example: lysine, metabolite
+
+      genecancer_links:
+        description: semicolon-separated list of links, where each link is a quadrouple connecting four entities via a relationship type
+        multivalued: true
+        range: GeneCancerPhenotype
+
+      
+  Phenotype:
+    is_a: NamedEntity
+    id_prefixes:
+      - UPHENO
+    annotations:
+      annotators: sqlite:obo:upheno
+
+  Quality:
+    is_a: NamedEntity
+    id_prefixes:
+      - PATO
+    annotations:
+      annotators: sqlite:obo:pato
+
+  ChemicalEntity:
+    is_a: NamedEntity
+    id_prefixes:
+      - CHEBI
+      - PR
+    annotations:
+      annotators: sqlite:obo:chebi
+
+  AnatomicalEntity:
+    is_a: NamedEntity
+    id_prefixes:
+      - UBERON
+    annotations:
+      annotators: sqlite:obo:uberon
+
+  Gene:
+    is_a: NamedEntity
+    id_prefixes:
+      - HGNC
+    annotations:
+      annotators: gilda:, bioportal:hgnc-nr, sqlite:obo:pr
+
+  Cancer:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:mesh, sqlite:obo:mondo
+
+
+  GeneCancerPhenotype:
+    is_a: CompoundExpression
+    attributes:
+      cancer:
+        range: Cancer
+        annotations:
+          prompt: name of the cancer being described
+      gene:
+        range: Gene
+        annotations:
+          prompt: a list of genes related to the cancer
+      quality:
+        range: Quality
+        annotations:
+          prompt: measurable attribute or quality and how it is presented in cancer
+      phenotype:
+        range: Phenotype
+        annotations:
+          prompt: a list of phenotypes related to the cancer, for example bleeding
+  
+
+
+      
+  
+
+      
+  
+  
+  
+  
+
+
+      
