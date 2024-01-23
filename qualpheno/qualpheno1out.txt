@@ -6,72 +6,82 @@ input_text: |
 
   If the tumor has metastasized (spread to other areas of the body), other signs may become evident. Your dog may generally feel unwell, eat less, become lethargic, and lose weight. If the lungs are involved, your dog may have problems with breathing or develop a cough.
 raw_completion_output: |-
-  cancer: canine mammary tumors; luminal A; luminal B; triple-negative; HER-2-positive
+  cancer: mammary neoplasms, canine mammary tumors
   gene: PIK3CA
-  phenotype: luminal A; luminal B; triple-negative; HER-2-positive
-  quality: improved prognosis; aggressive; occurrence of metastasis; worse Tumor-Node-Metastasis classification; shorter survival time; upregulation of E-cadherin
-  anatomical_entity: mammary gland; abdomen; skin; nipple; mammary chain; lungs
+  phenotype: luminal A, luminal B, triple-negative, HER-2-positive
+  quality: improved prognosis, more aggressive, significant association with metastasis, worse Tumor-Node-Metastasis classification, shorter survival time, upregulation of E-cadherin, different levels of E-cadherin expression intensity
+  anatomical_entity: mammary gland, abdomen, nipple
   chemical_entity: not mentioned
-  genecancer_links: PIK3CA - canine mammary tumors - mutation; E-cadherin - luminal A and B phenotypes - upregulation
+  genecancer_links: PIK3CA - mammary neoplasms; PIK3CA - canine mammary tumors
 prompt: |+
   Split the following piece of text into fields in the following format:
 
-  cancer: <name of the cancer being described>
   gene: <a list of genes related to the cancer>
+  cancer: <name of the cancer being described>
+  phenotype: <a list of clinical signs and physical symptoms caused by the cancer that are easy to look for, for example bleeding or fatigue>
   quality: <measurable attribute or quality and how it is presented in cancer>
-  phenotype: <a list of phenotypes related to the cancer, for example bleeding>
 
 
   Text:
-  E-cadherin - luminal A and B phenotypes - upregulation
+  PIK3CA - canine mammary tumors
 
   ===
 
 extracted_object:
-  cancer: 
-    AUTO:canine%20mammary%20tumors%3B%20luminal%20A%3B%20luminal%20B%3B%20triple-negative%3B%20HER-2-positive
+  cancer: AUTO:mammary%20neoplasms%2C%20canine%20mammary%20tumors
   gene:
     - HGNC:8975
-  phenotype: AUTO:luminal%20A%3B%20luminal%20B%3B%20triple-negative%3B%20HER-2-positive
+  phenotype: AUTO:luminal%20A%2C%20luminal%20B%2C%20triple-negative%2C%20HER-2-positive
   quality: 
-    AUTO:improved%20prognosis%3B%20aggressive%3B%20occurrence%20of%20metastasis%3B%20worse%20Tumor-Node-Metastasis%20classification%3B%20shorter%20survival%20time%3B%20upregulation%20of%20E-cadherin
-  anatomical_entity: 
-    AUTO:mammary%20gland%3B%20abdomen%3B%20skin%3B%20nipple%3B%20mammary%20chain%3B%20lungs
+    AUTO:improved%20prognosis%2C%20more%20aggressive%2C%20significant%20association%20with%20metastasis%2C%20worse%20Tumor-Node-Metastasis%20classification%2C%20shorter%20survival%20time%2C%20upregulation%20of%20E-cadherin%2C%20different%20levels%20of%20E-cadherin%20expression%20intensity
+  anatomical_entity: AUTO:mammary%20gland%2C%20abdomen%2C%20nipple
   chemical_entity: AUTO:not%20mentioned
   genecancer_links:
-    - cancer: AUTO:canine%20mammary%20tumors
-      gene: HGNC:8975
-      quality: AUTO:mutation
-      phenotype: AUTO:%28not%20provided%29
-    - gene: HGNC:1748
-      quality: AUTO:upregulation
-      phenotype: AUTO:luminal%20A%20and%20B%20phenotypes
+    - gene: HGNC:8975
+      cancer: MONDO:0007254
+      phenotype: 
+        AUTO:potential%20clinical%20signs%20might%20include%20the%20presence%20of%20a%20lump%20or%20mass%20in%20the%20breast%2C%20changes%20in%20breast%20size%20or%20shape%2C%20nipple%20discharge%20or%20inversion%2C%20skin%20changes%20on%20the%20breast%2C%20and%20lymph%20node%20enlargement%20in%20the%20armpit
+      quality: 
+        AUTO:The%20activation%20of%20PIK3CA%20gene%20is%20associated%20with%20an%20increased%20risk%20of%20developing%20mammary%20neoplasms.
+    - gene: HGNC:8975
+      cancer: AUTO:canine%20mammary%20tumors
+      phenotype: 
+        AUTO:breast%20lumps%2C%20nipple%20discharge%2C%20enlarged%20mammary%20glands%2C%20changes%20in%20shape%20or%20size%20of%20mammary%20glands
+      quality: 
+        AUTO:increased%20cell%20proliferation%20and%20growth%20of%20mammary%20epithelial%20cells
 named_entities:
-  - id: 
-      AUTO:canine%20mammary%20tumors%3B%20luminal%20A%3B%20luminal%20B%3B%20triple-negative%3B%20HER-2-positive
-    label: canine mammary tumors; luminal A; luminal B; triple-negative; HER-2-positive
+  - id: AUTO:mammary%20neoplasms%2C%20canine%20mammary%20tumors
+    label: mammary neoplasms, canine mammary tumors
   - id: HGNC:8975
     label: PIK3CA
-  - id: AUTO:luminal%20A%3B%20luminal%20B%3B%20triple-negative%3B%20HER-2-positive
-    label: luminal A; luminal B; triple-negative; HER-2-positive
+  - id: AUTO:luminal%20A%2C%20luminal%20B%2C%20triple-negative%2C%20HER-2-positive
+    label: luminal A, luminal B, triple-negative, HER-2-positive
   - id: 
-      AUTO:improved%20prognosis%3B%20aggressive%3B%20occurrence%20of%20metastasis%3B%20worse%20Tumor-Node-Metastasis%20classification%3B%20shorter%20survival%20time%3B%20upregulation%20of%20E-cadherin
-    label: improved prognosis; aggressive; occurrence of metastasis; worse Tumor-Node-Metastasis
-      classification; shorter survival time; upregulation of E-cadherin
-  - id: 
-      AUTO:mammary%20gland%3B%20abdomen%3B%20skin%3B%20nipple%3B%20mammary%20chain%3B%20lungs
-    label: mammary gland; abdomen; skin; nipple; mammary chain; lungs
+      AUTO:improved%20prognosis%2C%20more%20aggressive%2C%20significant%20association%20with%20metastasis%2C%20worse%20Tumor-Node-Metastasis%20classification%2C%20shorter%20survival%20time%2C%20upregulation%20of%20E-cadherin%2C%20different%20levels%20of%20E-cadherin%20expression%20intensity
+    label: improved prognosis, more aggressive, significant association with metastasis,
+      worse Tumor-Node-Metastasis classification, shorter survival time, upregulation
+      of E-cadherin, different levels of E-cadherin expression intensity
+  - id: AUTO:mammary%20gland%2C%20abdomen%2C%20nipple
+    label: mammary gland, abdomen, nipple
   - id: AUTO:not%20mentioned
     label: not mentioned
+  - id: MONDO:0007254
+    label: mammary neoplasms
+  - id: 
+      AUTO:potential%20clinical%20signs%20might%20include%20the%20presence%20of%20a%20lump%20or%20mass%20in%20the%20breast%2C%20changes%20in%20breast%20size%20or%20shape%2C%20nipple%20discharge%20or%20inversion%2C%20skin%20changes%20on%20the%20breast%2C%20and%20lymph%20node%20enlargement%20in%20the%20armpit
+    label: potential clinical signs might include the presence of a lump or mass in
+      the breast, changes in breast size or shape, nipple discharge or inversion,
+      skin changes on the breast, and lymph node enlargement in the armpit
+  - id: 
+      AUTO:The%20activation%20of%20PIK3CA%20gene%20is%20associated%20with%20an%20increased%20risk%20of%20developing%20mammary%20neoplasms.
+    label: The activation of PIK3CA gene is associated with an increased risk of developing
+      mammary neoplasms.
   - id: AUTO:canine%20mammary%20tumors
     label: canine mammary tumors
-  - id: AUTO:mutation
-    label: mutation
-  - id: AUTO:%28not%20provided%29
-    label: (not provided)
-  - id: HGNC:1748
-    label: E-cadherin
-  - id: AUTO:upregulation
-    label: upregulation
-  - id: AUTO:luminal%20A%20and%20B%20phenotypes
-    label: luminal A and B phenotypes
+  - id: 
+      AUTO:breast%20lumps%2C%20nipple%20discharge%2C%20enlarged%20mammary%20glands%2C%20changes%20in%20shape%20or%20size%20of%20mammary%20glands
+    label: breast lumps, nipple discharge, enlarged mammary glands, changes in shape
+      or size of mammary glands
+  - id: 
+      AUTO:increased%20cell%20proliferation%20and%20growth%20of%20mammary%20epithelial%20cells
+    label: increased cell proliferation and growth of mammary epithelial cells
