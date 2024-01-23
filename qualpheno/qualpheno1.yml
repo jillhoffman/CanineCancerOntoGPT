@@ -31,9 +31,8 @@ classes:
         range: Gene
       
       phenotype:
-        description: a comma separated list of physical symptoms and feelings related to the specific cancer type
+        description: a comma separated list of clinical signs and physical symptoms caused by the specific cancer type
         annotations:
-          prompt: physical attributes and consequences of the cancer that owner would be able to identify
           prompt.example: fatigue, weakness, bleeding
         range: Phenotype
 
@@ -106,22 +105,25 @@ classes:
   GeneCancerPhenotype:
     is_a: CompoundExpression
     attributes:
-      cancer:
-        range: Cancer
-        annotations:
-          prompt: name of the cancer being described
       gene:
         range: Gene
         annotations:
           prompt: a list of genes related to the cancer
+      cancer:
+        range: Cancer
+        annotations:
+          prompt: name of the cancer being described
+      phenotype:
+        range: Phenotype
+        annotations:
+          prompt: a list of clinical signs and physical symptoms caused by the cancer that are easy to look for, for example bleeding or fatigue
       quality:
         range: Quality
         annotations:
           prompt: measurable attribute or quality and how it is presented in cancer
-      phenotype:
-        range: Phenotype
-        annotations:
-          prompt: a list of phenotypes related to the cancer, for example bleeding
+      
+      
+          
   
 
 
