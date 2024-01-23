@@ -6,13 +6,13 @@ input_text: |
 
   If the tumor has metastasized (spread to other areas of the body), other signs may become evident. Your dog may generally feel unwell, eat less, become lethargic, and lose weight. If the lungs are involved, your dog may have problems with breathing or develop a cough.
 raw_completion_output: |-
-  cancer: mammary neoplasms; canine mammary tumors
+  cancer: canine mammary tumors; luminal A; luminal B; triple-negative; HER-2-positive
   gene: PIK3CA
-  phenotype: luminal A, luminal B, triple-negative, HER-2-positive
-  quality: improved prognosis, more aggressive, occurrence of metastasis, worse Tumor-Node-Metastasis classification, shorter survival time, upregulation of E-cadherin
-  anatomical_entity: skin, abdomen, mammary gland, lungs
-  chemical_entity: estrogen receptor-α, progesterone receptor, human epidermal growth factor receptor 2 (HER-2)/neu, E-cadherin
-  genecancer_links: PIK3CA:canine mammary tumors:mutation relationship
+  phenotype: luminal A; luminal B; triple-negative; HER-2-positive
+  quality: improved prognosis; aggressive; occurrence of metastasis; worse Tumor-Node-Metastasis classification; shorter survival time; upregulation of E-cadherin
+  anatomical_entity: mammary gland; abdomen; skin; nipple; mammary chain; lungs
+  chemical_entity: not mentioned
+  genecancer_links: PIK3CA - canine mammary tumors - mutation; E-cadherin - luminal A and B phenotypes - upregulation
 prompt: |+
   Split the following piece of text into fields in the following format:
 
@@ -23,45 +23,55 @@ prompt: |+
 
 
   Text:
-  PIK3CA:canine mammary tumors:mutation relationship
+  E-cadherin - luminal A and B phenotypes - upregulation
 
   ===
 
 extracted_object:
-  cancer: AUTO:mammary%20neoplasms%3B%20canine%20mammary%20tumors
+  cancer: 
+    AUTO:canine%20mammary%20tumors%3B%20luminal%20A%3B%20luminal%20B%3B%20triple-negative%3B%20HER-2-positive
   gene:
     - HGNC:8975
-  phenotype: AUTO:luminal%20A%2C%20luminal%20B%2C%20triple-negative%2C%20HER-2-positive
+  phenotype: AUTO:luminal%20A%3B%20luminal%20B%3B%20triple-negative%3B%20HER-2-positive
   quality: 
-    AUTO:improved%20prognosis%2C%20more%20aggressive%2C%20occurrence%20of%20metastasis%2C%20worse%20Tumor-Node-Metastasis%20classification%2C%20shorter%20survival%20time%2C%20upregulation%20of%20E-cadherin
-  anatomical_entity: AUTO:skin%2C%20abdomen%2C%20mammary%20gland%2C%20lungs
-  chemical_entity: 
-    AUTO:estrogen%20receptor-%CE%B1%2C%20progesterone%20receptor%2C%20human%20epidermal%20growth%20factor%20receptor%202%20%28HER-2%29/neu%2C%20E-cadherin
+    AUTO:improved%20prognosis%3B%20aggressive%3B%20occurrence%20of%20metastasis%3B%20worse%20Tumor-Node-Metastasis%20classification%3B%20shorter%20survival%20time%3B%20upregulation%20of%20E-cadherin
+  anatomical_entity: 
+    AUTO:mammary%20gland%3B%20abdomen%3B%20skin%3B%20nipple%3B%20mammary%20chain%3B%20lungs
+  chemical_entity: AUTO:not%20mentioned
   genecancer_links:
     - cancer: AUTO:canine%20mammary%20tumors
       gene: HGNC:8975
-      quality: AUTO:mutation%20relationship
+      quality: AUTO:mutation
       phenotype: AUTO:%28not%20provided%29
+    - gene: HGNC:1748
+      quality: AUTO:upregulation
+      phenotype: AUTO:luminal%20A%20and%20B%20phenotypes
 named_entities:
-  - id: AUTO:mammary%20neoplasms%3B%20canine%20mammary%20tumors
-    label: mammary neoplasms; canine mammary tumors
+  - id: 
+      AUTO:canine%20mammary%20tumors%3B%20luminal%20A%3B%20luminal%20B%3B%20triple-negative%3B%20HER-2-positive
+    label: canine mammary tumors; luminal A; luminal B; triple-negative; HER-2-positive
   - id: HGNC:8975
     label: PIK3CA
-  - id: AUTO:luminal%20A%2C%20luminal%20B%2C%20triple-negative%2C%20HER-2-positive
-    label: luminal A, luminal B, triple-negative, HER-2-positive
+  - id: AUTO:luminal%20A%3B%20luminal%20B%3B%20triple-negative%3B%20HER-2-positive
+    label: luminal A; luminal B; triple-negative; HER-2-positive
   - id: 
-      AUTO:improved%20prognosis%2C%20more%20aggressive%2C%20occurrence%20of%20metastasis%2C%20worse%20Tumor-Node-Metastasis%20classification%2C%20shorter%20survival%20time%2C%20upregulation%20of%20E-cadherin
-    label: improved prognosis, more aggressive, occurrence of metastasis, worse Tumor-Node-Metastasis
-      classification, shorter survival time, upregulation of E-cadherin
-  - id: AUTO:skin%2C%20abdomen%2C%20mammary%20gland%2C%20lungs
-    label: skin, abdomen, mammary gland, lungs
+      AUTO:improved%20prognosis%3B%20aggressive%3B%20occurrence%20of%20metastasis%3B%20worse%20Tumor-Node-Metastasis%20classification%3B%20shorter%20survival%20time%3B%20upregulation%20of%20E-cadherin
+    label: improved prognosis; aggressive; occurrence of metastasis; worse Tumor-Node-Metastasis
+      classification; shorter survival time; upregulation of E-cadherin
   - id: 
-      AUTO:estrogen%20receptor-%CE%B1%2C%20progesterone%20receptor%2C%20human%20epidermal%20growth%20factor%20receptor%202%20%28HER-2%29/neu%2C%20E-cadherin
-    label: estrogen receptor-α, progesterone receptor, human epidermal growth factor
-      receptor 2 (HER-2)/neu, E-cadherin
+      AUTO:mammary%20gland%3B%20abdomen%3B%20skin%3B%20nipple%3B%20mammary%20chain%3B%20lungs
+    label: mammary gland; abdomen; skin; nipple; mammary chain; lungs
+  - id: AUTO:not%20mentioned
+    label: not mentioned
   - id: AUTO:canine%20mammary%20tumors
     label: canine mammary tumors
-  - id: AUTO:mutation%20relationship
-    label: mutation relationship
+  - id: AUTO:mutation
+    label: mutation
   - id: AUTO:%28not%20provided%29
     label: (not provided)
+  - id: HGNC:1748
+    label: E-cadherin
+  - id: AUTO:upregulation
+    label: upregulation
+  - id: AUTO:luminal%20A%20and%20B%20phenotypes
+    label: luminal A and B phenotypes

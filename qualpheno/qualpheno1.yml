@@ -24,21 +24,21 @@ classes:
       cancer:
         description: a semicolon-separated list of types of cancer
         range: Cancer
-      
+
       gene:
         description: a semicolon-separated list of the names of the gene that causes the cancer
         multivalued: true
         range: Gene
       
       phenotype:
-        description: a comma separated list of physical symptoms related to the specific cancer type
+        description: a comma separated list of physical symptoms and feelings related to the specific cancer type
         annotations:
-          prompt: physical attributes and consequences of the cancer
+          prompt: physical attributes and consequences of the cancer that owner would be able to identify
           prompt.example: fatigue, weakness, bleeding
         range: Phenotype
 
       quality:
-        description: a comma separated list of properties being measured, or changes in this property, for example, amount, level, increased amount, decreased concentration and what the property is
+        description: a comma separated list of clinicopathological properties being measured, or changes in this property, for example, amount, level, increased amount, decreased concentration and what the property is
         annotations:
           prompt.example: amount, level, increased amount, decreased concentration
         range: Quality
