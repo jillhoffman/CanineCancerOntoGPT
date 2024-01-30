@@ -1,4 +1,5 @@
-#include quality and phenotype
+#ask about auto thing
+#increase text and different text 
 
 id:  "id"
 name: trial1
@@ -22,43 +23,48 @@ classes:
     tree_root: true
     attributes:
       cancer:
-        description: a semicolon-separated list of types of cancer
+        description: the cancer being described
+        multivalued: true
         range: Cancer
 
       gene:
-        description: a semicolon-separated list of the names of the gene that causes the cancer
+        description: the genes that are linked to the cancer 
         multivalued: true
         range: Gene
       
       phenotype:
-        description: a comma separated list of clinical signs and physical symptoms caused by the specific cancer type
+        description: physical symptoms caused by cancer indicating disease
+        multivalued: true
         annotations:
           prompt.example: fatigue, weakness, bleeding
         range: Phenotype
 
-      quality:
-        description: a comma separated list of clinicopathological properties being measured, or changes in this property, for example, amount, level, increased amount, decreased concentration and what the property is
-        annotations:
-          prompt.example: amount, level, increased amount, decreased concentration
-        range: Quality
+      # quality:
+      #   description: changes in chemicals with cancer and the chemicals involved
+      #   multivalued: true
+      #   annotations:
+      #     prompt.example: amount, level, increased amount, decreased concentration
+      #   range: Quality
 
       anatomical_entity:
-        description: The anatomical location that the chemical entity is measured in
+        description: The anatomical location that the cancer is in
+        multivalued: true
         range: AnatomicalEntity
         annotations:
           prompt.example: liver, heart, brain, finger
 
       chemical_entity:
-        description: The chemical entity that is being measured
+        description: named chemical entity that is being measured and is changed with cancer and how it is changed
+        multivalued: true
         range: ChemicalEntity
         annotations:
-          prompt.example: lysine, metabolite
+          prompt.example: lysine upregulated, metabolite downregulated
 
       genecancer_links:
-        description: semicolon-separated list of links, where each link is a quadrouple connecting four entities via a relationship type
+        description: semicolon-separated list of links, where each link is connecting six entities via a relationship type
         multivalued: true
-        range: GeneCancerPhenotype
-
+        range: GeneCancer
+  
       
   Phenotype:
     is_a: NamedEntity
@@ -67,20 +73,20 @@ classes:
     annotations:
       annotators: sqlite:obo:upheno
 
-  Quality:
-    is_a: NamedEntity
-    id_prefixes:
-      - PATO
-    annotations:
-      annotators: sqlite:obo:pato
+  # Quality:
+  #   is_a: NamedEntity
+  #   id_prefixes:
+  #     - PATO
+  #   annotations:
+  #     annotators: sqlite:obo:pato
 
   ChemicalEntity:
     is_a: NamedEntity
     id_prefixes:
       - CHEBI
-      - PR
+      - PATO
     annotations:
-      annotators: sqlite:obo:chebi
+      annotators: sqlite:obo:chebi, sqlite:obo:pato
 
   AnatomicalEntity:
     is_a: NamedEntity
@@ -102,25 +108,34 @@ classes:
       annotators: sqlite:obo:mesh, sqlite:obo:mondo
 
 
-  GeneCancerPhenotype:
+  GeneCancer:
     is_a: CompoundExpression
     attributes:
       gene:
         range: Gene
-        annotations:
-          prompt: a list of genes related to the cancer
       cancer:
-        range: Cancer
-        annotations:
-          prompt: name of the cancer being described
+        range: Cancer  
       phenotype:
         range: Phenotype
         annotations:
-          prompt: a list of clinical signs and physical symptoms caused by the cancer that are easy to look for, for example bleeding or fatigue
-      quality:
-        range: Quality
+          prompt: physical symptoms related to the cancer and indicate disease
+      anatomical_entity:
+        range: AnatomicalEntity
         annotations:
-          prompt: measurable attribute or quality and how it is presented in cancer
+          prompt: anatomical entity where the cancer and phenotype are presented
+      chemical_entity:
+        range: ChemicalEntity
+        annotations:
+          prompt: named chemical entity that is being measured and is changed with cancer
+      # quality:
+      #   range: Quality
+      #   annotations:
+      #     prompt: how the chemical entity is expressed in cancer compared to normal, for example upregulated or downregulated
+      
+      
+      
+    
+
       
       
           

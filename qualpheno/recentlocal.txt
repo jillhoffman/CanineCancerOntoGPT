@@ -1,0 +1,107 @@
+---
+input_text: |
+  Mammary neoplasms are a heterogeneous form of disease, and in order to determine its course and biological features with more accuracy, investigations based on tumor phenotypes are required. The PIK3CA gene has been identified as being the most commonly mutated gene in canine mammary tumors. The aim of the present study was to propose and validate a phenotypic classification for canine mammary tumors and to assess any association between clinicopathological characteristics, survival and prognosis. For the immunohistochemistry analysis, the primary antibodies against estrogen receptor-α, progesterone receptor, human epidermal growth factor receptor 2 (HER-2)/neu and E-cadherin were used. A total of 110 canine mammary tumors were investigated; 42 tumors were classified as; luminal A, 41 as luminal B, 17 as triple-negative and 10 as HER-2-positive. The luminal A and B phenotypes were associated with improved prognosis, whereas HER-2positive and triple-negative tumors were more aggressive, and exhibited a significant association with the occurrence of metastasis, a worse Tumor-Node-Metastasis classification and shorter survival time (P<0.05). In addition, there were different levels of E-cadherin expression intensity observed among the four tumor profiles investigated. Luminal A and B phenotypes presented an upregulation of E-cadherin compared with the HER-2 positive and triple-negative phenotypes (P<0.05). From the results of the present study, the proposed immunohistochemical panel and phenotypic classification techniques could be useful diagnostic tools with a good technical applicability in veterinary oncology. The analysis of E-cadherin expression in the panel of tumor markers allowed a more accurate classification for determining the biological features of the mammary tumor.
+
+  The most common clinical sign of a malignant mammary tumor is one (or more) palpable masses underneath the skin of the abdomen. They may be next to or within the nipple and follow along the mammary chain (see illustration). The size of the mass(es) and their appearance may vary, but they are usually firm and nodular. Occasionally, the skin over the mass may ulcerate (open) and bleed, and the affected area may feel warm to the touch and become painful. The mammary gland may even produce a discharge.
+
+  If the tumor has metastasized (spread to other areas of the body), other signs may become evident. Your dog may generally feel unwell, eat less, become lethargic, and lose weight. If the lungs are involved, your dog may have problems with breathing or develop a cough.
+raw_completion_output: |-
+  cancer: canine mammary tumors
+  gene: PIK3CA gene
+  phenotype: luminal A, luminal B, triple-negative, HER-2 positive
+  anatomical_entity: mammary gland
+  chemical_entity: E-cadherin
+  genecancer_links: canine mammary tumors - PIK3CA gene (mutated); luminal A/B tumors - improved prognosis; HER-2 positive/triple-negative tumors - more aggressive, metastasis, worse Tumor-Node-Metastasis classification, shorter survival time; luminal A/B tumors - upregulation of E-cadherin compared with HER-2 positive/triple-negative tumors
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  gene: <the value for gene>
+  cancer: <the value for cancer>
+  phenotype: <physical symptoms related to the cancer and indicate disease>
+  anatomical_entity: <anatomical entity where the cancer and phenotype are presented>
+  chemical_entity: <named chemical entity that is being measured and is changed with cancer>
+
+
+  Text:
+  luminal A/B tumors - upregulation of E-cadherin compared with HER-2 positive/triple-negative tumors
+
+  ===
+
+extracted_object:
+  cancer:
+    - AUTO:canine%20mammary%20tumors
+  gene:
+    - AUTO:PIK3CA%20gene
+  phenotype:
+    - AUTO:luminal%20A%2C%20luminal%20B%2C%20triple-negative%2C%20HER-2%20positive
+  anatomical_entity:
+    - UBERON:0001911
+  chemical_entity:
+    - AUTO:E-cadherin
+  genecancer_links:
+    - gene: HGNC:8975
+      cancer: AUTO:canine%20mammary%20tumors
+      phenotype: AUTO:mutated
+      anatomical_entity: AUTO:mammary%20tumors
+      chemical_entity: AUTO:not%20specified
+    - gene: AUTO:Not%20specified
+      cancer: AUTO:Luminal%20A/B%20tumors
+      phenotype: AUTO:Improved%20prognosis
+      anatomical_entity: AUTO:Not%20specified
+      chemical_entity: AUTO:Not%20specified
+    - gene: HGNC:3430
+      cancer: AUTO:triple-negative%20tumors
+      phenotype: 
+        AUTO:more%20aggressive%2C%20metastasis%2C%20worse%20Tumor-Node-Metastasis%20classification%2C%20shorter%20survival%20time
+      anatomical_entity: AUTO:tumors
+      chemical_entity: AUTO:N/A%20%28no%20named%20chemical%20entity%20mentioned%20in%20the%20text%29
+    - gene: HGNC:1748
+      cancer: AUTO:luminal%20A/B%20tumors%2C%20HER-2%20positive/triple-negative%20tumors
+      phenotype: AUTO:upregulation%20of%20E-cadherin
+      anatomical_entity: AUTO:tumors
+      chemical_entity: AUTO:not%20mentioned
+named_entities:
+  - id: AUTO:canine%20mammary%20tumors
+    label: canine mammary tumors
+  - id: AUTO:PIK3CA%20gene
+    label: PIK3CA gene
+  - id: AUTO:luminal%20A%2C%20luminal%20B%2C%20triple-negative%2C%20HER-2%20positive
+    label: luminal A, luminal B, triple-negative, HER-2 positive
+  - id: UBERON:0001911
+    label: mammary gland
+  - id: AUTO:E-cadherin
+    label: E-cadherin
+  - id: HGNC:8975
+    label: PIK3CA
+  - id: AUTO:mutated
+    label: mutated
+  - id: AUTO:mammary%20tumors
+    label: mammary tumors
+  - id: AUTO:not%20specified
+    label: not specified
+  - id: AUTO:Not%20specified
+    label: Not specified
+  - id: AUTO:Luminal%20A/B%20tumors
+    label: Luminal A/B tumors
+  - id: AUTO:Improved%20prognosis
+    label: Improved prognosis
+  - id: HGNC:3430
+    label: HER-2
+  - id: AUTO:triple-negative%20tumors
+    label: triple-negative tumors
+  - id: 
+      AUTO:more%20aggressive%2C%20metastasis%2C%20worse%20Tumor-Node-Metastasis%20classification%2C%20shorter%20survival%20time
+    label: more aggressive, metastasis, worse Tumor-Node-Metastasis classification,
+      shorter survival time
+  - id: AUTO:tumors
+    label: tumors
+  - id: AUTO:N/A%20%28no%20named%20chemical%20entity%20mentioned%20in%20the%20text%29
+    label: N/A (no named chemical entity mentioned in the text)
+  - id: HGNC:1748
+    label: E-cadherin
+  - id: AUTO:luminal%20A/B%20tumors%2C%20HER-2%20positive/triple-negative%20tumors
+    label: luminal A/B tumors, HER-2 positive/triple-negative tumors
+  - id: AUTO:upregulation%20of%20E-cadherin
+    label: upregulation of E-cadherin
+  - id: AUTO:not%20mentioned
+    label: not mentioned
