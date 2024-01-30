@@ -8,22 +8,21 @@ input_text: |
 raw_completion_output: |-
   cancer: canine mammary tumors
   gene: PIK3CA gene
-  phenotype: luminal A, luminal B, triple-negative, HER-2 positive
   anatomical_entity: mammary gland
-  chemical_entity: E-cadherin
-  genecancer_links: canine mammary tumors - PIK3CA gene (mutated); luminal A/B tumors - improved prognosis; HER-2 positive/triple-negative tumors - more aggressive, metastasis, worse Tumor-Node-Metastasis classification, shorter survival time; luminal A/B tumors - upregulation of E-cadherin compared with HER-2 positive/triple-negative tumors
+  genecancer_links: PIK3CA gene - canine mammary tumors - mammary gland
+  phenotype: luminal A, luminal B, triple-negative, HER-2-positive
+  chemical_entity: estrogen receptor-α, progesterone receptor, human epidermal growth factor receptor 2 (HER-2)/neu, E-cadherin
+  cancerphenotype: HER-2-positive and triple-negative tumors - more aggressive, metastasis, worse Tumor-Node-Metastasis classification, shorter survival time; Luminal A and B phenotypes - improved prognosis; E-cadherin - upregulation in luminal A and B phenotypes compared to HER-2 positive and triple-negative phenotypes
 prompt: |+
   From the text below, extract the following entities in the following format:
 
-  gene: <the value for gene>
   cancer: <the value for cancer>
-  phenotype: <physical symptoms related to the cancer and indicate disease>
-  anatomical_entity: <anatomical entity where the cancer and phenotype are presented>
-  chemical_entity: <named chemical entity that is being measured and is changed with cancer>
+  phenotype: <physical symptoms related to the cancer that indicate disease>
+  chemical_entity: <entity and is how it is changed with cancer>
 
 
   Text:
-  luminal A/B tumors - upregulation of E-cadherin compared with HER-2 positive/triple-negative tumors
+  E-cadherin - upregulation in luminal A and B phenotypes compared to HER-2 positive and triple-negative phenotypes
 
   ===
 
@@ -32,76 +31,59 @@ extracted_object:
     - AUTO:canine%20mammary%20tumors
   gene:
     - AUTO:PIK3CA%20gene
-  phenotype:
-    - AUTO:luminal%20A%2C%20luminal%20B%2C%20triple-negative%2C%20HER-2%20positive
   anatomical_entity:
     - UBERON:0001911
-  chemical_entity:
-    - AUTO:E-cadherin
   genecancer_links:
     - gene: HGNC:8975
       cancer: AUTO:canine%20mammary%20tumors
-      phenotype: AUTO:mutated
-      anatomical_entity: AUTO:mammary%20tumors
-      chemical_entity: AUTO:not%20specified
-    - gene: AUTO:Not%20specified
-      cancer: AUTO:Luminal%20A/B%20tumors
-      phenotype: AUTO:Improved%20prognosis
-      anatomical_entity: AUTO:Not%20specified
-      chemical_entity: AUTO:Not%20specified
-    - gene: HGNC:3430
-      cancer: AUTO:triple-negative%20tumors
+      anatomical_entity: UBERON:0001911
+  phenotype:
+    - AUTO:luminal%20A%2C%20luminal%20B%2C%20triple-negative%2C%20HER-2-positive
+  chemical_entity:
+    - PR:P34708
+  cancerphenotype:
+    - cancer: AUTO:HER-2-positive%20and%20triple-negative%20tumors
       phenotype: 
         AUTO:more%20aggressive%2C%20metastasis%2C%20worse%20Tumor-Node-Metastasis%20classification%2C%20shorter%20survival%20time
-      anatomical_entity: AUTO:tumors
-      chemical_entity: AUTO:N/A%20%28no%20named%20chemical%20entity%20mentioned%20in%20the%20text%29
-    - gene: HGNC:1748
-      cancer: AUTO:luminal%20A/B%20tumors%2C%20HER-2%20positive/triple-negative%20tumors
-      phenotype: AUTO:upregulation%20of%20E-cadherin
-      anatomical_entity: AUTO:tumors
-      chemical_entity: AUTO:not%20mentioned
+      chemical_entity: AUTO:Not%20mentioned%20in%20the%20text.
+    - cancer: AUTO:Luminal%20A%20and%20B%20phenotypes
+      phenotype: AUTO:improved%20prognosis
+      chemical_entity: AUTO:Not%20mentioned
+    - cancer: 
+        AUTO:luminal%20A%20and%20B%20phenotypes%2C%20HER-2%20positive%20and%20triple-negative%20phenotypes
+      phenotype: 
+        AUTO:luminal%20A%20and%20B%20phenotypes%2C%20HER-2%20positive%20and%20triple-negative%20phenotypes
+      chemical_entity: PR:000001447
 named_entities:
   - id: AUTO:canine%20mammary%20tumors
     label: canine mammary tumors
   - id: AUTO:PIK3CA%20gene
     label: PIK3CA gene
-  - id: AUTO:luminal%20A%2C%20luminal%20B%2C%20triple-negative%2C%20HER-2%20positive
-    label: luminal A, luminal B, triple-negative, HER-2 positive
   - id: UBERON:0001911
     label: mammary gland
-  - id: AUTO:E-cadherin
-    label: E-cadherin
   - id: HGNC:8975
     label: PIK3CA
-  - id: AUTO:mutated
-    label: mutated
-  - id: AUTO:mammary%20tumors
-    label: mammary tumors
-  - id: AUTO:not%20specified
-    label: not specified
-  - id: AUTO:Not%20specified
-    label: Not specified
-  - id: AUTO:Luminal%20A/B%20tumors
-    label: Luminal A/B tumors
-  - id: AUTO:Improved%20prognosis
-    label: Improved prognosis
-  - id: HGNC:3430
-    label: HER-2
-  - id: AUTO:triple-negative%20tumors
-    label: triple-negative tumors
+  - id: AUTO:luminal%20A%2C%20luminal%20B%2C%20triple-negative%2C%20HER-2-positive
+    label: luminal A, luminal B, triple-negative, HER-2-positive
+  - id: PR:P34708
+    label: estrogen receptor-α, progesterone receptor, human epidermal growth factor
+      receptor 2 (HER-2)/neu, E-cadherin
+  - id: AUTO:HER-2-positive%20and%20triple-negative%20tumors
+    label: HER-2-positive and triple-negative tumors
   - id: 
       AUTO:more%20aggressive%2C%20metastasis%2C%20worse%20Tumor-Node-Metastasis%20classification%2C%20shorter%20survival%20time
     label: more aggressive, metastasis, worse Tumor-Node-Metastasis classification,
       shorter survival time
-  - id: AUTO:tumors
-    label: tumors
-  - id: AUTO:N/A%20%28no%20named%20chemical%20entity%20mentioned%20in%20the%20text%29
-    label: N/A (no named chemical entity mentioned in the text)
-  - id: HGNC:1748
+  - id: AUTO:Not%20mentioned%20in%20the%20text.
+    label: Not mentioned in the text.
+  - id: AUTO:Luminal%20A%20and%20B%20phenotypes
+    label: Luminal A and B phenotypes
+  - id: AUTO:improved%20prognosis
+    label: improved prognosis
+  - id: AUTO:Not%20mentioned
+    label: Not mentioned
+  - id: 
+      AUTO:luminal%20A%20and%20B%20phenotypes%2C%20HER-2%20positive%20and%20triple-negative%20phenotypes
+    label: luminal A and B phenotypes, HER-2 positive and triple-negative phenotypes
+  - id: PR:000001447
     label: E-cadherin
-  - id: AUTO:luminal%20A/B%20tumors%2C%20HER-2%20positive/triple-negative%20tumors
-    label: luminal A/B tumors, HER-2 positive/triple-negative tumors
-  - id: AUTO:upregulation%20of%20E-cadherin
-    label: upregulation of E-cadherin
-  - id: AUTO:not%20mentioned
-    label: not mentioned
