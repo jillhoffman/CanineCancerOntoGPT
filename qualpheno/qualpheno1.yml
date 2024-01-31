@@ -33,7 +33,7 @@ classes:
         range: Gene
       
       anatomical_entity:
-        description: The anatomical location that the cancer is in
+        description: The anatomical locations that the cancers are in
         multivalued: true
         range: AnatomicalEntity
         annotations:

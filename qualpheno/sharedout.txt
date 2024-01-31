@@ -1,0 +1,104 @@
+---
+input_text: |
+  Naturally occurring canine cancers have remarkable similarities to their human counterparts. To better understand these similarities, we investigated 671 client-owned dogs from 96 breeds with 23 common tumor types, including those whose mutation profile are unknown (anal sac carcinoma and neuroendocrine carcinoma) or understudied (thyroid carcinoma, soft tissue sarcoma and hepatocellular carcinoma). We discovered mutations in 50 well-established oncogenes and tumor suppressors, and compared them to those reported in human cancers. As in human cancer, TP53 is the most commonly mutated gene, detected in 22.5% of canine tumors overall. Canine tumors share mutational hotspots with human tumors in oncogenes including PIK3CA, KRAS, NRAS, BRAF, KIT and EGFR. Hotspot mutations with significant association to tumor type include NRAS G61R and PIK3CA H1047R in hemangiosarcoma, ERBB2 V659E in pulmonary carcinoma, and BRAF V588E (equivalent of V600E in humans) in urothelial carcinoma. Our findings better position canines as a translational model of human cancer to investigate a wide spectrum of targeted therapies.
+raw_completion_output: |-
+  cancer: canine cancers, tumor types, anal sac carcinoma, neuroendocrine carcinoma, thyroid carcinoma, soft tissue sarcoma, hepatocellular carcinoma, hemangiosarcoma, pulmonary carcinoma, urothelial carcinoma
+
+  gene: TP53, PIK3CA, KRAS, NRAS, BRAF, KIT, EGFR, ERBB2
+
+  anatomical_entity: anal sac, thyroid, soft tissue, liver, hemangiosarcoma, lungs, urothelial
+
+  genecancer_links: TP53 in canine tumors overall; PIK3CA, KRAS, NRAS, BRAF, KIT, EGFR in human tumors; NRAS G61R and PIK3CA H1047R in hemangiosarcoma; ERBB2 V659E in pulmonary carcinoma; BRAF V588E in urothelial carcinoma
+
+  phenotype: physical symptoms caused by cancer
+
+  chemical_entity: unspecified
+
+  cancerphenotype: unspecified
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  cancer: <the value for cancer>
+  phenotype: <physical symptoms related to the cancer that indicate disease>
+  chemical_entity: <entity and is how it is changed with cancer>
+
+
+  Text:
+  unspecified
+
+  ===
+
+extracted_object:
+  cancer:
+    - AUTO:canine%20cancers%2C%20tumor%20types%2C%20anal%20sac%20carcinoma%2C%20neuroendocrine%20carcinoma%2C%20thyroid%20carcinoma%2C%20soft%20tissue%20sarcoma%2C%20hepatocellular%20carcinoma%2C%20hemangiosarcoma%2C%20pulmonary%20carcinoma%2C%20urothelial%20carcinoma
+  gene:
+    - AUTO:TP53%2C%20PIK3CA%2C%20KRAS%2C%20NRAS%2C%20BRAF%2C%20KIT%2C%20EGFR%2C%20ERBB2
+  anatomical_entity:
+    - AUTO:anal%20sac%2C%20thyroid%2C%20soft%20tissue%2C%20liver%2C%20hemangiosarcoma%2C%20lungs%2C%20urothelial
+  genecancer_links:
+    - gene: HGNC:11998
+      cancer: AUTO:canine%20tumors
+      anatomical_entity: AUTO:overall
+    - gene: AUTO:PIK3CA%2C%20KRAS%2C%20NRAS%2C%20BRAF%2C%20KIT%2C%20EGFR
+      cancer: AUTO:human%20tumors
+    - gene: AUTO:NRAS%20G61R
+      cancer: MESH:D006394
+      anatomical_entity: AUTO:not%20mentioned
+    - gene: HGNC:3430
+      cancer: AUTO:pulmonary%20carcinoma
+      anatomical_entity: AUTO:not%20provided
+    - gene: AUTO:BRAF%20V588E
+      cancer: MONDO:0040679
+      anatomical_entity: AUTO:not%20available
+  phenotype:
+    - AUTO:physical%20symptoms%20caused%20by%20cancer
+  chemical_entity:
+    - AUTO:unspecified
+  cancerphenotype:
+    - cancer: AUTO:unspecified
+      phenotype: AUTO:unspecified
+      chemical_entity: AUTO:unspecified
+named_entities:
+  - id: 
+      AUTO:canine%20cancers%2C%20tumor%20types%2C%20anal%20sac%20carcinoma%2C%20neuroendocrine%20carcinoma%2C%20thyroid%20carcinoma%2C%20soft%20tissue%20sarcoma%2C%20hepatocellular%20carcinoma%2C%20hemangiosarcoma%2C%20pulmonary%20carcinoma%2C%20urothelial%20carcinoma
+    label: canine cancers, tumor types, anal sac carcinoma, neuroendocrine carcinoma,
+      thyroid carcinoma, soft tissue sarcoma, hepatocellular carcinoma, hemangiosarcoma,
+      pulmonary carcinoma, urothelial carcinoma
+  - id: 
+      AUTO:TP53%2C%20PIK3CA%2C%20KRAS%2C%20NRAS%2C%20BRAF%2C%20KIT%2C%20EGFR%2C%20ERBB2
+    label: TP53, PIK3CA, KRAS, NRAS, BRAF, KIT, EGFR, ERBB2
+  - id: 
+      AUTO:anal%20sac%2C%20thyroid%2C%20soft%20tissue%2C%20liver%2C%20hemangiosarcoma%2C%20lungs%2C%20urothelial
+    label: anal sac, thyroid, soft tissue, liver, hemangiosarcoma, lungs, urothelial
+  - id: HGNC:11998
+    label: TP53
+  - id: AUTO:canine%20tumors
+    label: canine tumors
+  - id: AUTO:overall
+    label: overall
+  - id: AUTO:PIK3CA%2C%20KRAS%2C%20NRAS%2C%20BRAF%2C%20KIT%2C%20EGFR
+    label: PIK3CA, KRAS, NRAS, BRAF, KIT, EGFR
+  - id: AUTO:human%20tumors
+    label: human tumors
+  - id: AUTO:NRAS%20G61R
+    label: NRAS G61R
+  - id: MESH:D006394
+    label: hemangiosarcoma
+  - id: AUTO:not%20mentioned
+    label: not mentioned
+  - id: HGNC:3430
+    label: ERBB2
+  - id: AUTO:pulmonary%20carcinoma
+    label: pulmonary carcinoma
+  - id: AUTO:not%20provided
+    label: not provided
+  - id: AUTO:BRAF%20V588E
+    label: BRAF V588E
+  - id: MONDO:0040679
+    label: urothelial carcinoma
+  - id: AUTO:not%20available
+    label: not available
+  - id: AUTO:physical%20symptoms%20caused%20by%20cancer
+    label: physical symptoms caused by cancer
+  - id: AUTO:unspecified
+    label: unspecified
