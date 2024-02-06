@@ -1,0 +1,148 @@
+---
+input_text: |
+  Mammary neoplasms are a heterogeneous form of disease, and in order to determine its course and biological features with more accuracy, investigations based on tumor phenotypes are required. The PIK3CA gene has been identified as being the most commonly mutated gene in canine mammary tumors. The aim of the present study was to propose and validate a phenotypic classification for canine mammary tumors and to assess any association between clinicopathological characteristics, survival and prognosis. For the immunohistochemistry analysis, the primary antibodies against estrogen receptor-α, progesterone receptor, human epidermal growth factor receptor 2 (HER-2)/neu and E-cadherin were used. A total of 110 canine mammary tumors were investigated; 42 tumors were classified as; luminal A, 41 as luminal B, 17 as triple-negative and 10 as HER-2-positive. The luminal A and B phenotypes were associated with improved prognosis, whereas HER-2positive and triple-negative tumors were more aggressive, and exhibited a significant association with the occurrence of metastasis, a worse Tumor-Node-Metastasis classification and shorter survival time (P<0.05). In addition, there were different levels of E-cadherin expression intensity observed among the four tumor profiles investigated. Luminal A and B phenotypes presented an upregulation of E-cadherin compared with the HER-2 positive and triple-negative phenotypes (P<0.05). From the results of the present study, the proposed immunohistochemical panel and phenotypic classification techniques could be useful diagnostic tools with a good technical applicability in veterinary oncology. The analysis of E-cadherin expression in the panel of tumor markers allowed a more accurate classification for determining the biological features of the mammary tumor.
+
+  The most common clinical sign of a malignant mammary tumor is one (or more) palpable masses underneath the skin of the abdomen. They may be next to or within the nipple and follow along the mammary chain (see illustration). The size of the mass(es) and their appearance may vary, but they are usually firm and nodular. Occasionally, the skin over the mass may ulcerate (open) and bleed, and the affected area may feel warm to the touch and become painful. The mammary gland may even produce a discharge.
+
+  If the tumor has metastasized (spread to other areas of the body), other signs may become evident. Your dog may generally feel unwell, eat less, become lethargic, and lose weight. If the lungs are involved, your dog may have problems with breathing or develop a cough.
+raw_completion_output: |-
+  cancer: mammary neoplasms; canine mammary tumors
+  gene: PIK3CA
+  anatomical_entity: mammary gland; abdomen; nipple; mammary chain; skin; lungs; body
+  genecancer_links: PIK3CA-mammary neoplasms; PIK3CA-canine mammary tumors
+  phenotype: improved prognosis; more aggressive; occurrence of metastasis; worse Tumor-Node-Metastasis classification; shorter survival time; upregulation of E-cadherin; accurate classification for determining the biological features of the mammary tumor
+  chemical_entity: estrogen receptor-α; progesterone receptor; human epidermal growth factor receptor 2 (HER-2)/neu; E-cadherin
+  cancerphenotype: palpable masses underneath the skin of the abdomen; firm and nodular masses; ulcerated and bleeding masses; warm and painful affected area; discharge from the mammary gland; feeling unwell; decreased appetite; lethargy; weight loss; breathing problems; coughing
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  cancer: <the value for cancer>
+  phenotype: <the value for phenotype>
+  chemical_entity: <the value for chemical_entity>
+
+
+  Text:
+  coughing
+
+  ===
+
+extracted_object:
+  cancer:
+    - MONDO:0007254
+    - AUTO:canine%20mammary%20tumors
+  gene:
+    - HGNC:8975
+  anatomical_entity:
+    - UBERON:0001911
+    - UBERON:0000916
+    - UBERON:0002030
+    - AUTO:mammary%20chain
+    - 'LIKELY HALLUCINATION: skin'
+    - UBERON:0002048
+    - UBERON:0000468
+  genecancer_links:
+    - gene: HGNC:8975
+      cancer: MONDO:0007254
+      anatomical_entity: AUTO:N/A
+    - gene: HGNC:8975
+      cancer: AUTO:canine%20mammary%20tumors
+      anatomical_entity: AUTO:N/A
+  phenotype:
+    - AUTO:improved%20prognosis
+    - NCIT:C199193
+    - AUTO:occurrence%20of%20metastasis
+    - AUTO:worse%20Tumor-Node-Metastasis%20classification
+    - AUTO:shorter%20survival%20time
+    - AUTO:upregulation%20of%20E-cadherin
+    - AUTO:accurate%20classification%20for%20determining%20the%20biological%20features%20of%20the%20mammary%20tumor
+  chemical_entity:
+    - AUTO:estrogen%20receptor-%CE%B1
+    - PR:000012621
+    - PR:P34708
+    - PR:000001447
+  cancerphenotype:
+    - phenotype: AUTO:palpable%20masses%20underneath%20the%20skin%20of%20the%20abdomen
+    - phenotype: AUTO:firm%20and%20nodular%20masses
+    - phenotype: AUTO:ulcerated%20and%20bleeding%20masses
+    - phenotype: AUTO:warm%20and%20painful
+      chemical_entity: AUTO:affected%20area
+    - phenotype: AUTO:discharge%20from%20the%20mammary%20gland
+    - phenotype: AUTO:feeling%20unwell
+    - cancer: NCIT:C18902
+      phenotype: HP:0004396
+      chemical_entity: AUTO:N/A
+    - phenotype: HP:0001254
+    - phenotype: HP:0001824
+    - phenotype: AUTO:breathing%20problems
+    - phenotype: HP:0012735
+named_entities:
+  - id: MONDO:0007254
+    label: mammary neoplasms
+  - id: AUTO:canine%20mammary%20tumors
+    label: canine mammary tumors
+  - id: HGNC:8975
+    label: PIK3CA
+  - id: UBERON:0001911
+    label: mammary gland
+  - id: UBERON:0000916
+    label: abdomen
+  - id: UBERON:0002030
+    label: nipple
+  - id: AUTO:mammary%20chain
+    label: mammary chain
+  - id: UBERON:0002048
+    label: lungs
+  - id: UBERON:0000468
+    label: body
+  - id: AUTO:N/A
+    label: N/A
+  - id: AUTO:improved%20prognosis
+    label: improved prognosis
+  - id: NCIT:C199193
+    label: more aggressive
+  - id: AUTO:occurrence%20of%20metastasis
+    label: occurrence of metastasis
+  - id: AUTO:worse%20Tumor-Node-Metastasis%20classification
+    label: worse Tumor-Node-Metastasis classification
+  - id: AUTO:shorter%20survival%20time
+    label: shorter survival time
+  - id: AUTO:upregulation%20of%20E-cadherin
+    label: upregulation of E-cadherin
+  - id: 
+      AUTO:accurate%20classification%20for%20determining%20the%20biological%20features%20of%20the%20mammary%20tumor
+    label: accurate classification for determining the biological features of the
+      mammary tumor
+  - id: AUTO:estrogen%20receptor-%CE%B1
+    label: estrogen receptor-α
+  - id: PR:000012621
+    label: progesterone receptor
+  - id: PR:P34708
+    label: human epidermal growth factor receptor 2 (HER-2)/neu
+  - id: PR:000001447
+    label: E-cadherin
+  - id: AUTO:palpable%20masses%20underneath%20the%20skin%20of%20the%20abdomen
+    label: palpable masses underneath the skin of the abdomen
+  - id: AUTO:firm%20and%20nodular%20masses
+    label: firm and nodular masses
+  - id: AUTO:ulcerated%20and%20bleeding%20masses
+    label: ulcerated and bleeding masses
+  - id: AUTO:warm%20and%20painful
+    label: warm and painful
+  - id: AUTO:affected%20area
+    label: affected area
+  - id: AUTO:discharge%20from%20the%20mammary%20gland
+    label: discharge from the mammary gland
+  - id: AUTO:feeling%20unwell
+    label: feeling unwell
+  - id: NCIT:C18902
+    label: N/A
+  - id: HP:0004396
+    label: decreased appetite
+  - id: HP:0001254
+    label: lethargy
+  - id: HP:0001824
+    label: weight loss
+  - id: AUTO:breathing%20problems
+    label: breathing problems
+  - id: HP:0012735
+    label: coughing

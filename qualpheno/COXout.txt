@@ -1,0 +1,91 @@
+---
+input_text: |
+  Cyclooxgenase-2 (COX-2) is associated with inflammatory microenvironment and tumour progression. COX-2 expression was reported in canine tumours, and anti-COX treatment showed therapeutic effects in selected tumour types. Currently, direct comparisons between different tumour types or reports were impossible due to varying evaluation protocols. Additionally, COX-2 expression in relatively uncommon tumours were yet to be evaluated. Here, we analysed COX-2 expression across various tumour types in dogs in a consistent protocol, aiming to revisit accumulated evidence in the field and report novel candidate tumours for anti-COX therapy. COX-2 expression in 32 histological types of tumours, which consisted of 347 samples in total, was investigated using immunohistochemistry followed by the Belshaw’s method scoring (range: 0–12). More than the half of the samples expressed COX-2 in mast cell tumours, transitional cell carcinoma in the urinary tract, squamous cell carcinoma, liposarcoma, and melanoma, with COX-2 median scores ranging from 1–8. On the other hand, <20% tissues expressed COX-2 in the half of tumour types investigated. Overall COX-2 positive rate was 27%. In conclusion, the results confirmed COX-2 expression in the well-known COX-2-expresing tumour types and suggested novel candidate tumours for anti-COX-2 therapy. At the same time, overall COX-2 expression was low, and inter- and intra-histology heterogeneity was apparent. This study will provide a foundation reference for future research in canine tumours.
+raw_completion_output: |-
+  cancer: mast cell tumours; transitional cell carcinoma; squamous cell carcinoma; liposarcoma; melanoma
+  gene: Cyclooxgenase-2 (COX-2)
+  anatomical_entity: urinary tract
+  genecancer_links: COX-2 - mast cell tumours; COX-2 - transitional cell carcinoma in the urinary tract; COX-2 - squamous cell carcinoma; COX-2 - liposarcoma; COX-2 - melanoma
+  phenotype: therapeutic effects; inter- and intra-histology heterogeneity
+  chemical_entity: N/A
+  cancerphenotype: COX-2 expression; low overall COX-2 expression
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  cancer: <the value for cancer>
+  phenotype: <the value for phenotype>
+  chemical_entity: <the value for chemical_entity>
+
+
+  Text:
+  low overall COX-2 expression
+
+  ===
+
+extracted_object:
+  cancer:
+    - MONDO:0002724
+    - MONDO:0006474
+    - MESH:D002294
+    - MESH:D008080
+    - MESH:D008545
+  gene:
+    - HGNC:9605
+  anatomical_entity:
+    - UBERON:0001008
+  genecancer_links:
+    - gene: HGNC:9605
+      cancer: MONDO:0002724
+      anatomical_entity: AUTO:None
+    - gene: HGNC:9605
+      cancer: MONDO:0006474
+      anatomical_entity: UBERON:0001008
+    - gene: HGNC:9605
+      cancer: MESH:D002294
+      anatomical_entity: AUTO:None
+    - gene: HGNC:9605
+      cancer: MESH:D008080
+      anatomical_entity: AUTO:None
+    - gene: HGNC:9605
+      cancer: MESH:D008545
+  phenotype:
+    - NCIT:C38032
+    - AUTO:inter-%20and%20intra-histology%20heterogeneity
+  chemical_entity:
+    - AUTO:N/A
+  cancerphenotype:
+    - cancer: NCIT:C10636
+      phenotype: AUTO:COX-2%20expression
+      chemical_entity: CHEBI:26708
+    - phenotype: AUTO:low%20overall%20COX-2%20expression
+named_entities:
+  - id: MONDO:0002724
+    label: mast cell tumours
+  - id: MONDO:0006474
+    label: transitional cell carcinoma
+  - id: MESH:D002294
+    label: squamous cell carcinoma
+  - id: MESH:D008080
+    label: liposarcoma
+  - id: MESH:D008545
+    label: melanoma
+  - id: HGNC:9605
+    label: Cyclooxgenase-2 (COX-2)
+  - id: UBERON:0001008
+    label: urinary tract
+  - id: AUTO:None
+    label: None
+  - id: NCIT:C38032
+    label: therapeutic effects
+  - id: AUTO:inter-%20and%20intra-histology%20heterogeneity
+    label: inter- and intra-histology heterogeneity
+  - id: AUTO:N/A
+    label: N/A
+  - id: NCIT:C10636
+    label: NA
+  - id: AUTO:COX-2%20expression
+    label: COX-2 expression
+  - id: CHEBI:26708
+    label: NA
+  - id: AUTO:low%20overall%20COX-2%20expression
+    label: low overall COX-2 expression
