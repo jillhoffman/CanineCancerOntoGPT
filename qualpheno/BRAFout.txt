@@ -2,68 +2,77 @@
 input_text: |
   Activating mutations of the BRAF gene lead to constitutive activation of the MAPK pathway. The characterization and discovery of BRAF mutations in a variety of human cancers has led to the development of specific inhibitors targeting the BRAF/MAPK pathway and dramatically changed clinical outcomes in BRAF-mutant melanoma patients. Recent discovery of BRAF mutation in canine cancers underscores the importance of MAPK pathway activation as an oncogenic molecular alteration evolutionarily conserved between species. A comparative approach using the domestic dog as a spontaneous cancer model will provide new insights into the dysregulation of BRAF/MAPK pathway in carcinogenesis and facilitate in vivo studies to evaluate therapeutic strategies targeting this pathway’s molecules for cancer therapy. The BRAF mutation in canine cancers may also represent a molecular marker and therapeutic target in veterinary oncology. This review article summarizes the current knowledge on BRAF mutations in human and canine cancers and discusses the potential applications of this abnormality in veterinary oncology.
 raw_completion_output: |-
-  cancer: human cancers, canine cancers, melanoma  
-  gene: BRAF gene  
-  anatomical_entity: unspecified  
-  genecancer_links: BRAF gene is linked to human cancers, canine cancers, and melanoma  
-  phenotype: dysregulation of BRAF/MAPK pathway  
-  chemical_entity: unspecified  
-  cancerphenotype: dysregulation of BRAF/MAPK pathway leads to carcinogenesis; abnormality in BRAF mutations as a potential marker and therapeutic target in veterinary oncology
+  cancer: human cancers; canine cancers
+  gene: BRAF gene
+  anatomical_entity: melanoma; canine cancers
+  genecancer_links: BRAF gene - human cancers; BRAF gene - canine cancers (melanoma)
+  phenotype: abnormality in veterinary oncology
+  chemical_entity: MAPK pathway
+  cancerphenotype: dysregulation of BRAF/MAPK pathway in carcinogenesis; therapeutic strategies targeting this pathway’s molecules for cancer therapy
 prompt: |+
   From the text below, extract the following entities in the following format:
 
   cancer: <the value for cancer>
-  phenotype: <physical symptoms related to the cancer that indicate disease>
-  chemical_entity: <entity and is how it is changed with cancer>
+  phenotype: <the value for phenotype>
+  chemical_entity: <the value for chemical_entity>
 
 
   Text:
-  abnormality in BRAF mutations as a potential marker and therapeutic target in veterinary oncology
+  therapeutic strategies targeting this pathway’s molecules for cancer therapy
 
   ===
 
 extracted_object:
   cancer:
-    - AUTO:human%20cancers%2C%20canine%20cancers%2C%20melanoma
+    - AUTO:human%20cancers
+    - AUTO:canine%20cancers
   gene:
     - AUTO:BRAF%20gene
   anatomical_entity:
-    - AUTO:unspecified
+    - AUTO:melanoma
+    - AUTO:canine%20cancers
   genecancer_links:
     - gene: HGNC:1097
-      cancer: AUTO:human%20cancers%2C%20canine%20cancers%2C%20melanoma
-      anatomical_entity: AUTO:not%20specified%20in%20the%20given%20text
+      cancer: AUTO:human%20cancers
+    - gene: HGNC:1097
+      cancer: MESH:D008545
+      anatomical_entity: AUTO:N/A
   phenotype:
-    - AUTO:dysregulation%20of%20BRAF/MAPK%20pathway
+    - AUTO:abnormality%20in%20veterinary%20oncology
   chemical_entity:
-    - AUTO:unspecified
+    - AUTO:MAPK%20pathway
   cancerphenotype:
     - cancer: MESH:D063646
-      phenotype: AUTO:dysregulation%20of%20BRAF/MAPK%20pathway
+      phenotype: AUTO:dysregulation
       chemical_entity: AUTO:BRAF/MAPK%20pathway
-    - cancer: AUTO:veterinary%20oncology
-      phenotype: AUTO:physical%20symptoms
-      chemical_entity: AUTO:BRAF%20mutations
+    - cancer: MESH:M0030821
+      chemical_entity: CHEBI:25367
 named_entities:
-  - id: AUTO:human%20cancers%2C%20canine%20cancers%2C%20melanoma
-    label: human cancers, canine cancers, melanoma
+  - id: AUTO:human%20cancers
+    label: human cancers
+  - id: AUTO:canine%20cancers
+    label: canine cancers
   - id: AUTO:BRAF%20gene
     label: BRAF gene
-  - id: AUTO:unspecified
-    label: unspecified
+  - id: AUTO:melanoma
+    label: melanoma
   - id: HGNC:1097
     label: BRAF
-  - id: AUTO:not%20specified%20in%20the%20given%20text
-    label: not specified in the given text
-  - id: AUTO:dysregulation%20of%20BRAF/MAPK%20pathway
-    label: dysregulation of BRAF/MAPK pathway
+  - id: MESH:D008545
+    label: canine cancers (melanoma)
+  - id: AUTO:N/A
+    label: N/A
+  - id: AUTO:abnormality%20in%20veterinary%20oncology
+    label: abnormality in veterinary oncology
+  - id: AUTO:MAPK%20pathway
+    label: MAPK pathway
   - id: MESH:D063646
     label: carcinogenesis
+  - id: AUTO:dysregulation
+    label: dysregulation
   - id: AUTO:BRAF/MAPK%20pathway
     label: BRAF/MAPK pathway
-  - id: AUTO:veterinary%20oncology
-    label: veterinary oncology
-  - id: AUTO:physical%20symptoms
-    label: physical symptoms
-  - id: AUTO:BRAF%20mutations
-    label: BRAF mutations
+  - id: MESH:M0030821
+    label: therapy
+  - id: CHEBI:25367
+    label: molecules
