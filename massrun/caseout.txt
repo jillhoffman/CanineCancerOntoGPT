@@ -1,0 +1,56 @@
+---
+input_text: |
+  A 12-y-old, male Dachshund was presented for elective orchiectomy. The testes were of normal size. The left testis had numerous dark-red, blood clot–like foci within the vaginal tunic over the pampiniform plexus, epididymis, and testis. Histologically, the red foci were limited to the vaginal tunic and consisted of disorderly growing, variably sized, thin-walled blood vessels lined by a single layer of endothelial cells without mitoses and supported by a thin layer of pericytes. The blood vessels were distended by erythrocytes without thrombus formation. Endothelial cells had cytoplasmic immunolabeling for CD31; pericytes had strong cytoplasmic immunolabeling for α–smooth muscle actin. Our case of subclinical unilateral vascular hamartomas of the vaginal tunic in a dog has not been reported previously in domestic animals or humans, to our knowledge.
+raw_completion_output: |-
+  cancer: vascular hamartomas
+
+  gene: N/A
+
+  anatomical_entity: vaginal tunic, pampiniform plexus, epididymis, testis
+
+  genecancer_links: N/A
+
+  phenotype: N/A
+
+  chemical_entity: N/A
+
+  cancerphenotype: N/A
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  cancer: <the value for cancer>
+  chemical_entity: <the value for chemical_entity>
+
+
+  Text:
+  N/A
+
+  ===
+
+extracted_object:
+  cancer:
+    - NCIT:C3438
+  gene:
+    - AUTO:N/A
+  anatomical_entity:
+    - AUTO:vaginal%20tunic%2C%20pampiniform%20plexus%2C%20epididymis%2C%20testis
+  genecancer_links:
+    - gene: AUTO:N/A
+      cancer: NCIT:C18902
+      anatomical_entity: AUTO:N/A
+  phenotype:
+    - NCIT:C18902
+  chemical_entity:
+    - AUTO:N/A
+  cancerphenotype:
+    - cancer: NCIT:C18902
+      chemical_entity: AUTO:N/A
+named_entities:
+  - id: NCIT:C3438
+    label: vascular hamartomas
+  - id: AUTO:N/A
+    label: N/A
+  - id: AUTO:vaginal%20tunic%2C%20pampiniform%20plexus%2C%20epididymis%2C%20testis
+    label: vaginal tunic, pampiniform plexus, epididymis, testis
+  - id: NCIT:C18902
+    label: N/A

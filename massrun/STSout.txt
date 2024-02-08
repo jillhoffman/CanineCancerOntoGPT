@@ -1,0 +1,81 @@
+---
+input_text: |+
+  Soft tissue sarcomas (STS) are a heterogenous group of mesenchymal tumors representing over 50 distinct types with overlapping histological features and non-specific anatomical locations. Currently, localized sarcomas are treated with surgery + / −  radiation in both humans and dogs with few molecularly targeted therapeutic options. However, to improve precision-based cancer therapy through trials in pet dogs with naturally occurring STS tumors, knowledge of genomic profiling and molecular drivers in both species is essential. To this purpose, we sought to characterize the transcriptomic and genomic mutation profiles of canine STS subtypes (fibrosarcoma, undifferentiated pleomorphic sarcoma, and peripheral nerve sheath tumors), by leveraging RNAseq, whole exome sequencing, immunohistochemistry, and drug assays. The most common driver mutations were in cell cycle/DNA repair (31%, TP53-21%) and chromatin organization/binding (41%, KMT2D-21%) genes. Similar to a subset of human sarcomas, we identified fusion transcripts of platelet derived growth factor B and collagen genes that predict sensitivity to PDGFR inhibitors. Transcriptomic profiling grouped these canine STS tumors into 4 clusters, one PNST group (H1), and 3 FSA groups selectively enriched for extracellular matrix interactions and PDFGB fusions (H2), homeobox transcription factors (H3), and elevated T-cell infiltration (H4). This multi-omics approach provides insights into canine STS sub-types at a molecular level for comparison to their human counterparts, to improve diagnosis, and may provide additional targets for chemo- and immuno-therapy.
+
+
+raw_completion_output: |-
+  cancer: soft tissue sarcomas, fibrosarcoma, undifferentiated pleomorphic sarcoma, peripheral nerve sheath tumors
+
+  gene: TP53, KMT2D
+
+  anatomical_entity: non-specific anatomical locations
+
+  genecancer_links: TP53 is linked to cell cycle/DNA repair; KMT2D is linked to chromatin organization/binding; fusion transcripts of platelet derived growth factor B and collagen genes predict sensitivity to PDGFR inhibitors
+
+  phenotype: not mentioned in the text
+
+  chemical_entity: not mentioned in the text
+
+  cancerphenotype: not mentioned in the text
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  cancer: <the value for cancer>
+  chemical_entity: <the value for chemical_entity>
+
+
+  Text:
+  not mentioned in the text
+
+  ===
+
+extracted_object:
+  cancer:
+    - AUTO:soft%20tissue%20sarcomas%2C%20fibrosarcoma%2C%20undifferentiated%20pleomorphic%20sarcoma%2C%20peripheral%20nerve%20sheath%20tumors
+  gene:
+    - AUTO:TP53%2C%20KMT2D
+  anatomical_entity:
+    - AUTO:non-specific%20anatomical%20locations
+  genecancer_links:
+    - gene: HGNC:11998
+      anatomical_entity: AUTO:cell%20cycle/DNA%20repair
+    - gene: HGNC:7133
+      cancer: NCIT:C41132
+      anatomical_entity: AUTO:chromatin%20organization/binding
+    - gene: AUTO:platelet%20derived%20growth%20factor%20B%20and%20collagen%20genes
+      cancer: NCIT:C18902
+      anatomical_entity: AUTO:N/A
+  phenotype:
+    - AUTO:not%20mentioned%20in%20the%20text
+  chemical_entity:
+    - AUTO:not%20mentioned%20in%20the%20text
+  cancerphenotype:
+    - cancer: AUTO:not%20mentioned%20in%20the%20text
+      chemical_entity: AUTO:not%20mentioned%20in%20the%20text
+named_entities:
+  - id: 
+      AUTO:soft%20tissue%20sarcomas%2C%20fibrosarcoma%2C%20undifferentiated%20pleomorphic%20sarcoma%2C%20peripheral%20nerve%20sheath%20tumors
+    label: soft tissue sarcomas, fibrosarcoma, undifferentiated pleomorphic sarcoma,
+      peripheral nerve sheath tumors
+  - id: AUTO:TP53%2C%20KMT2D
+    label: TP53, KMT2D
+  - id: AUTO:non-specific%20anatomical%20locations
+    label: non-specific anatomical locations
+  - id: HGNC:11998
+    label: TP53
+  - id: AUTO:cell%20cycle/DNA%20repair
+    label: cell cycle/DNA repair
+  - id: HGNC:7133
+    label: KMT2D
+  - id: NCIT:C41132
+    label: None
+  - id: AUTO:chromatin%20organization/binding
+    label: chromatin organization/binding
+  - id: AUTO:platelet%20derived%20growth%20factor%20B%20and%20collagen%20genes
+    label: platelet derived growth factor B and collagen genes
+  - id: NCIT:C18902
+    label: N/A
+  - id: AUTO:N/A
+    label: N/A
+  - id: AUTO:not%20mentioned%20in%20the%20text
+    label: not mentioned in the text

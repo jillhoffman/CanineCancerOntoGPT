@@ -1,0 +1,58 @@
+---
+input_text: |
+  Mammary gland tumours (MGTs) are commonly occurring neoplasms in female dogs. However, rare cases of MGTs in male dogs have been reported for years. Due to the low incidence of MGTs in male dogs in comparison to female dogs, veterinary oncology is mainly focused on mammary neoplasms diagnosed in female dogs and extensive research is conducted in this scientific area. Therefore, there are no sufficient epidemiological data on male dogs and the aetiology of their tumour development is still poorly understood.
+
+  The aim of this literature review was to present cases of MGTs in male dogs for better understanding the scale of the problem over the years. The analyses of 74 affected male dogs with 92 tumours showed that the majority of MGTs in male dogs were benign tumours (54.3%), especially in form of adenomas, often developed in posterior canine mammary glands (58.1%).
+
+  The increased number of canine MGTs in male dogs aged 7 -13 years with an age peak at 11 years was noted. The age of affected animals was not related to breed. Mammary gland neoplasms were diagnosed predominately in Crossbreeds (20.2%) followed by Cocker Spaniels (18.9%) and German Shepherds (10.8%).
+
+  The association between MGT development in male dogs and co-occurrence of testicular tumours (TTs) has been discussed for years. Thus, cases of development of both tumours were included in this study. As a result, only in 12.7% cases of MGTs also history of TTs was described. Therefore, no general association between these tumours should be assumed.
+raw_completion_output: |-
+  cancer: Mammary gland tumours (MGTs)
+  gene: not mentioned
+  anatomical_entity: mammary glands
+  genecancer_links: not applicable
+  phenotype: not mentioned
+  chemical_entity: not mentioned
+  cancerphenotype: not mentioned
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  cancer: <the value for cancer>
+  chemical_entity: <the value for chemical_entity>
+
+
+  Text:
+  not mentioned
+
+  ===
+
+extracted_object:
+  cancer:
+    - AUTO:Mammary%20gland%20tumours%20%28MGTs%29
+  gene:
+    - AUTO:not%20mentioned
+  anatomical_entity:
+    - UBERON:0001911
+  genecancer_links:
+    - gene: AUTO:not%20applicable
+      cancer: NCIT:C48660
+      anatomical_entity: AUTO:not%20applicable
+  phenotype:
+    - AUTO:not%20mentioned
+  chemical_entity:
+    - AUTO:not%20mentioned
+  cancerphenotype:
+    - cancer: AUTO:not%20mentioned
+      chemical_entity: AUTO:not%20mentioned
+named_entities:
+  - id: AUTO:Mammary%20gland%20tumours%20%28MGTs%29
+    label: Mammary gland tumours (MGTs)
+  - id: AUTO:not%20mentioned
+    label: not mentioned
+  - id: UBERON:0001911
+    label: mammary glands
+  - id: AUTO:not%20applicable
+    label: not applicable
+  - id: NCIT:C48660
+    label: not applicable

@@ -1,0 +1,17 @@
+
+OBJECTIVE
+
+To describe the clinical findings and outcome in hypercalcemic dogs that were diagnosed with T-cell lymphoid neoplasia by bone marrow evaluation.
+ANIMALS
+
+11 client-owned dogs, identified retrospectively through 2 diagnostic laboratories between 2014 and 2021.
+CLINICAL PRESENTATION
+
+Cases presented with hypercalcemia and lacked overt evidence of lymphoid neoplasia in the blood or nonmedullary tissues. T-cell lymphoid neoplasia was diagnosed once the bone marrow was investigated, using a variable combination of cytology, histology, and flow cytometry.
+RESULTS
+
+The median age at presentation was 5.7 years (range, 4.0 to 8.6 years). All cases were large-breed dogs, and 4 of 11 cases were Golden Retrievers. Dogs presented most commonly for polyuria and polydipsia (72%). Eight cases had neutropenia, and 10 of 11 dogs had reported thrombocytopenia. In all cases, flow cytometry identified an expansion of neoplastic small- to intermediate-sized T cells in the bone marrow that expressed low-class-II major histocompatibility complex. Neoplastic T cells in 10 of 11 cases expressed CD4. Treatments ranged from prednisone alone to multiagent chemotherapy. The median overall survival time was 260 days (range, 25 to 792 days).
+CLINICAL RELEVANCE
+
+T-cell lymphoid neoplasia diagnosed via bone marrow evaluation that may represent a unique bone marrow T-cell neoplastic entity should be considered in hypercalcemic dogs with isolated cytopenias that lack peripheral lymphocytosis, lymphadenopathy, and organomegaly. Clinical outcome in these cases was variable, which may be related to nonstandardized treatments, but a subset of patients had prolonged survival.
+

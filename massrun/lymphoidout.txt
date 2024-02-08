@@ -1,0 +1,69 @@
+---
+input_text: |2+
+
+  OBJECTIVE
+
+  To describe the clinical findings and outcome in hypercalcemic dogs that were diagnosed with T-cell lymphoid neoplasia by bone marrow evaluation.
+  ANIMALS
+
+  11 client-owned dogs, identified retrospectively through 2 diagnostic laboratories between 2014 and 2021.
+  CLINICAL PRESENTATION
+
+  Cases presented with hypercalcemia and lacked overt evidence of lymphoid neoplasia in the blood or nonmedullary tissues. T-cell lymphoid neoplasia was diagnosed once the bone marrow was investigated, using a variable combination of cytology, histology, and flow cytometry.
+  RESULTS
+
+  The median age at presentation was 5.7 years (range, 4.0 to 8.6 years). All cases were large-breed dogs, and 4 of 11 cases were Golden Retrievers. Dogs presented most commonly for polyuria and polydipsia (72%). Eight cases had neutropenia, and 10 of 11 dogs had reported thrombocytopenia. In all cases, flow cytometry identified an expansion of neoplastic small- to intermediate-sized T cells in the bone marrow that expressed low-class-II major histocompatibility complex. Neoplastic T cells in 10 of 11 cases expressed CD4. Treatments ranged from prednisone alone to multiagent chemotherapy. The median overall survival time was 260 days (range, 25 to 792 days).
+  CLINICAL RELEVANCE
+
+  T-cell lymphoid neoplasia diagnosed via bone marrow evaluation that may represent a unique bone marrow T-cell neoplastic entity should be considered in hypercalcemic dogs with isolated cytopenias that lack peripheral lymphocytosis, lymphadenopathy, and organomegaly. Clinical outcome in these cases was variable, which may be related to nonstandardized treatments, but a subset of patients had prolonged survival.
+
+raw_completion_output: |-
+  cancer: T-cell lymphoid neoplasia
+  gene: None mentioned
+  anatomical_entity: bone marrow
+  genecancer_links: None mentioned
+  phenotype: hypercalcemia, polyuria, polydipsia, neutropenia, thrombocytopenia
+  chemical_entity: None mentioned
+  cancerphenotype: None mentioned
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  cancer: <the value for cancer>
+  chemical_entity: <the value for chemical_entity>
+
+
+  Text:
+  None mentioned
+
+  ===
+
+extracted_object:
+  cancer:
+    - AUTO:T-cell%20lymphoid%20neoplasia
+  gene:
+    - AUTO:None%20mentioned
+  anatomical_entity:
+    - UBERON:0002371
+  genecancer_links:
+    - gene: AUTO:Not%20provided
+      cancer: AUTO:Not%20provided
+      anatomical_entity: AUTO:Not%20provided
+  phenotype:
+    - AUTO:hypercalcemia%2C%20polyuria%2C%20polydipsia%2C%20neutropenia%2C%20thrombocytopenia
+  chemical_entity:
+    - AUTO:None%20mentioned
+  cancerphenotype:
+    - cancer: AUTO:None%20mentioned
+      chemical_entity: AUTO:None%20mentioned
+named_entities:
+  - id: AUTO:T-cell%20lymphoid%20neoplasia
+    label: T-cell lymphoid neoplasia
+  - id: AUTO:None%20mentioned
+    label: None mentioned
+  - id: UBERON:0002371
+    label: bone marrow
+  - id: AUTO:Not%20provided
+    label: Not provided
+  - id: 
+      AUTO:hypercalcemia%2C%20polyuria%2C%20polydipsia%2C%20neutropenia%2C%20thrombocytopenia
+    label: hypercalcemia, polyuria, polydipsia, neutropenia, thrombocytopenia

@@ -1,0 +1,72 @@
+---
+input_text: |
+  Colorectal cancer (CRC) in dogs has been shown to have similar molecular characteristics to human colorectal cancer. Although researchers have explored the pathogenesis and immune status of human CRC, the canine CRC has been far less studied. As a result, we analyzed canine colorectal tumors and normal canine intestinal samples by Gene Set Enrichment Analysis (GSEA) and found significant enrichment of immune-related pathways, including the TNF-α signaling pathway and IL6-STAT3 signaling pathway. In addition, the differential infiltration of naive B cells and regulatory T cells suggested that canine CRC was in a state of immunosuppression. Weighted gene co-expression network analysis (WGCNA) revealed the gene modules that contribute to differences in regulatory T cell inetfiltration, Further cross-validation of canine and human CRC differential genes obtained three core genes that are both species-conserved and differentially expressed, CD44, NAT10, and ETV4, of which NAT10 and ETV4 have been little studied in the immune status of colorectal cancer. Our findings may have implications for the pathogenesis and progression of CRC in dogs and could be a new potential therapeutic target for CMT and provide a bioinformatics foundation for later clinical experiment validation.
+raw_completion_output: |-
+  cancer: colorectal cancer
+  gene: CD44, NAT10, ETV4
+  anatomical_entity: canine colorectal tumors, normal canine intestinal samples
+  genecancer_links: CD44 - colorectal cancer - canine colorectal tumors; NAT10 - colorectal cancer - canine colorectal tumors; ETV4 - colorectal cancer - canine colorectal tumors
+  phenotype: immunosuppression
+  chemical_entity: TNF-α, IL6-STAT3
+  cancerphenotype: TNF-α - immunosuppression - colorectal cancer; IL6-STAT3 - immunosuppression - colorectal cancer
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  cancer: <the value for cancer>
+  chemical_entity: <the value for chemical_entity>
+
+
+  Text:
+  IL6-STAT3 - immunosuppression - colorectal cancer
+
+  ===
+
+extracted_object:
+  cancer:
+    - MESH:M0023327
+  gene:
+    - AUTO:CD44%2C%20NAT10%2C%20ETV4
+  anatomical_entity:
+    - AUTO:canine%20colorectal%20tumors%2C%20normal%20canine%20intestinal%20samples
+  genecancer_links:
+    - gene: HGNC:1681
+      cancer: MESH:M0023327
+      anatomical_entity: AUTO:canine%20colorectal%20tumors
+    - gene: HGNC:29830
+      cancer: MESH:M0023327
+      anatomical_entity: AUTO:canine%20colorectal%20tumors
+    - gene: HGNC:3493
+      cancer: MESH:M0023327
+      anatomical_entity: AUTO:canine%20colorectal%20tumors
+  phenotype:
+    - MESH:D007165
+  chemical_entity:
+    - AUTO:TNF-%CE%B1%2C%20IL6-STAT3
+  cancerphenotype:
+    - cancer: MESH:M0023327
+      chemical_entity: AUTO:TNF-%CE%B1
+    - cancer: MESH:M0023327
+      chemical_entity: AUTO:IL6-STAT3
+named_entities:
+  - id: MESH:M0023327
+    label: colorectal cancer
+  - id: AUTO:CD44%2C%20NAT10%2C%20ETV4
+    label: CD44, NAT10, ETV4
+  - id: AUTO:canine%20colorectal%20tumors%2C%20normal%20canine%20intestinal%20samples
+    label: canine colorectal tumors, normal canine intestinal samples
+  - id: HGNC:1681
+    label: CD44
+  - id: AUTO:canine%20colorectal%20tumors
+    label: canine colorectal tumors
+  - id: HGNC:29830
+    label: NAT10
+  - id: HGNC:3493
+    label: ETV4
+  - id: MESH:D007165
+    label: immunosuppression
+  - id: AUTO:TNF-%CE%B1%2C%20IL6-STAT3
+    label: TNF-α, IL6-STAT3
+  - id: AUTO:TNF-%CE%B1
+    label: TNF-α
+  - id: AUTO:IL6-STAT3
+    label: IL6-STAT3

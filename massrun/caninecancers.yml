@@ -1,0 +1,149 @@
+#run on multiple diff texts NEW
+
+id:  "id"
+name: trial1
+title: trial1
+description: >-
+  A template to start working with
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  linkml: https://w3id.org/linkml/
+  t1: "id"
+
+default_prefix: t1
+default_range: string
+
+imports:
+  - linkml:types
+  - core
+
+classes:
+  CancerGenes:
+    tree_root: true
+    attributes:
+      cancer:
+        description:  semi-colon separated list of the names of the cancers being described
+        multivalued: true
+        range: Cancer
+
+      gene:
+        description: the genes that are linked to the cancer 
+        multivalued: true
+        range: Gene
+      
+      anatomical_entity:
+        description: The anatomical locations that the cancer(s) effect
+        multivalued: true
+        range: AnatomicalEntity
+
+      genecancer_links:
+        description: semicolon-separated list linking gene to cancer including the anatomical location of the cancer
+        multivalued: true
+        range: GeneCancer
+      
+      phenotype:
+        description: physical symptoms caused by cancer indicating disease
+        multivalued: true
+        range: Phenotype
+
+      chemical_entity:
+        description: semicolon-separated list entity whose expression is changed with cancer and how it is changed
+        multivalued: true
+        range: ChemicalEntity
+      
+      cancerphenotype:
+        description: semicolon-separated list linking chemical changes and the cancer
+        multivalued: true
+        range: CancerPhenotype
+
+  Phenotype:
+    is_a: NamedEntity
+    id_prefixes:
+      - UPHENO
+      - HP
+      - MESH
+      - NCIT
+    annotations: 
+      annotators: sqlite:obo:upheno, sqlite:obo:hp, sqlite:obo:mondo, sqlite:obo:mesh, sqlite:obo:ncit
+      prompt: physical qualities and characteristics caused by the cancer that indicate disease
+      prompt.example: fatigue, weakness, bleeding
+
+  ChemicalEntity:
+    is_a: NamedEntity
+    id_prefixes:
+      - CHEBI
+      - PR
+      - PATO
+    annotations:
+      annotators: sqlite:obo:chebi, sqlite:obo:pato, sqlite:obo:pr
+      prompt: entity being expressed and is how it is changed with cancer
+      prompt.example: upregulated E-cadherin in A, downregulated K in B
+
+  AnatomicalEntity:
+    is_a: NamedEntity
+    id_prefixes:
+      - UBERON
+    annotations:
+      annotators: sqlite:obo:uberon
+      prompt: the anatomical location the cancer is presented
+      prompt.examples: skin, lung, bladdar
+
+
+  Gene:
+    is_a: NamedEntity
+    id_prefixes:
+      - HGNC
+      - PR
+      - UniProtKB
+    annotations:
+      annotators: gilda:, bioportal:hgnc-nr, sqlite:obo:pr
+      prompt: name of the gene that is linked to causing cancer
+
+  Cancer:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:mesh, sqlite:obo:mondo, sqlite:obo:ncit
+      prompt: name of cancer being described
+      prompt.example: melanoma, carcinoma
+
+  GeneCancer:
+    is_a: CompoundExpression
+    attributes:
+      gene:
+        range: Gene
+      cancer:
+        range: Cancer
+      anatomical_entity:
+        range: AnatomicalEntity
+       
+  CancerPhenotype:
+    is_a: CompoundExpression
+    attributes:
+      cancer:
+        range: Cancer
+
+      chemical_entity:
+        range: ChemicalEntity
+        
+      
+      
+      
+    
+
+      
+      
+          
+  
+
+
+      
+  
+
+      
+  
+  
+  
+  
+
+
+      
