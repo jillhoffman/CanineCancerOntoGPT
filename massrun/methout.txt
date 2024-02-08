@@ -1,0 +1,64 @@
+---
+input_text: |2+
+
+  Background
+
+  Canine hepatocellular tumours (HCTs) are common primary liver tumours. However, the exact mechanisms of tumourigenesis remain unclear. Although some genetic mutations have been reported, DNA methylation alterations in canine HCT have not been well studied.
+  Objectives
+
+  In this study, we aimed to analyse the DNA methylation status of canine HCT.
+  Methods
+
+  Tissues from 33 hepatocellular carcinomas, 3 hepatocellular adenomas, 1 nodular hyperplasia, 21 non-tumour livers from the patients and normal livers from 5 healthy dogs were used. We analysed the DNA methylation levels of 72,367 cytosine–guanine dinucleotides (CpG sites) in all 63 samples.
+  Results and conclusions
+
+  Although a large fraction of CpG sites that were highly methylated in the normal liver became hypomethylated in tumours from most patients, we also found some patients with less remarkable change or no change in DNA methylation. Hierarchical clustering analysis revealed that 32 of 37 tumour samples differed from normal livers, although the remaining 5 tumour livers fell into the same cluster as normal livers. In addition, the number of hypermethylated genes in tumour livers varied among tumour cases, suggesting various DNA methylation patterns in different tumour groups. However, patient and clinical parameters, such as age, were not associated with DNA methylation status. In conclusion, we found that HCTs undergo aberrant and diverse patterns of genome-wide DNA methylation compared with normal liver tissue, suggesting a complex epigenetic mechanism in canine HCT.
+
+raw_completion_output: |-
+  cancer: hepatocellular carcinomas, hepatocellular adenomas, nodular hyperplasia
+  gene: unspecified
+  anatomical_entity: liver
+  genecancer_links: unspecified
+  phenotype: unspecified
+  chemical_entity: unspecified
+  cancerphenotype: unspecified
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  cancer: <the value for cancer>
+  chemical_entity: <the value for chemical_entity>
+
+
+  Text:
+  unspecified
+
+  ===
+
+extracted_object:
+  cancer:
+    - AUTO:hepatocellular%20carcinomas%2C%20hepatocellular%20adenomas%2C%20nodular%20hyperplasia
+  gene:
+    - AUTO:unspecified
+  anatomical_entity:
+    - UBERON:0002107
+  genecancer_links:
+    - gene: AUTO:unspecified
+      cancer: NCIT:C38046
+      anatomical_entity: AUTO:unspecified
+  phenotype:
+    - NCIT:C38046
+  chemical_entity:
+    - AUTO:unspecified
+  cancerphenotype:
+    - cancer: NCIT:C38046
+      chemical_entity: AUTO:unspecified
+named_entities:
+  - id: 
+      AUTO:hepatocellular%20carcinomas%2C%20hepatocellular%20adenomas%2C%20nodular%20hyperplasia
+    label: hepatocellular carcinomas, hepatocellular adenomas, nodular hyperplasia
+  - id: AUTO:unspecified
+    label: unspecified
+  - id: UBERON:0002107
+    label: liver
+  - id: NCIT:C38046
+    label: unspecified
