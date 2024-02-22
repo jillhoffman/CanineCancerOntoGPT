@@ -1,0 +1,162 @@
+---
+input_text: |2
+   Naturally occurring canine cancers have remarkable similarities to their human counterparts. To
+    better understand these similarities, we investigated 671 client-owned dogs from 96 breeds with
+    23 common tumor types, including those whose mutation profile are unknown (anal sac carcinoma
+    and neuroendocrine carcinoma) or understudied (thyroid carcinoma, soft tissue sarcoma and
+    hepatocellular carcinoma). We discovered mutations in 50 well-established oncogenes and tumor
+    suppressors, and compared them to those reported in human cancers. As in human cancer, TP53 is
+    the most commonly mutated gene, detected in 22.5% of canine tumors overall. Canine tumors share
+    mutational hotspots with human tumors in oncogenes including PIK3CA, KRAS, NRAS, BRAF, KIT and
+    EGFR. Hotspot mutations with significant association to tumor type include NRAS G61R and PIK3CA
+    H1047R in hemangiosarcoma, ERBB2 V659E in pulmonary carcinoma, and BRAF V588E (equivalent
+    of V600E in humans) in urothelial carcinoma. Our findings better position canines as a translational model of human cancer to investigate a wide spectrum of targeted therapies.
+
+    “Dogs with the most common splenic form of hemangiosarcoma will usually arrive at an emergency clinic having suddenly collapsed and with pale gums due to internal bleeding from a previously undetected and now ruptured tumor,” says Kelly Sams, lab manager at the Coonrod Lab at Cornell College of Veterinary Medicine’s Baker Institute for Animal Health. Internal bleeding sometimes results in sudden death.
+raw_completion_output: |-
+  cancer: anal sac carcinoma; neuroendocrine carcinoma; thyroid carcinoma; soft tissue sarcoma; hepatocellular carcinoma; hemangiosarcoma; pulmonary carcinoma; urothelial carcinoma  
+  gene: TP53; PIK3CA; KRAS; NRAS; BRAF; KIT; EGFR;
+  anatomical_entity: anal sac; endocrine system; thyroid; soft tissue; liver; spleen; lung; urinary tract
+  genecancer_links: TP53-cancer (all); PIK3CA-hemangiosarcoma; KRAS-cancer (all); NRAS-hemangiosarcoma; BRAF-urothelial carcinoma; KIT-cancer (not specified); EGFR-cancer (not specified)
+  phenotype: sudden collapse; pale gums; internal bleeding; sudden death
+  chemical_entity: mutations in oncogenes and tumor suppressors
+  cancerphenotype: mutations in oncogenes and tumor suppressors - cancer (not specified)
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  cancer: <the value for cancer>
+  chemical_entity: <the value for chemical_entity>
+
+
+  Text:
+  mutations in oncogenes and tumor suppressors - cancer (not specified)
+
+  ===
+
+extracted_object:
+  cancer:
+    - AUTO:anal%20sac%20carcinoma
+    - MONDO:0002120
+    - MESH:M0333546
+    - MONDO:0018078
+    - MESH:D006528
+    - MESH:D006394
+    - AUTO:pulmonary%20carcinoma
+    - MONDO:0040679
+  gene:
+    - HGNC:11998
+    - HGNC:8975
+    - PR:Q9VNE2
+    - HGNC:7989
+    - HGNC:1097
+    - HGNC:6342
+    - HGNC:3236
+  anatomical_entity:
+    - UBERON:0008978
+    - UBERON:0000949
+    - UBERON:0002046
+    - AUTO:soft%20tissue
+    - UBERON:0002107
+    - UBERON:0002106
+    - 'LIKELY HALLUCINATION: lung'
+    - UBERON:0001008
+  genecancer_links:
+    - gene: HGNC:11998
+      cancer: HP:0000001
+      anatomical_entity: UBERON:2005085
+    - gene: HGNC:8975
+      cancer: MESH:D006394
+      anatomical_entity: AUTO:N/A
+    - gene: PR:Q9VNE2
+      cancer: HP:0000001
+      anatomical_entity: AUTO:N/A
+    - gene: HGNC:7989
+      cancer: MESH:D006394
+      anatomical_entity: AUTO:N/A
+    - gene: HGNC:1097
+      cancer: MONDO:0040679
+      anatomical_entity: AUTO:Not%20provided
+    - gene: HGNC:6342
+      cancer: NCIT:C149701
+      anatomical_entity: AUTO:Not%20specified
+    - gene: HGNC:3236
+      cancer: NCIT:C149701
+  phenotype:
+    - AUTO:sudden%20collapse
+    - AUTO:pale%20gums
+    - HP:0011029
+    - HP:0001699
+  chemical_entity:
+    - AUTO:mutations%20in%20oncogenes%20and%20tumor%20suppressors
+  cancerphenotype:
+    - cancer: NCIT:C149701
+      chemical_entity: AUTO:mutations%2C%20oncogenes%2C%20tumor%20suppressors
+named_entities:
+  - id: AUTO:anal%20sac%20carcinoma
+    label: anal sac carcinoma
+  - id: MONDO:0002120
+    label: neuroendocrine carcinoma
+  - id: MESH:M0333546
+    label: thyroid carcinoma
+  - id: MONDO:0018078
+    label: soft tissue sarcoma
+  - id: MESH:D006528
+    label: hepatocellular carcinoma
+  - id: MESH:D006394
+    label: hemangiosarcoma
+  - id: AUTO:pulmonary%20carcinoma
+    label: pulmonary carcinoma
+  - id: MONDO:0040679
+    label: urothelial carcinoma
+  - id: HGNC:11998
+    label: TP53
+  - id: HGNC:8975
+    label: PIK3CA
+  - id: PR:Q9VNE2
+    label: KRAS
+  - id: HGNC:7989
+    label: NRAS
+  - id: HGNC:1097
+    label: BRAF
+  - id: HGNC:6342
+    label: KIT
+  - id: HGNC:3236
+    label: EGFR
+  - id: UBERON:0008978
+    label: anal sac
+  - id: UBERON:0000949
+    label: endocrine system
+  - id: UBERON:0002046
+    label: thyroid
+  - id: AUTO:soft%20tissue
+    label: soft tissue
+  - id: UBERON:0002107
+    label: liver
+  - id: UBERON:0002106
+    label: spleen
+  - id: UBERON:0001008
+    label: urinary tract
+  - id: HP:0000001
+    label: all
+  - id: UBERON:2005085
+    label: NA
+  - id: AUTO:N/A
+    label: N/A
+  - id: AUTO:Not%20provided
+    label: Not provided
+  - id: NCIT:C149701
+    label: cancer (not specified)
+  - id: AUTO:Not%20specified
+    label: Not specified
+  - id: AUTO:sudden%20collapse
+    label: sudden collapse
+  - id: AUTO:pale%20gums
+    label: pale gums
+  - id: HP:0011029
+    label: internal bleeding
+  - id: HP:0001699
+    label: sudden death
+  - id: AUTO:mutations%20in%20oncogenes%20and%20tumor%20suppressors
+    label: mutations in oncogenes and tumor suppressors
+  - id: AUTO:mutations%2C%20oncogenes%2C%20tumor%20suppressors
+    label: mutations, oncogenes, tumor suppressors
