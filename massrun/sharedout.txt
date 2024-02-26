@@ -14,22 +14,22 @@ input_text: |2
 
     “Dogs with the most common splenic form of hemangiosarcoma will usually arrive at an emergency clinic having suddenly collapsed and with pale gums due to internal bleeding from a previously undetected and now ruptured tumor,” says Kelly Sams, lab manager at the Coonrod Lab at Cornell College of Veterinary Medicine’s Baker Institute for Animal Health. Internal bleeding sometimes results in sudden death.
 raw_completion_output: |-
-  cancer: anal sac carcinoma; neuroendocrine carcinoma; thyroid carcinoma; soft tissue sarcoma; hepatocellular carcinoma; hemangiosarcoma; pulmonary carcinoma; urothelial carcinoma  
-  gene: TP53; PIK3CA; KRAS; NRAS; BRAF; KIT; EGFR;
-  anatomical_entity: anal sac; endocrine system; thyroid; soft tissue; liver; spleen; lung; urinary tract
-  genecancer_links: TP53-cancer (all); PIK3CA-hemangiosarcoma; KRAS-cancer (all); NRAS-hemangiosarcoma; BRAF-urothelial carcinoma; KIT-cancer (not specified); EGFR-cancer (not specified)
-  phenotype: sudden collapse; pale gums; internal bleeding; sudden death
-  chemical_entity: mutations in oncogenes and tumor suppressors
-  cancerphenotype: mutations in oncogenes and tumor suppressors - cancer (not specified)
+  cancer: anal sac carcinoma; neuroendocrine carcinoma; thyroid carcinoma; soft tissue sarcoma; hepatocellular carcinoma; hemangiosarcoma; pulmonary carcinoma; splenic form of hemangiosarcoma; urothelial carcinoma
+  gene: TP53; PIK3CA; KRAS; NRAS; BRAF; KIT; EGFR; ERBB2
+  anatomical_entity: anal sac; neuroendocrine; thyroid; soft tissue; hepatocellular; hemangiosarcoma; pulmonary; splenic; urothelial
+  genecancer_links: TP53-anal sac carcinoma, neuroendocrine carcinoma, thyroid carcinoma, soft tissue sarcoma, hepatocellular carcinoma, hemangiosarcoma, pulmonary carcinoma, splenic form of hemangiosarcoma, urothelial carcinoma; PIK3CA-hemangiosarcoma; NRAS-hemangiosarcoma; BRAF-urothelial carcinoma
+  phenotype: sudden collapse; pale gums; internal bleeding; ruptured tumor; sudden death
+  chemical_entity: unknown
+  cancer_phenotype: unknown
 prompt: |+
-  From the text below, extract the following entities in the following format:
+  Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
   chemical_entity: <the value for chemical_entity>
 
 
   Text:
-  mutations in oncogenes and tumor suppressors - cancer (not specified)
+  unknown
 
   ===
 
@@ -42,6 +42,7 @@ extracted_object:
     - MESH:D006528
     - MESH:D006394
     - AUTO:pulmonary%20carcinoma
+    - AUTO:splenic%20form%20of%20hemangiosarcoma
     - MONDO:0040679
   gene:
     - HGNC:11998
@@ -51,24 +52,24 @@ extracted_object:
     - HGNC:1097
     - HGNC:6342
     - HGNC:3236
+    - HGNC:3430
   anatomical_entity:
     - UBERON:0008978
-    - UBERON:0000949
+    - AUTO:neuroendocrine
     - UBERON:0002046
     - AUTO:soft%20tissue
-    - UBERON:0002107
-    - UBERON:0002106
-    - 'LIKELY HALLUCINATION: lung'
-    - UBERON:0001008
+    - AUTO:hepatocellular
+    - AUTO:hemangiosarcoma
+    - AUTO:pulmonary
+    - AUTO:splenic
+    - AUTO:urothelial
   genecancer_links:
     - gene: HGNC:11998
-      cancer: HP:0000001
-      anatomical_entity: UBERON:2005085
+      cancer: 
+        AUTO:anal%20sac%20carcinoma%2C%20neuroendocrine%20carcinoma%2C%20thyroid%20carcinoma%2C%20soft%20tissue%20sarcoma%2C%20hepatocellular%20carcinoma%2C%20hemangiosarcoma%2C%20pulmonary%20carcinoma%2C%20splenic%20form%20of%20hemangiosarcoma%2C%20urothelial%20carcinoma
+      anatomical_entity: AUTO:not%20mentioned
     - gene: HGNC:8975
       cancer: MESH:D006394
-      anatomical_entity: AUTO:N/A
-    - gene: PR:Q9VNE2
-      cancer: HP:0000001
       anatomical_entity: AUTO:N/A
     - gene: HGNC:7989
       cancer: MESH:D006394
@@ -76,21 +77,17 @@ extracted_object:
     - gene: HGNC:1097
       cancer: MONDO:0040679
       anatomical_entity: AUTO:Not%20provided
-    - gene: HGNC:6342
-      cancer: NCIT:C149701
-      anatomical_entity: AUTO:Not%20specified
-    - gene: HGNC:3236
-      cancer: NCIT:C149701
   phenotype:
     - AUTO:sudden%20collapse
     - AUTO:pale%20gums
     - HP:0011029
+    - AUTO:ruptured%20tumor
     - HP:0001699
   chemical_entity:
-    - AUTO:mutations%20in%20oncogenes%20and%20tumor%20suppressors
-  cancerphenotype:
-    - cancer: NCIT:C149701
-      chemical_entity: AUTO:mutations%2C%20oncogenes%2C%20tumor%20suppressors
+    - NCIT:C17998
+  cancer_phenotype:
+    - cancer: NCIT:C17998
+      chemical_entity: NCIT:C17998
 named_entities:
   - id: AUTO:anal%20sac%20carcinoma
     label: anal sac carcinoma
@@ -106,6 +103,8 @@ named_entities:
     label: hemangiosarcoma
   - id: AUTO:pulmonary%20carcinoma
     label: pulmonary carcinoma
+  - id: AUTO:splenic%20form%20of%20hemangiosarcoma
+    label: splenic form of hemangiosarcoma
   - id: MONDO:0040679
     label: urothelial carcinoma
   - id: HGNC:11998
@@ -122,41 +121,46 @@ named_entities:
     label: KIT
   - id: HGNC:3236
     label: EGFR
+  - id: HGNC:3430
+    label: ERBB2
   - id: UBERON:0008978
     label: anal sac
-  - id: UBERON:0000949
-    label: endocrine system
+  - id: AUTO:neuroendocrine
+    label: neuroendocrine
   - id: UBERON:0002046
     label: thyroid
   - id: AUTO:soft%20tissue
     label: soft tissue
-  - id: UBERON:0002107
-    label: liver
-  - id: UBERON:0002106
-    label: spleen
-  - id: UBERON:0001008
-    label: urinary tract
-  - id: HP:0000001
-    label: all
-  - id: UBERON:2005085
-    label: NA
+  - id: AUTO:hepatocellular
+    label: hepatocellular
+  - id: AUTO:hemangiosarcoma
+    label: hemangiosarcoma
+  - id: AUTO:pulmonary
+    label: pulmonary
+  - id: AUTO:splenic
+    label: splenic
+  - id: AUTO:urothelial
+    label: urothelial
+  - id: 
+      AUTO:anal%20sac%20carcinoma%2C%20neuroendocrine%20carcinoma%2C%20thyroid%20carcinoma%2C%20soft%20tissue%20sarcoma%2C%20hepatocellular%20carcinoma%2C%20hemangiosarcoma%2C%20pulmonary%20carcinoma%2C%20splenic%20form%20of%20hemangiosarcoma%2C%20urothelial%20carcinoma
+    label: anal sac carcinoma, neuroendocrine carcinoma, thyroid carcinoma, soft tissue
+      sarcoma, hepatocellular carcinoma, hemangiosarcoma, pulmonary carcinoma, splenic
+      form of hemangiosarcoma, urothelial carcinoma
+  - id: AUTO:not%20mentioned
+    label: not mentioned
   - id: AUTO:N/A
     label: N/A
   - id: AUTO:Not%20provided
     label: Not provided
-  - id: NCIT:C149701
-    label: cancer (not specified)
-  - id: AUTO:Not%20specified
-    label: Not specified
   - id: AUTO:sudden%20collapse
     label: sudden collapse
   - id: AUTO:pale%20gums
     label: pale gums
   - id: HP:0011029
     label: internal bleeding
+  - id: AUTO:ruptured%20tumor
+    label: ruptured tumor
   - id: HP:0001699
     label: sudden death
-  - id: AUTO:mutations%20in%20oncogenes%20and%20tumor%20suppressors
-    label: mutations in oncogenes and tumor suppressors
-  - id: AUTO:mutations%2C%20oncogenes%2C%20tumor%20suppressors
-    label: mutations, oncogenes, tumor suppressors
+  - id: NCIT:C17998
+    label: unknown

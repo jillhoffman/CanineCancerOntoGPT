@@ -22,7 +22,7 @@ classes:
     tree_root: true
     attributes:
       cancer:
-        description:  semi-colon separated list of the names of the cancers being described
+        description: semi-colon separated list of the names of the cancers being described
         multivalued: true
         range: Cancer
 
@@ -47,14 +47,21 @@ classes:
         range: Phenotype
 
       chemical_entity:
-        description: semicolon-separated list entity whose expression is changed with cancer and how it is changed
+        description: list of biological processes and chemical entities that are effected by cancer
         multivalued: true
         range: ChemicalEntity
       
-      cancerphenotype:
+      cancer_phenotype:
         description: semicolon-separated list linking chemical changes and the cancer
         multivalued: true
         range: CancerPhenotype
+  
+  Cancer:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:mesh, sqlite:obo:mondo, sqlite:obo:ncit
+      prompt: name of the canine cancer being described
+      prompt.example: melanoma, canine carcinoma
 
   Phenotype:
     is_a: NamedEntity
@@ -63,8 +70,9 @@ classes:
       - HP
       - MESH
       - NCIT
+      - GO
     annotations: 
-      annotators: sqlite:obo:upheno, sqlite:obo:hp, sqlite:obo:mondo, sqlite:obo:mesh, sqlite:obo:ncit
+      annotators: sqlite:obo:upheno, sqlite:obo:hp, sqlite:obo:mondo, sqlite:obo:mesh, sqlite:obo:ncit, sqlite:obo:go
       prompt: physical qualities and characteristics caused by the cancer that indicate disease
       prompt.example: fatigue, weakness, bleeding
 
@@ -74,9 +82,11 @@ classes:
       - CHEBI
       - PR
       - PATO
+      - NCIT
+      - GO
     annotations:
-      annotators: sqlite:obo:chebi, sqlite:obo:pato, sqlite:obo:pr
-      prompt: entity being expressed and is how it is changed with cancer
+      annotators: sqlite:obo:chebi, sqlite:obo:pato, sqlite:obo:pr, sqlite:obo:ncit, sqlite:obo:go
+      prompt: biological process being described and is how it is changed with cancer
       prompt.example: upregulated E-cadherin in A, downregulated K in B
 
   AnatomicalEntity:
@@ -86,8 +96,7 @@ classes:
     annotations:
       annotators: sqlite:obo:uberon
       prompt: the anatomical location the cancer is presented
-      prompt.examples: skin, lung, bladdar
-
+      prompt.examples: skin, lung, bladder
 
   Gene:
     is_a: NamedEntity
@@ -99,13 +108,6 @@ classes:
       annotators: gilda:, bioportal:hgnc-nr, sqlite:obo:pr
       prompt: name of the gene that is linked to causing cancer
 
-  Cancer:
-    is_a: NamedEntity
-    annotations:
-      annotators: sqlite:obo:mesh, sqlite:obo:mondo, sqlite:obo:ncit
-      prompt: name of cancer being described
-      prompt.example: melanoma, carcinoma
-
   GeneCancer:
     is_a: CompoundExpression
     attributes:
@@ -115,15 +117,26 @@ classes:
         range: Cancer
       anatomical_entity:
         range: AnatomicalEntity
+  
+  CP:
+    is_a: NamedEntity
+    id_prefixes:
+      - CHEBI
+      - PR
+      - PATO
+      - NCIT
+      - GO
+    annotations:
+      annotators: sqlite:obo:chebi, sqlite:obo:pato, sqlite:obo:pr, sqlite:obo:ncit, sqlite:obo:go
+      prompt: the chemical entity described and the specific cancer that causes the change
        
   CancerPhenotype:
     is_a: CompoundExpression
     attributes:
       cancer:
         range: Cancer
-
       chemical_entity:
-        range: ChemicalEntity
+        range: CP
         
       
       

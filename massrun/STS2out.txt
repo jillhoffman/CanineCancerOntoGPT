@@ -2,13 +2,13 @@
 input_text: |
   Canine soft tissue sarcoma (STS) is relatively common in dogs and is the generic term for tumours that originate from mesenchymal cells. While histopathological grade and immunolabelling with Ki-67 have been used for estimating prognosis, additional indicators are needed for predicting prognosis. Aberrant cell signalling pathways may contribute to disease activity and, therefore, prognostic markers. However, their role in canine STS remains poorly understood. The aim of this study was to investigate expression of phosphorylated Akt (phospho-Akt) and phosphorylated S6 (phospho-S6) as potential prognostic indicators. Immunohistochemical labelling was conducted on clinical samples of canine STS (n = 67). We found that phospho-Akt expression was positively correlated with histopathological grade (P = 0.001) and Ki-67 index (P <0.01). There was no apparent relationship between the type of STS and the expression of phospho-Akt. The number of cases that expressed phospho-S6, which is the downstream molecule of the Akt signalling pathway, was higher in immunopositive phospho-Akt cases than in immunonegative phospho-Akt cases (P <0.0001). Furthermore, phospho-Akt expression was significantly higher in recurrent and metastatic cases. We also confirmed that phosphorylation of Akt occurred in conjunction with S6 phosphorylation in three canine STS cell lines. These results suggest that immunolabelling for phospho-Akt, phospho-S6 and Ki-67 could potentially be used as a prognostic indicator and therapeutic target in canine STS.
 raw_completion_output: |-
-  cancer: canine soft tissue sarcoma (STS)
-  gene: phosphorylated Akt, phosphorylated S6
-  anatomical_entity: mesenchymal cells, clinical samples of canine STS
-  genecancer_links: phosphorylated Akt - canine STS; phosphorylated S6 - canine STS
-  phenotype: histopathological grade, Ki-67 index
-  chemical_entity: none mentioned in the text
-  cancerphenotype: none mentioned in the text
+  cancer: Canine soft tissue sarcoma (STS)
+  gene: Akt, S6
+  anatomical_entity: soft tissue
+  genecancer_links: Akt - Canine soft tissue sarcoma (STS); S6 - Canine soft tissue sarcoma (STS)
+  phenotype: disease activity, prognosis
+  chemical_entity: phosphorylated Akt, phosphorylated S6, Ki-67
+  cancer_phenotype: phosphorylated Akt - Canine soft tissue sarcoma (STS); phosphorylated S6 - Canine soft tissue sarcoma (STS)
 prompt: |+
   Split the following piece of text into fields in the following format:
 
@@ -17,7 +17,7 @@ prompt: |+
 
 
   Text:
-  none mentioned in the text
+  phosphorylated S6 - Canine soft tissue sarcoma (STS)
 
   ===
 
@@ -25,37 +25,47 @@ extracted_object:
   cancer:
     - NCIT:C159109
   gene:
-    - AUTO:phosphorylated%20Akt%2C%20phosphorylated%20S6
+    - AUTO:Akt%2C%20S6
   anatomical_entity:
-    - AUTO:mesenchymal%20cells%2C%20clinical%20samples%20of%20canine%20STS
+    - AUTO:soft%20tissue
   genecancer_links:
     - gene: HGNC:391
       cancer: NCIT:C159109
-      anatomical_entity: UBERON:0003674
+      anatomical_entity: AUTO:N/A
     - gene: HGNC:10429
-      cancer: NCIT:C159109
-      anatomical_entity: UBERON:0003674
+      cancer: MONDO:0700156
+      anatomical_entity: UBERON:0002734
   phenotype:
-    - AUTO:histopathological%20grade%2C%20Ki-67%20index
+    - AUTO:disease%20activity%2C%20prognosis
   chemical_entity:
-    - AUTO:none%20mentioned%20in%20the%20text
-  cancerphenotype:
-    - cancer: AUTO:none%20mentioned%20in%20the%20text
-      chemical_entity: AUTO:none%20mentioned%20in%20the%20text
+    - AUTO:phosphorylated%20Akt%2C%20phosphorylated%20S6%2C%20Ki-67
+  cancer_phenotype:
+    - cancer: NCIT:C159109
+      chemical_entity: AUTO:phosphorylated%20Akt
+    - cancer: NCIT:C159109
+      chemical_entity: AUTO:phosphorylated%20S6
 named_entities:
   - id: NCIT:C159109
-    label: canine soft tissue sarcoma (STS)
-  - id: AUTO:phosphorylated%20Akt%2C%20phosphorylated%20S6
-    label: phosphorylated Akt, phosphorylated S6
-  - id: AUTO:mesenchymal%20cells%2C%20clinical%20samples%20of%20canine%20STS
-    label: mesenchymal cells, clinical samples of canine STS
+    label: Canine soft tissue sarcoma (STS)
+  - id: AUTO:Akt%2C%20S6
+    label: Akt, S6
+  - id: AUTO:soft%20tissue
+    label: soft tissue
   - id: HGNC:391
     label: Akt
-  - id: UBERON:0003674
-    label: canine
+  - id: AUTO:N/A
+    label: N/A
   - id: HGNC:10429
     label: S6
-  - id: AUTO:histopathological%20grade%2C%20Ki-67%20index
-    label: histopathological grade, Ki-67 index
-  - id: AUTO:none%20mentioned%20in%20the%20text
-    label: none mentioned in the text
+  - id: MONDO:0700156
+    label: Canine soft tissue sarcoma
+  - id: UBERON:0002734
+    label: STS
+  - id: AUTO:disease%20activity%2C%20prognosis
+    label: disease activity, prognosis
+  - id: AUTO:phosphorylated%20Akt%2C%20phosphorylated%20S6%2C%20Ki-67
+    label: phosphorylated Akt, phosphorylated S6, Ki-67
+  - id: AUTO:phosphorylated%20Akt
+    label: phosphorylated Akt
+  - id: AUTO:phosphorylated%20S6
+    label: phosphorylated S6

@@ -19,12 +19,12 @@ input_text: |2+
 
 raw_completion_output: |-
   cancer: T-cell lymphoid neoplasia
-  gene: None mentioned
+  gene: N/A
   anatomical_entity: bone marrow
-  genecancer_links: None mentioned
+  genecancer_links: N/A
   phenotype: hypercalcemia, polyuria, polydipsia, neutropenia, thrombocytopenia
-  chemical_entity: None mentioned
-  cancerphenotype: None mentioned
+  chemical_entity: N/A
+  cancer_phenotype: N/A
 prompt: |+
   Split the following piece of text into fields in the following format:
 
@@ -33,7 +33,7 @@ prompt: |+
 
 
   Text:
-  None mentioned
+  N/A
 
   ===
 
@@ -41,29 +41,29 @@ extracted_object:
   cancer:
     - AUTO:T-cell%20lymphoid%20neoplasia
   gene:
-    - AUTO:None%20mentioned
+    - AUTO:N/A
   anatomical_entity:
     - UBERON:0002371
   genecancer_links:
-    - gene: AUTO:Not%20provided
-      cancer: AUTO:Not%20provided
-      anatomical_entity: AUTO:Not%20provided
+    - gene: AUTO:N/A
+      cancer: NCIT:C18902
+      anatomical_entity: AUTO:N/A
   phenotype:
     - AUTO:hypercalcemia%2C%20polyuria%2C%20polydipsia%2C%20neutropenia%2C%20thrombocytopenia
   chemical_entity:
-    - AUTO:None%20mentioned
-  cancerphenotype:
-    - cancer: AUTO:None%20mentioned
-      chemical_entity: AUTO:None%20mentioned
+    - NCIT:C18902
+  cancer_phenotype:
+    - cancer: NCIT:C18902
+      chemical_entity: NCIT:C18902
 named_entities:
   - id: AUTO:T-cell%20lymphoid%20neoplasia
     label: T-cell lymphoid neoplasia
-  - id: AUTO:None%20mentioned
-    label: None mentioned
+  - id: AUTO:N/A
+    label: N/A
   - id: UBERON:0002371
     label: bone marrow
-  - id: AUTO:Not%20provided
-    label: Not provided
+  - id: NCIT:C18902
+    label: N/A
   - id: 
       AUTO:hypercalcemia%2C%20polyuria%2C%20polydipsia%2C%20neutropenia%2C%20thrombocytopenia
     label: hypercalcemia, polyuria, polydipsia, neutropenia, thrombocytopenia

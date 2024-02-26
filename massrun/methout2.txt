@@ -15,13 +15,13 @@ input_text: |2+
   Although a large fraction of CpG sites that were highly methylated in the normal liver became hypomethylated in tumours from most patients, we also found some patients with less remarkable change or no change in DNA methylation. Hierarchical clustering analysis revealed that 32 of 37 tumour samples differed from normal livers, although the remaining 5 tumour livers fell into the same cluster as normal livers. In addition, the number of hypermethylated genes in tumour livers varied among tumour cases, suggesting various DNA methylation patterns in different tumour groups. However, patient and clinical parameters, such as age, were not associated with DNA methylation status. In conclusion, we found that HCTs undergo aberrant and diverse patterns of genome-wide DNA methylation compared with normal liver tissue, suggesting a complex epigenetic mechanism in canine HCT.
 
 raw_completion_output: |-
-  cancer: hepatocellular carcinomas, hepatocellular adenomas, nodular hyperplasia
-  gene: unspecified
-  anatomical_entity: liver
-  genecancer_links: unspecified
-  phenotype: unspecified
-  chemical_entity: unspecified
-  cancerphenotype: unspecified
+  cancer: hepatocellular carcinoma; hepatocellular adenoma; nodular hyperplasia
+  gene: Not specified
+  anatomical_entity: Liver
+  genecancer_links: Not specified
+  phenotype: Aberrant DNA methylation; diverse patterns of genome-wide DNA methylation
+  chemical_entity: Not specified
+  cancer_phenotype: DNA methylation changes; DNA methylation patterns
 prompt: |+
   Split the following piece of text into fields in the following format:
 
@@ -30,35 +30,49 @@ prompt: |+
 
 
   Text:
-  unspecified
+  DNA methylation patterns
 
   ===
 
 extracted_object:
   cancer:
-    - AUTO:hepatocellular%20carcinomas%2C%20hepatocellular%20adenomas%2C%20nodular%20hyperplasia
+    - MESH:D006528
+    - MONDO:0018902
+    - NCIT:C131437
   gene:
-    - AUTO:unspecified
+    - AUTO:Not%20specified
   anatomical_entity:
     - UBERON:0002107
   genecancer_links:
-    - gene: AUTO:unspecified
-      cancer: NCIT:C38046
-      anatomical_entity: AUTO:unspecified
+    - gene: AUTO:Not%20specified
+      cancer: NCIT:C149701
+      anatomical_entity: AUTO:Not%20specified
   phenotype:
-    - NCIT:C38046
+    - NCIT:C36664
+    - AUTO:diverse%20patterns%20of%20genome-wide%20DNA%20methylation
   chemical_entity:
-    - AUTO:unspecified
-  cancerphenotype:
-    - cancer: NCIT:C38046
-      chemical_entity: AUTO:unspecified
+    - NCIT:C149701
+  cancer_phenotype:
+    - chemical_entity: AUTO:DNA%2C%20methylation
+    - chemical_entity: AUTO:DNA%20methylation%20patterns
 named_entities:
-  - id: 
-      AUTO:hepatocellular%20carcinomas%2C%20hepatocellular%20adenomas%2C%20nodular%20hyperplasia
-    label: hepatocellular carcinomas, hepatocellular adenomas, nodular hyperplasia
-  - id: AUTO:unspecified
-    label: unspecified
+  - id: MESH:D006528
+    label: hepatocellular carcinoma
+  - id: MONDO:0018902
+    label: hepatocellular adenoma
+  - id: NCIT:C131437
+    label: nodular hyperplasia
+  - id: AUTO:Not%20specified
+    label: Not specified
   - id: UBERON:0002107
-    label: liver
-  - id: NCIT:C38046
-    label: unspecified
+    label: Liver
+  - id: NCIT:C149701
+    label: Not specified
+  - id: NCIT:C36664
+    label: Aberrant DNA methylation
+  - id: AUTO:diverse%20patterns%20of%20genome-wide%20DNA%20methylation
+    label: diverse patterns of genome-wide DNA methylation
+  - id: AUTO:DNA%2C%20methylation
+    label: DNA, methylation
+  - id: AUTO:DNA%20methylation%20patterns
+    label: DNA methylation patterns
