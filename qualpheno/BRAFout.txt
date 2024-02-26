@@ -2,77 +2,65 @@
 input_text: |
   Activating mutations of the BRAF gene lead to constitutive activation of the MAPK pathway. The characterization and discovery of BRAF mutations in a variety of human cancers has led to the development of specific inhibitors targeting the BRAF/MAPK pathway and dramatically changed clinical outcomes in BRAF-mutant melanoma patients. Recent discovery of BRAF mutation in canine cancers underscores the importance of MAPK pathway activation as an oncogenic molecular alteration evolutionarily conserved between species. A comparative approach using the domestic dog as a spontaneous cancer model will provide new insights into the dysregulation of BRAF/MAPK pathway in carcinogenesis and facilitate in vivo studies to evaluate therapeutic strategies targeting this pathway’s molecules for cancer therapy. The BRAF mutation in canine cancers may also represent a molecular marker and therapeutic target in veterinary oncology. This review article summarizes the current knowledge on BRAF mutations in human and canine cancers and discusses the potential applications of this abnormality in veterinary oncology.
 raw_completion_output: |-
-  cancer: human cancers; canine cancers
-  gene: BRAF gene
-  anatomical_entity: melanoma; canine cancers
-  genecancer_links: BRAF gene - human cancers; BRAF gene - canine cancers (melanoma)
-  phenotype: abnormality in veterinary oncology
+  cancer: melanoma; veterinary oncology
+  gene: BRAF
+  anatomical_entity: human cancers; canine cancers
+  genecancer_links: BRAF-mutant melanoma; canine cancers
+  phenotype: dysregulation of pathway in carcinogenesis; therapeutic strategies targeting pathway's molecules for cancer therapy
   chemical_entity: MAPK pathway
-  cancerphenotype: dysregulation of BRAF/MAPK pathway in carcinogenesis; therapeutic strategies targeting this pathway’s molecules for cancer therapy
+  cancerphenotype: constitutive activation of MAPK pathway
 prompt: |+
-  From the text below, extract the following entities in the following format:
+  Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
-  phenotype: <the value for phenotype>
   chemical_entity: <the value for chemical_entity>
 
 
   Text:
-  therapeutic strategies targeting this pathway’s molecules for cancer therapy
+  constitutive activation of MAPK pathway
 
   ===
 
 extracted_object:
   cancer:
-    - AUTO:human%20cancers
-    - AUTO:canine%20cancers
+    - MESH:D008545
+    - AUTO:veterinary%20oncology
   gene:
-    - AUTO:BRAF%20gene
+    - HGNC:1097
   anatomical_entity:
-    - AUTO:melanoma
+    - AUTO:human%20cancers
     - AUTO:canine%20cancers
   genecancer_links:
     - gene: HGNC:1097
-      cancer: AUTO:human%20cancers
-    - gene: HGNC:1097
       cancer: MESH:D008545
-      anatomical_entity: AUTO:N/A
+      anatomical_entity: AUTO:None
+    - cancer: AUTO:canine%20cancers
   phenotype:
-    - AUTO:abnormality%20in%20veterinary%20oncology
+    - AUTO:dysregulation%20of%20pathway%20in%20carcinogenesis
+    - AUTO:therapeutic%20strategies%20targeting%20pathway%27s%20molecules%20for%20cancer%20therapy
   chemical_entity:
     - AUTO:MAPK%20pathway
   cancerphenotype:
-    - cancer: MESH:D063646
-      phenotype: AUTO:dysregulation
-      chemical_entity: AUTO:BRAF/MAPK%20pathway
-    - cancer: MESH:M0030821
-      chemical_entity: CHEBI:25367
+    - chemical_entity: AUTO:constitutive%20activation%20of%20MAPK%20pathway
 named_entities:
+  - id: MESH:D008545
+    label: melanoma
+  - id: AUTO:veterinary%20oncology
+    label: veterinary oncology
+  - id: HGNC:1097
+    label: BRAF
   - id: AUTO:human%20cancers
     label: human cancers
   - id: AUTO:canine%20cancers
     label: canine cancers
-  - id: AUTO:BRAF%20gene
-    label: BRAF gene
-  - id: AUTO:melanoma
-    label: melanoma
-  - id: HGNC:1097
-    label: BRAF
-  - id: MESH:D008545
-    label: canine cancers (melanoma)
-  - id: AUTO:N/A
-    label: N/A
-  - id: AUTO:abnormality%20in%20veterinary%20oncology
-    label: abnormality in veterinary oncology
+  - id: AUTO:None
+    label: None
+  - id: AUTO:dysregulation%20of%20pathway%20in%20carcinogenesis
+    label: dysregulation of pathway in carcinogenesis
+  - id: 
+      AUTO:therapeutic%20strategies%20targeting%20pathway%27s%20molecules%20for%20cancer%20therapy
+    label: therapeutic strategies targeting pathway's molecules for cancer therapy
   - id: AUTO:MAPK%20pathway
     label: MAPK pathway
-  - id: MESH:D063646
-    label: carcinogenesis
-  - id: AUTO:dysregulation
-    label: dysregulation
-  - id: AUTO:BRAF/MAPK%20pathway
-    label: BRAF/MAPK pathway
-  - id: MESH:M0030821
-    label: therapy
-  - id: CHEBI:25367
-    label: molecules
+  - id: AUTO:constitutive%20activation%20of%20MAPK%20pathway
+    label: constitutive activation of MAPK pathway

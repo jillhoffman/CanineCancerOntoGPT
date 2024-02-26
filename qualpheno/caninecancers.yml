@@ -1,3 +1,5 @@
+#run on multiple diff texts NEW
+
 id:  "id"
 name: trial1
 title: trial1
@@ -20,7 +22,7 @@ classes:
     tree_root: true
     attributes:
       cancer:
-        description: semicolon-seperated list of the name sor types of cancers being described
+        description: semi-colon separated list of the names of the cancers being described
         multivalued: true
         range: Cancer
 
@@ -30,7 +32,7 @@ classes:
         range: Gene
       
       anatomical_entity:
-        description: The anatomical locations that the cancers are in
+        description: The anatomical locations that the cancer(s) effect
         multivalued: true
         range: AnatomicalEntity
 
@@ -40,17 +42,17 @@ classes:
         range: GeneCancer
       
       phenotype:
-        description: physical symptoms caused by cancer indicating disease
+        description: physical symptoms that indicating disease
         multivalued: true
         range: Phenotype
 
       chemical_entity:
-        description: entity whose expression is changed with cancer and how it is changed
+        description: semicolon-separated list of entities whose expression is changed with cancer and how it is changed
         multivalued: true
         range: ChemicalEntity
       
       cancerphenotype:
-        description: semicolon-separated list of links of physical and chemical changes caused by the cancer
+        description: semicolon-separated list linking chemical changes and the cancer
         multivalued: true
         range: CancerPhenotype
 
@@ -74,8 +76,8 @@ classes:
       - PATO
     annotations:
       annotators: sqlite:obo:chebi, sqlite:obo:pato, sqlite:obo:pr
-      prompt: entity and is how it is changed with cancer
-      prompt.example: upregulated E-cadherin, downregulated K
+      prompt: measureable changes to components caused by cancer, eg chemical, expression, biological components
+      prompt.example: upregulated E-cadherin in A, downregulated K in B, hypo, hyper, methylation
 
   AnatomicalEntity:
     is_a: NamedEntity
@@ -101,7 +103,7 @@ classes:
     is_a: NamedEntity
     annotations:
       annotators: sqlite:obo:mesh, sqlite:obo:mondo, sqlite:obo:ncit
-      prompt: name or type of cancer being described
+      prompt: name of cancer being described
       prompt.example: melanoma, carcinoma
 
   GeneCancer:
@@ -118,9 +120,8 @@ classes:
     is_a: CompoundExpression
     attributes:
       cancer:
-        range: Cancer 
-      phenotype:
-        range: Phenotype
+        range: Cancer
+
       chemical_entity:
         range: ChemicalEntity
         

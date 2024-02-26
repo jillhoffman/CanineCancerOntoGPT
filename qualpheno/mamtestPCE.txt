@@ -6,13 +6,13 @@ input_text: |
 
   If the tumor has metastasized (spread to other areas of the body), other signs may become evident. Your dog may generally feel unwell, eat less, become lethargic, and lose weight. If the lungs are involved, your dog may have problems with breathing or develop a cough.
 raw_completion_output: |-
-  cancer: canine mammary tumors
-  gene: PIK3CA gene
-  anatomical_entity: mammary gland
-  genecancer_links: PIK3CA gene + canine mammary tumors + mammary gland
-  phenotype: luminal A, luminal B, triple-negative, HER-2-positive
-  chemical_entity: estrogen receptor-α, progesterone receptor, human epidermal growth factor receptor 2 (HER-2)/neu, E-cadherin
-  cancerphenotype: upregulation of E-cadherin in luminal A and B phenotypes compared to HER-2 positive and triple-negative phenotypes
+  cancer: Mammary neoplasms, canine mammary tumors
+  gene: PIK3CA
+  anatomical_entity: mammary glands
+  genecancer_links: PIK3CA and canine mammary tumors in mammary glands
+  phenotype: luminal A, luminal B, triple-negative, HER-2-positive; improved prognosis, more aggressive, associated with metastasis and worse Tumor-Node-Metastasis classification, shorter survival time
+  chemical_entity: E-cadherin; upregulation in luminal A and B phenotypes compared to HER-2 positive and triple-negative phenotypes
+  cancerphenotype: ulceration and bleeding of the skin over the tumor, warm and painful affected area, discharge from the mammary gland, feeling unwell, decreased appetite, lethargy, weight loss, breathing problems and cough if metastasized to the lungs
 prompt: |+
   From the text below, extract the following entities in the following format:
 
@@ -21,15 +21,15 @@ prompt: |+
 
 
   Text:
-  upregulation of E-cadherin in luminal A and B phenotypes compared to HER-2 positive and triple-negative phenotypes
+  ulceration and bleeding of the skin over the tumor, warm and painful affected area, discharge from the mammary gland, feeling unwell, decreased appetite, lethargy, weight loss, breathing problems and cough if metastasized to the lungs
 
   ===
 
 extracted_object:
   cancer:
-    - AUTO:canine%20mammary%20tumors
+    - AUTO:Mammary%20neoplasms%2C%20canine%20mammary%20tumors
   gene:
-    - AUTO:PIK3CA%20gene
+    - HGNC:8975
   anatomical_entity:
     - UBERON:0001911
   genecancer_links:
@@ -38,28 +38,28 @@ extracted_object:
       anatomical_entity: UBERON:0001911
   phenotype:
     - AUTO:luminal%20A%2C%20luminal%20B%2C%20triple-negative%2C%20HER-2-positive
+    - AUTO:improved%20prognosis%2C%20more%20aggressive%2C%20associated%20with%20metastasis%20and%20worse%20Tumor-Node-Metastasis%20classification%2C%20shorter%20survival%20time
   chemical_entity:
-    - PR:P34708
-  cancerphenotype:
-    - phenotype: 
-        AUTO:luminal%20A%20and%20B%20phenotypes%2C%20HER-2%20positive%20and%20triple-negative%20phenotypes
-      chemical_entity: PR:000001447
+    - PR:000001447
+    - AUTO:upregulation%20in%20luminal%20A%20and%20B%20phenotypes%20compared%20to%20HER-2%20positive%20and%20triple-negative%20phenotypes
 named_entities:
-  - id: AUTO:canine%20mammary%20tumors
-    label: canine mammary tumors
-  - id: AUTO:PIK3CA%20gene
-    label: PIK3CA gene
-  - id: UBERON:0001911
-    label: mammary gland
+  - id: AUTO:Mammary%20neoplasms%2C%20canine%20mammary%20tumors
+    label: Mammary neoplasms, canine mammary tumors
   - id: HGNC:8975
     label: PIK3CA
+  - id: UBERON:0001911
+    label: mammary glands
+  - id: AUTO:canine%20mammary%20tumors
+    label: canine mammary tumors
   - id: AUTO:luminal%20A%2C%20luminal%20B%2C%20triple-negative%2C%20HER-2-positive
     label: luminal A, luminal B, triple-negative, HER-2-positive
-  - id: PR:P34708
-    label: estrogen receptor-α, progesterone receptor, human epidermal growth factor
-      receptor 2 (HER-2)/neu, E-cadherin
   - id: 
-      AUTO:luminal%20A%20and%20B%20phenotypes%2C%20HER-2%20positive%20and%20triple-negative%20phenotypes
-    label: luminal A and B phenotypes, HER-2 positive and triple-negative phenotypes
+      AUTO:improved%20prognosis%2C%20more%20aggressive%2C%20associated%20with%20metastasis%20and%20worse%20Tumor-Node-Metastasis%20classification%2C%20shorter%20survival%20time
+    label: improved prognosis, more aggressive, associated with metastasis and worse
+      Tumor-Node-Metastasis classification, shorter survival time
   - id: PR:000001447
     label: E-cadherin
+  - id: 
+      AUTO:upregulation%20in%20luminal%20A%20and%20B%20phenotypes%20compared%20to%20HER-2%20positive%20and%20triple-negative%20phenotypes
+    label: upregulation in luminal A and B phenotypes compared to HER-2 positive and
+      triple-negative phenotypes
