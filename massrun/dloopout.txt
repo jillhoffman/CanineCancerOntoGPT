@@ -2,19 +2,13 @@
 input_text: |
   The aim of the conducted investigations was to identify differences in the D-loop nucleotide sequence between neoplastic tissue, normal tissue, and blood and to determine their correlation with the type of cancer in dogs. In 62.5% of the analyzed tumors of epithelial origin and 25% tumors of mesenchymal origin, substitution was detected within the D-loop sequence between the neoplastic tissue, normal tissue, and blood. Two mutations occurring in the carcinogenic process in position T15620C have been identified in epithelioma glandulae sebacei and carcinoma planoepithelialae keratodes. Blood and cancer heteroplasmy was diagnosed for carcinoma planoepithelialae keratodes and “Comedo” carcinoma. The results of the study indicate that polymorphic changes in the D-loop sequence promote carcinogenesis in dogs. Heteroplasmy diagnosed in blood and tumor cells and absence thereof in normal tissue may imply mtDNA recombination. High prevalence of mtDNA mutations in canine tumors may suggest mtDNA genetic instability, which is likely to play a role in carcinogenesis.
 raw_completion_output: |-
-  cancer: epithelial origin tumors; mesenchymal origin tumors; epithelioma glandulae sebacei; carcinoma planoepithelialae keratodes; “Comedo” carcinoma
-
-  gene: D-loop nucleotide sequence
-
+  cancer: epithelioma glandulae sebacei; carcinoma planoepithelialae keratodes; Comedo carcinoma
+  gene: Not mentioned
   anatomical_entity: neoplastic tissue; normal tissue; blood
-
-  genecancer_links: D-loop nucleotide sequence - epithelial origin tumors; D-loop nucleotide sequence - mesenchymal origin tumors; D-loop nucleotide sequence - epithelioma glandulae sebacei; D-loop nucleotide sequence - carcinoma planoepithelialae keratodes; D-loop nucleotide sequence - “Comedo” carcinoma
-
-  phenotype: mtDNA recombination
-
-  chemical_entity: mtDNA mutations
-
-  cancerphenotype: mtDNA mutations - promote carcinogenesis
+  genecancer_links: Not mentioned
+  phenotype: mtDNA recombination; mtDNA genetic instability
+  chemical_entity: D-loop nucleotide sequence
+  cancer_phenotype: carcinogenesis
 prompt: |+
   Split the following piece of text into fields in the following format:
 
@@ -23,77 +17,55 @@ prompt: |+
 
 
   Text:
-  mtDNA mutations - promote carcinogenesis
+  carcinogenesis
 
   ===
 
 extracted_object:
   cancer:
-    - AUTO:epithelial%20origin%20tumors
-    - AUTO:mesenchymal%20origin%20tumors
     - AUTO:epithelioma%20glandulae%20sebacei
     - AUTO:carcinoma%20planoepithelialae%20keratodes
-    - AUTO:%E2%80%9CComedo%E2%80%9D%20carcinoma
+    - MONDO:0003575
   gene:
-    - AUTO:D-loop%20nucleotide%20sequence
+    - AUTO:Not%20mentioned
   anatomical_entity:
     - AUTO:neoplastic%20tissue
     - AUTO:normal%20tissue
     - UBERON:0000178
   genecancer_links:
-    - gene: AUTO:D-loop%20nucleotide%20sequence
-      cancer: AUTO:epithelial%20origin%20tumors
-      anatomical_entity: AUTO:-
-    - gene: AUTO:D-loop%20nucleotide%20sequence
-      cancer: AUTO:mesenchymal%20origin%20tumors
-      anatomical_entity: AUTO:None
-    - gene: AUTO:D-loop%20nucleotide%20sequence
-      anatomical_entity: AUTO:epithelioma%20glandulae%20sebacei
-    - gene: AUTO:D-loop%20nucleotide%20sequence
-      cancer: AUTO:carcinoma%20planoepithelialae%20keratodes
-      anatomical_entity: 
-        AUTO:None%20%28no%20specific%20anatomical%20entity%20mentioned%20in%20the%20text%29
-    - gene: AUTO:D-loop
-      cancer: AUTO:%E2%80%9CComedo%E2%80%9D%20carcinoma
-      anatomical_entity: AUTO:None
+    - gene: AUTO:Not%20mentioned
+      cancer: AUTO:Not%20mentioned
+      anatomical_entity: AUTO:Not%20mentioned
   phenotype:
     - AUTO:mtDNA%20recombination
+    - AUTO:mtDNA%20genetic%20instability
   chemical_entity:
-    - AUTO:mtDNA%20mutations
-  cancerphenotype:
-    - cancer: AUTO:promote%20carcinogenesis
-      chemical_entity: AUTO:mtDNA%20mutations
+    - AUTO:D-loop%20nucleotide%20sequence
+  cancer_phenotype:
+    - cancer: MESH:D063646
+      chemical_entity: NCIT:C41132
 named_entities:
-  - id: AUTO:epithelial%20origin%20tumors
-    label: epithelial origin tumors
-  - id: AUTO:mesenchymal%20origin%20tumors
-    label: mesenchymal origin tumors
   - id: AUTO:epithelioma%20glandulae%20sebacei
     label: epithelioma glandulae sebacei
   - id: AUTO:carcinoma%20planoepithelialae%20keratodes
     label: carcinoma planoepithelialae keratodes
-  - id: AUTO:%E2%80%9CComedo%E2%80%9D%20carcinoma
-    label: “Comedo” carcinoma
-  - id: AUTO:D-loop%20nucleotide%20sequence
-    label: D-loop nucleotide sequence
+  - id: MONDO:0003575
+    label: Comedo carcinoma
+  - id: AUTO:Not%20mentioned
+    label: Not mentioned
   - id: AUTO:neoplastic%20tissue
     label: neoplastic tissue
   - id: AUTO:normal%20tissue
     label: normal tissue
   - id: UBERON:0000178
     label: blood
-  - id: AUTO:-
-    label: '-'
-  - id: AUTO:None
-    label: None
-  - id: 
-      AUTO:None%20%28no%20specific%20anatomical%20entity%20mentioned%20in%20the%20text%29
-    label: None (no specific anatomical entity mentioned in the text)
-  - id: AUTO:D-loop
-    label: D-loop
   - id: AUTO:mtDNA%20recombination
     label: mtDNA recombination
-  - id: AUTO:mtDNA%20mutations
-    label: mtDNA mutations
-  - id: AUTO:promote%20carcinogenesis
-    label: promote carcinogenesis
+  - id: AUTO:mtDNA%20genetic%20instability
+    label: mtDNA genetic instability
+  - id: AUTO:D-loop%20nucleotide%20sequence
+    label: D-loop nucleotide sequence
+  - id: MESH:D063646
+    label: carcinogenesis
+  - id: NCIT:C41132
+    label: None

@@ -4,19 +4,13 @@ input_text: |+
 
 
 raw_completion_output: |-
-  cancer: soft tissue sarcomas, fibrosarcoma, undifferentiated pleomorphic sarcoma, peripheral nerve sheath tumors
-
-  gene: TP53, KMT2D
-
-  anatomical_entity: non-specific anatomical locations
-
-  genecancer_links: TP53 is linked to cell cycle/DNA repair; KMT2D is linked to chromatin organization/binding; fusion transcripts of platelet derived growth factor B and collagen genes predict sensitivity to PDGFR inhibitors
-
-  phenotype: not mentioned in the text
-
-  chemical_entity: not mentioned in the text
-
-  cancerphenotype: not mentioned in the text
+  cancer: soft tissue sarcomas; fibrosarcoma; undifferentiated pleomorphic sarcoma; peripheral nerve sheath tumors
+  gene: TP53; KMT2D
+  anatomical_entity: soft tissue
+  genecancer_links: TP53-21%-cell cycle/DNA repair-soft tissue; KMT2D-21%-chromatin organization/binding-soft tissue
+  phenotype: - 
+  chemical_entity: platelet derived growth factor B; collagen
+  cancer_phenotype: PDGFR inhibitors-soft tissue
 prompt: |+
   Split the following piece of text into fields in the following format:
 
@@ -25,57 +19,59 @@ prompt: |+
 
 
   Text:
-  not mentioned in the text
+  PDGFR inhibitors-soft tissue
 
   ===
 
 extracted_object:
   cancer:
-    - AUTO:soft%20tissue%20sarcomas%2C%20fibrosarcoma%2C%20undifferentiated%20pleomorphic%20sarcoma%2C%20peripheral%20nerve%20sheath%20tumors
+    - MONDO:0018078
+    - MESH:D005354
+    - MONDO:0002142
+    - MESH:M0336464
   gene:
-    - AUTO:TP53%2C%20KMT2D
+    - HGNC:11998
+    - HGNC:7133
   anatomical_entity:
-    - AUTO:non-specific%20anatomical%20locations
+    - AUTO:soft%20tissue
   genecancer_links:
     - gene: HGNC:11998
+      cancer: NCIT:C12471
       anatomical_entity: AUTO:cell%20cycle/DNA%20repair
     - gene: HGNC:7133
-      cancer: NCIT:C41132
-      anatomical_entity: AUTO:chromatin%20organization/binding
-    - gene: AUTO:platelet%20derived%20growth%20factor%20B%20and%20collagen%20genes
-      cancer: NCIT:C18902
-      anatomical_entity: AUTO:N/A
+      anatomical_entity: AUTO:soft%20tissue
   phenotype:
-    - AUTO:not%20mentioned%20in%20the%20text
+    - AUTO:-
   chemical_entity:
-    - AUTO:not%20mentioned%20in%20the%20text
-  cancerphenotype:
-    - cancer: AUTO:not%20mentioned%20in%20the%20text
-      chemical_entity: AUTO:not%20mentioned%20in%20the%20text
+    - AUTO:platelet%20derived%20growth%20factor%20B
+    - CHEBI:3815
+  cancer_phenotype:
+    - cancer: NCIT:C12471
+      chemical_entity: CHEBI:62434
 named_entities:
-  - id: 
-      AUTO:soft%20tissue%20sarcomas%2C%20fibrosarcoma%2C%20undifferentiated%20pleomorphic%20sarcoma%2C%20peripheral%20nerve%20sheath%20tumors
-    label: soft tissue sarcomas, fibrosarcoma, undifferentiated pleomorphic sarcoma,
-      peripheral nerve sheath tumors
-  - id: AUTO:TP53%2C%20KMT2D
-    label: TP53, KMT2D
-  - id: AUTO:non-specific%20anatomical%20locations
-    label: non-specific anatomical locations
+  - id: MONDO:0018078
+    label: soft tissue sarcomas
+  - id: MESH:D005354
+    label: fibrosarcoma
+  - id: MONDO:0002142
+    label: undifferentiated pleomorphic sarcoma
+  - id: MESH:M0336464
+    label: peripheral nerve sheath tumors
   - id: HGNC:11998
     label: TP53
-  - id: AUTO:cell%20cycle/DNA%20repair
-    label: cell cycle/DNA repair
   - id: HGNC:7133
     label: KMT2D
-  - id: NCIT:C41132
-    label: None
-  - id: AUTO:chromatin%20organization/binding
-    label: chromatin organization/binding
-  - id: AUTO:platelet%20derived%20growth%20factor%20B%20and%20collagen%20genes
-    label: platelet derived growth factor B and collagen genes
-  - id: NCIT:C18902
-    label: N/A
-  - id: AUTO:N/A
-    label: N/A
-  - id: AUTO:not%20mentioned%20in%20the%20text
-    label: not mentioned in the text
+  - id: AUTO:soft%20tissue
+    label: soft tissue
+  - id: NCIT:C12471
+    label: soft tissue
+  - id: AUTO:cell%20cycle/DNA%20repair
+    label: cell cycle/DNA repair
+  - id: AUTO:-
+    label: '-'
+  - id: AUTO:platelet%20derived%20growth%20factor%20B
+    label: platelet derived growth factor B
+  - id: CHEBI:3815
+    label: collagen
+  - id: CHEBI:62434
+    label: PDGFR inhibitors

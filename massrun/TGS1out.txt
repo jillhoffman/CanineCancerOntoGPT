@@ -2,74 +2,113 @@
 input_text: |
   Tri methylguanosine synthase 1 (TGS1) is the enzyme that hyper methylates the hallmark 7-methyl-guanosine cap (m7G-cap) appended to the transcription start site of RNAs. The m7G-cap and the eIF4E-cap binding protein guide canonical cap-dependent translation of mRNAs, whereas hyper methylated cap, m2,2,7G-cap (TMG) lacks adequate eIF4E affinity and licenses entry into a different translation initiation pathway. The potential role for TGS1 and TMG-capped mRNA in neoplastic growth is unknown. Canine sarcoma has high translational value to the human disease. Cumulative downregulation of protein synthesis in osteosarcoma OSCA-40 was achieved cooperatively by siTGS1 and Torin-1. Torin-1 inhibited the proliferation of three canine sarcoma explants in a reversible manner that was eliminated by siRNA-downregulation of TGS1. TGS1 failure prevented the anchorage-independent growth of osteo- and hemangio-sarcomas and curtailed sarcoma recovery from mTOR inhibition. RNA immunoprecipitation studies identified TMG-capped mRNAs encoding TGS1, DHX9 and JUND. TMG-tgs1 transcripts were downregulated by leptomycin B and TGS1 failure was compensated by eIF4E mRNP-dependent tgs1 mRNA translation affected by mTOR. The evidence documents TMG-capped mRNAs are hallmarks of the investigated neoplasms and synergy between TGS1 specialized translation and canonical translation is involved in sarcoma recovery from mTOR inhibition. Therapeutic targeting of TGS1 activity in cancer is ripe for future exploration.
 raw_completion_output: |-
-  cancer: canine sarcoma, osteosarcoma, hemangio-sarcomas
-  gene: TGS1, DHX9, JUND
-  anatomical_entity: osteo- and hemangio-sarcomas
-  genecancer_links: TGS1-canine sarcoma-osteo- and hemangio-sarcomas; DHX9-canine sarcoma; JUND-canine sarcoma
-  phenotype: neoplastic growth
-  chemical_entity: Tri methylguanosine synthase 1 (TGS1), m7G-cap, m2,2,7G-cap (TMG), eIF4E-cap binding protein, Torin-1, leptomycin B, mTOR
-  cancerphenotype: downregulation of protein synthesis, inhibition of proliferation, anchorage-independent growth, curtailed sarcoma recovery from mTOR inhibition
+  cancer: canine sarcoma; osteosarcoma; hemangio-sarcoma
+  gene: TGS1; DHX9; JUND
+  anatomical_entity: not mentioned
+  genecancer_links: TGS1-canine sarcoma, osteosarcoma, hemangio-sarcoma; DHX9-not mentioned; JUND-not mentioned
+  phenotype: high translational value; downregulation of protein synthesis; inhibited proliferation; prevention of anchorage-independent growth; curtailed sarcoma recovery
+  chemical_entity: m7G-cap; m2,2,7G-cap (TMG); Torin-1; leptomycin B; mTOR
+  cancer_phenotype: involvement of TMG-capped mRNAs in neoplastic growth; synergy between TGS1 specialized translation and canonical translation in sarcoma recovery; therapeutic targeting of TGS1 activity in cancer
 prompt: |+
-  From the text below, extract the following entities in the following format:
+  Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
   chemical_entity: <the value for chemical_entity>
 
 
   Text:
-  downregulation of protein synthesis, inhibition of proliferation, anchorage-independent growth, curtailed sarcoma recovery from mTOR inhibition
+  therapeutic targeting of TGS1 activity in cancer
 
   ===
 
 extracted_object:
   cancer:
-    - AUTO:canine%20sarcoma%2C%20osteosarcoma%2C%20hemangio-sarcomas
+    - MONDO:0700149
+    - MESH:D012516
+    - AUTO:hemangio-sarcoma
   gene:
-    - AUTO:TGS1%2C%20DHX9%2C%20JUND
+    - HGNC:17843
+    - HGNC:2750
+    - HGNC:6206
   anatomical_entity:
-    - AUTO:osteo-%20and%20hemangio-sarcomas
+    - AUTO:not%20mentioned
   genecancer_links:
     - gene: HGNC:17843
-      cancer: AUTO:canine%20sarcoma-osteo-%20and%20hemangio-sarcomas
+      cancer: AUTO:canine%20sarcoma%2C%20osteosarcoma%2C%20hemangio-sarcoma
       anatomical_entity: AUTO:N/A
     - gene: HGNC:2750
-      cancer: MONDO:0700149
-      anatomical_entity: AUTO:N/A
+      cancer: AUTO:not%20mentioned
+      anatomical_entity: AUTO:not%20mentioned
     - gene: HGNC:6206
-      cancer: MONDO:0700149
-      anatomical_entity: AUTO:N/A
+      cancer: AUTO:not%20mentioned
+      anatomical_entity: AUTO:not%20mentioned
   phenotype:
-    - MESH:D009369
+    - AUTO:high%20translational%20value
+    - AUTO:downregulation%20of%20protein%20synthesis
+    - AUTO:inhibited%20proliferation
+    - AUTO:prevention%20of%20anchorage-independent%20growth
+    - AUTO:curtailed%20sarcoma%20recovery
   chemical_entity:
-    - PR:000016300
-  cancerphenotype:
-    - chemical_entity: 
-        AUTO:protein%20synthesis%2C%20proliferation%2C%20anchorage-independent%20growth%2C%20sarcoma%20recovery%2C%20mTOR%20inhibition
+    - AUTO:m7G-cap
+    - AUTO:m2%2C2%2C7G-cap%20%28TMG%29
+    - AUTO:Torin-1
+    - CHEBI:52646
+    - PR:000003041
+  cancer_phenotype:
+    - cancer: MONDO:0005070
+      chemical_entity: AUTO:TMG-capped%20mRNAs
+    - cancer: MESH:D012509
+      chemical_entity: NCIT:C41132
+    - cancer: MESH:M0014584
+      chemical_entity: PR:000016300
 named_entities:
-  - id: AUTO:canine%20sarcoma%2C%20osteosarcoma%2C%20hemangio-sarcomas
-    label: canine sarcoma, osteosarcoma, hemangio-sarcomas
-  - id: AUTO:TGS1%2C%20DHX9%2C%20JUND
-    label: TGS1, DHX9, JUND
-  - id: AUTO:osteo-%20and%20hemangio-sarcomas
-    label: osteo- and hemangio-sarcomas
-  - id: HGNC:17843
-    label: TGS1
-  - id: AUTO:canine%20sarcoma-osteo-%20and%20hemangio-sarcomas
-    label: canine sarcoma-osteo- and hemangio-sarcomas
-  - id: AUTO:N/A
-    label: N/A
-  - id: HGNC:2750
-    label: DHX9
   - id: MONDO:0700149
     label: canine sarcoma
+  - id: MESH:D012516
+    label: osteosarcoma
+  - id: AUTO:hemangio-sarcoma
+    label: hemangio-sarcoma
+  - id: HGNC:17843
+    label: TGS1
+  - id: HGNC:2750
+    label: DHX9
   - id: HGNC:6206
     label: JUND
-  - id: MESH:D009369
+  - id: AUTO:not%20mentioned
+    label: not mentioned
+  - id: AUTO:canine%20sarcoma%2C%20osteosarcoma%2C%20hemangio-sarcoma
+    label: canine sarcoma, osteosarcoma, hemangio-sarcoma
+  - id: AUTO:N/A
+    label: N/A
+  - id: AUTO:high%20translational%20value
+    label: high translational value
+  - id: AUTO:downregulation%20of%20protein%20synthesis
+    label: downregulation of protein synthesis
+  - id: AUTO:inhibited%20proliferation
+    label: inhibited proliferation
+  - id: AUTO:prevention%20of%20anchorage-independent%20growth
+    label: prevention of anchorage-independent growth
+  - id: AUTO:curtailed%20sarcoma%20recovery
+    label: curtailed sarcoma recovery
+  - id: AUTO:m7G-cap
+    label: m7G-cap
+  - id: AUTO:m2%2C2%2C7G-cap%20%28TMG%29
+    label: m2,2,7G-cap (TMG)
+  - id: AUTO:Torin-1
+    label: Torin-1
+  - id: CHEBI:52646
+    label: leptomycin B
+  - id: PR:000003041
+    label: mTOR
+  - id: MONDO:0005070
     label: neoplastic growth
+  - id: AUTO:TMG-capped%20mRNAs
+    label: TMG-capped mRNAs
+  - id: MESH:D012509
+    label: sarcoma
+  - id: NCIT:C41132
+    label: None
+  - id: MESH:M0014584
+    label: cancer
   - id: PR:000016300
-    label: Tri methylguanosine synthase 1 (TGS1), m7G-cap, m2,2,7G-cap (TMG), eIF4E-cap
-      binding protein, Torin-1, leptomycin B, mTOR
-  - id: 
-      AUTO:protein%20synthesis%2C%20proliferation%2C%20anchorage-independent%20growth%2C%20sarcoma%20recovery%2C%20mTOR%20inhibition
-    label: protein synthesis, proliferation, anchorage-independent growth, sarcoma
-      recovery, mTOR inhibition
+    label: TGS1

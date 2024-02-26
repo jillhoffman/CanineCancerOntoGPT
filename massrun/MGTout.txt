@@ -8,13 +8,13 @@ input_text: |
 
   The association between MGT development in male dogs and co-occurrence of testicular tumours (TTs) has been discussed for years. Thus, cases of development of both tumours were included in this study. As a result, only in 12.7% cases of MGTs also history of TTs was described. Therefore, no general association between these tumours should be assumed.
 raw_completion_output: |-
-  cancer: Mammary gland tumours (MGTs)
-  gene: not mentioned
-  anatomical_entity: mammary glands
-  genecancer_links: not applicable
-  phenotype: not mentioned
-  chemical_entity: not mentioned
-  cancerphenotype: not mentioned
+  cancer: mammary gland tumours; 
+  gene: N/A 
+  anatomical_entity: mammary glands; 
+  genecancer_links: N/A 
+  phenotype: benign tumours; 
+  chemical_entity: N/A 
+  cancer_phenotype: N/A
 prompt: |+
   Split the following piece of text into fields in the following format:
 
@@ -23,36 +23,36 @@ prompt: |+
 
 
   Text:
-  not mentioned
+  N/A
 
   ===
 
 extracted_object:
   cancer:
-    - AUTO:Mammary%20gland%20tumours%20%28MGTs%29
+    - AUTO:mammary%20gland%20tumours
   gene:
-    - AUTO:not%20mentioned
+    - AUTO:N/A
   anatomical_entity:
     - UBERON:0001911
   genecancer_links:
-    - gene: AUTO:not%20applicable
-      cancer: NCIT:C48660
-      anatomical_entity: AUTO:not%20applicable
+    - gene: AUTO:N/A
+      cancer: NCIT:C18902
+      anatomical_entity: AUTO:N/A
   phenotype:
-    - AUTO:not%20mentioned
+    - NCIT:C3677
   chemical_entity:
-    - AUTO:not%20mentioned
-  cancerphenotype:
-    - cancer: AUTO:not%20mentioned
-      chemical_entity: AUTO:not%20mentioned
+    - NCIT:C18902
+  cancer_phenotype:
+    - cancer: NCIT:C18902
+      chemical_entity: NCIT:C18902
 named_entities:
-  - id: AUTO:Mammary%20gland%20tumours%20%28MGTs%29
-    label: Mammary gland tumours (MGTs)
-  - id: AUTO:not%20mentioned
-    label: not mentioned
+  - id: AUTO:mammary%20gland%20tumours
+    label: mammary gland tumours
+  - id: AUTO:N/A
+    label: N/A
   - id: UBERON:0001911
     label: mammary glands
-  - id: AUTO:not%20applicable
-    label: not applicable
-  - id: NCIT:C48660
-    label: not applicable
+  - id: NCIT:C18902
+    label: N/A
+  - id: NCIT:C3677
+    label: benign tumours

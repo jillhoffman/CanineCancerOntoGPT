@@ -3,18 +3,12 @@ input_text: |
   A 12-y-old, male Dachshund was presented for elective orchiectomy. The testes were of normal size. The left testis had numerous dark-red, blood clot–like foci within the vaginal tunic over the pampiniform plexus, epididymis, and testis. Histologically, the red foci were limited to the vaginal tunic and consisted of disorderly growing, variably sized, thin-walled blood vessels lined by a single layer of endothelial cells without mitoses and supported by a thin layer of pericytes. The blood vessels were distended by erythrocytes without thrombus formation. Endothelial cells had cytoplasmic immunolabeling for CD31; pericytes had strong cytoplasmic immunolabeling for α–smooth muscle actin. Our case of subclinical unilateral vascular hamartomas of the vaginal tunic in a dog has not been reported previously in domestic animals or humans, to our knowledge.
 raw_completion_output: |-
   cancer: vascular hamartomas
-
   gene: N/A
-
-  anatomical_entity: vaginal tunic, pampiniform plexus, epididymis, testis
-
+  anatomical_entity: testes, pampiniform plexus, epididymis
   genecancer_links: N/A
-
-  phenotype: N/A
-
+  phenotype: presence of dark-red, blood clot-like foci within the vaginal tunic
   chemical_entity: N/A
-
-  cancerphenotype: N/A
+  cancer_phenotype: N/A
 prompt: |+
   Split the following piece of text into fields in the following format:
 
@@ -33,24 +27,27 @@ extracted_object:
   gene:
     - AUTO:N/A
   anatomical_entity:
-    - AUTO:vaginal%20tunic%2C%20pampiniform%20plexus%2C%20epididymis%2C%20testis
+    - AUTO:testes%2C%20pampiniform%20plexus%2C%20epididymis
   genecancer_links:
     - gene: AUTO:N/A
       cancer: NCIT:C18902
       anatomical_entity: AUTO:N/A
   phenotype:
-    - NCIT:C18902
+    - AUTO:presence%20of%20dark-red%2C%20blood%20clot-like%20foci%20within%20the%20vaginal%20tunic
   chemical_entity:
-    - AUTO:N/A
-  cancerphenotype:
+    - NCIT:C18902
+  cancer_phenotype:
     - cancer: NCIT:C18902
-      chemical_entity: AUTO:N/A
+      chemical_entity: NCIT:C18902
 named_entities:
   - id: NCIT:C3438
     label: vascular hamartomas
   - id: AUTO:N/A
     label: N/A
-  - id: AUTO:vaginal%20tunic%2C%20pampiniform%20plexus%2C%20epididymis%2C%20testis
-    label: vaginal tunic, pampiniform plexus, epididymis, testis
+  - id: AUTO:testes%2C%20pampiniform%20plexus%2C%20epididymis
+    label: testes, pampiniform plexus, epididymis
   - id: NCIT:C18902
     label: N/A
+  - id: 
+      AUTO:presence%20of%20dark-red%2C%20blood%20clot-like%20foci%20within%20the%20vaginal%20tunic
+    label: presence of dark-red, blood clot-like foci within the vaginal tunic
