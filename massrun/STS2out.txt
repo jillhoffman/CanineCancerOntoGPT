@@ -2,70 +2,74 @@
 input_text: |
   Canine soft tissue sarcoma (STS) is relatively common in dogs and is the generic term for tumours that originate from mesenchymal cells. While histopathological grade and immunolabelling with Ki-67 have been used for estimating prognosis, additional indicators are needed for predicting prognosis. Aberrant cell signalling pathways may contribute to disease activity and, therefore, prognostic markers. However, their role in canine STS remains poorly understood. The aim of this study was to investigate expression of phosphorylated Akt (phospho-Akt) and phosphorylated S6 (phospho-S6) as potential prognostic indicators. Immunohistochemical labelling was conducted on clinical samples of canine STS (n = 67). We found that phospho-Akt expression was positively correlated with histopathological grade (P = 0.001) and Ki-67 index (P <0.01). There was no apparent relationship between the type of STS and the expression of phospho-Akt. The number of cases that expressed phospho-S6, which is the downstream molecule of the Akt signalling pathway, was higher in immunopositive phospho-Akt cases than in immunonegative phospho-Akt cases (P <0.0001). Furthermore, phospho-Akt expression was significantly higher in recurrent and metastatic cases. We also confirmed that phosphorylation of Akt occurred in conjunction with S6 phosphorylation in three canine STS cell lines. These results suggest that immunolabelling for phospho-Akt, phospho-S6 and Ki-67 could potentially be used as a prognostic indicator and therapeutic target in canine STS.
 raw_completion_output: |-
-  cancer: Canine soft tissue sarcoma (STS)
-  gene: Akt, S6
-  anatomical_entity: soft tissue
-  genecancer_links: Akt - Canine soft tissue sarcoma (STS); S6 - Canine soft tissue sarcoma (STS)
-  phenotype: disease activity, prognosis
-  chemical_entity: phosphorylated Akt, phosphorylated S6, Ki-67
-  cancer_phenotype: phosphorylated Akt - Canine soft tissue sarcoma (STS); phosphorylated S6 - Canine soft tissue sarcoma (STS)
+  cancer: soft tissue sarcoma; 
+  gene: Akt; S6;
+  anatomical_entity: soft tissue;
+  cancergenelocation: soft tissue sarcoma: Akt; soft tissue sarcoma: S6;
+  phenotype: abnormal cell signaling; recurrent and metastatic cases; 
+  cancerphenotype: soft tissue sarcoma: abnormal cell signaling; soft tissue sarcoma: recurrent and metastatic cases;
+  bio_process: cell signaling pathways; phosphorylation of Akt and S6; 
+  cancerbio: soft tissue sarcoma: cell signaling pathways; soft tissue sarcoma: phosphorylation of Akt and S6;
 prompt: |+
   Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  phosphorylated S6 - Canine soft tissue sarcoma (STS)
+  soft tissue sarcoma: phosphorylation of Akt and S6
 
   ===
 
 extracted_object:
   cancer:
-    - NCIT:C159109
+    - MONDO:0018078
   gene:
-    - AUTO:Akt%2C%20S6
+    - HGNC:391
+    - HGNC:10429
   anatomical_entity:
     - AUTO:soft%20tissue
-  genecancer_links:
-    - gene: HGNC:391
-      cancer: NCIT:C159109
-      anatomical_entity: AUTO:N/A
-    - gene: HGNC:10429
-      cancer: MONDO:0700156
-      anatomical_entity: UBERON:0002734
+  cancergenelocation:
+    - cancer: MONDO:0018078
+      gene: HGNC:391
+    - cancer: MONDO:0018078
+      gene: HGNC:10429
+      location: AUTO:N/A
   phenotype:
-    - AUTO:disease%20activity%2C%20prognosis
-  chemical_entity:
-    - AUTO:phosphorylated%20Akt%2C%20phosphorylated%20S6%2C%20Ki-67
-  cancer_phenotype:
-    - cancer: NCIT:C159109
-      chemical_entity: AUTO:phosphorylated%20Akt
-    - cancer: NCIT:C159109
-      chemical_entity: AUTO:phosphorylated%20S6
+    - AUTO:abnormal%20cell%20signaling
+    - AUTO:recurrent%20and%20metastatic%20cases
+  cancerphenotype:
+    - cancer: MONDO:0018078
+      phenotype: NCIT:C38046
+    - cancer: MONDO:0018078
+      phenotype: AUTO:recurrent%20and%20metastatic%20cases
+  bio_process: AUTO:cell%20signaling%20pathways%3B%20phosphorylation%20of%20Akt%20and%20S6%3B
+  cancerbio:
+    - cancer: MONDO:0018078
+      bioprocess: AUTO:cell%20signaling%20pathways
+    - cancer: MONDO:0018078
+      bioprocess: AUTO:phosphorylation%20of%20Akt%20and%20S6
 named_entities:
-  - id: NCIT:C159109
-    label: Canine soft tissue sarcoma (STS)
-  - id: AUTO:Akt%2C%20S6
-    label: Akt, S6
-  - id: AUTO:soft%20tissue
-    label: soft tissue
+  - id: MONDO:0018078
+    label: soft tissue sarcoma
   - id: HGNC:391
     label: Akt
-  - id: AUTO:N/A
-    label: N/A
   - id: HGNC:10429
     label: S6
-  - id: MONDO:0700156
-    label: Canine soft tissue sarcoma
-  - id: UBERON:0002734
-    label: STS
-  - id: AUTO:disease%20activity%2C%20prognosis
-    label: disease activity, prognosis
-  - id: AUTO:phosphorylated%20Akt%2C%20phosphorylated%20S6%2C%20Ki-67
-    label: phosphorylated Akt, phosphorylated S6, Ki-67
-  - id: AUTO:phosphorylated%20Akt
-    label: phosphorylated Akt
-  - id: AUTO:phosphorylated%20S6
-    label: phosphorylated S6
+  - id: AUTO:soft%20tissue
+    label: soft tissue
+  - id: AUTO:N/A
+    label: N/A
+  - id: AUTO:abnormal%20cell%20signaling
+    label: abnormal cell signaling
+  - id: AUTO:recurrent%20and%20metastatic%20cases
+    label: recurrent and metastatic cases
+  - id: NCIT:C38046
+    label: none specified
+  - id: AUTO:cell%20signaling%20pathways%3B%20phosphorylation%20of%20Akt%20and%20S6%3B
+    label: cell signaling pathways; phosphorylation of Akt and S6;
+  - id: AUTO:cell%20signaling%20pathways
+    label: cell signaling pathways
+  - id: AUTO:phosphorylation%20of%20Akt%20and%20S6
+    label: phosphorylation of Akt and S6

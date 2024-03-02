@@ -8,18 +8,19 @@ input_text: |
 
   The association between MGT development in male dogs and co-occurrence of testicular tumours (TTs) has been discussed for years. Thus, cases of development of both tumours were included in this study. As a result, only in 12.7% cases of MGTs also history of TTs was described. Therefore, no general association between these tumours should be assumed.
 raw_completion_output: |-
-  cancer: mammary gland tumours; 
-  gene: N/A 
-  anatomical_entity: mammary glands; 
-  genecancer_links: N/A 
-  phenotype: benign tumours; 
-  chemical_entity: N/A 
-  cancer_phenotype: N/A
+  cancer: Mammary gland tumours; male dogs
+  gene: N/A
+  anatomical_entity: mammary glands
+  cancergenelocation: N/A
+  phenotype: benign tumours; adenomas; age peak at 11 years
+  cancerphenotype: Mammary gland tumours
+  bio_process: N/A
+  cancerbio: N/A
 prompt: |+
   Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
@@ -29,25 +30,32 @@ prompt: |+
 
 extracted_object:
   cancer:
-    - AUTO:mammary%20gland%20tumours
+    - AUTO:Mammary%20gland%20tumours
+    - AUTO:male%20dogs
   gene:
     - AUTO:N/A
   anatomical_entity:
     - UBERON:0001911
-  genecancer_links:
-    - gene: AUTO:N/A
-      cancer: NCIT:C18902
-      anatomical_entity: AUTO:N/A
+  cancergenelocation:
+    - cancer: NCIT:C18902
+      gene: AUTO:N/A
+      location: AUTO:N/A
   phenotype:
     - NCIT:C3677
-  chemical_entity:
-    - NCIT:C18902
-  cancer_phenotype:
+    - MESH:D000236
+    - AUTO:age%20peak%20at%2011%20years
+  cancerphenotype:
+    - cancer: AUTO:Mammary%20gland%20tumours
+      phenotype: MESH:D008321
+  bio_process: NCIT:C18902
+  cancerbio:
     - cancer: NCIT:C18902
-      chemical_entity: NCIT:C18902
+      bioprocess: NCIT:C18902
 named_entities:
-  - id: AUTO:mammary%20gland%20tumours
-    label: mammary gland tumours
+  - id: AUTO:Mammary%20gland%20tumours
+    label: Mammary gland tumours
+  - id: AUTO:male%20dogs
+    label: male dogs
   - id: AUTO:N/A
     label: N/A
   - id: UBERON:0001911
@@ -56,3 +64,9 @@ named_entities:
     label: N/A
   - id: NCIT:C3677
     label: benign tumours
+  - id: MESH:D000236
+    label: adenomas
+  - id: AUTO:age%20peak%20at%2011%20years
+    label: age peak at 11 years
+  - id: MESH:D008321
+    label: Mammary gland

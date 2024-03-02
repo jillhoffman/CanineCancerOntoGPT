@@ -4,16 +4,17 @@ input_text: |
 raw_completion_output: |-
   cancer: vascular hamartomas
   gene: N/A
-  anatomical_entity: testes, pampiniform plexus, epididymis
-  genecancer_links: N/A
-  phenotype: presence of dark-red, blood clot-like foci within the vaginal tunic
-  chemical_entity: N/A
-  cancer_phenotype: N/A
+  anatomical_entity: vaginal tunic; pampiniform plexus; epididymis; testis
+  cancergenelocation: N/A
+  phenotype: dark-red, blood clot–like foci; disorderly growing blood vessels; distended vessels by erythrocytes
+  cancerphenotype: N/A
+  bio_process: N/A
+  cancerbio: N/A
 prompt: |+
   Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
@@ -27,27 +28,43 @@ extracted_object:
   gene:
     - AUTO:N/A
   anatomical_entity:
-    - AUTO:testes%2C%20pampiniform%20plexus%2C%20epididymis
-  genecancer_links:
-    - gene: AUTO:N/A
-      cancer: NCIT:C18902
-      anatomical_entity: AUTO:N/A
-  phenotype:
-    - AUTO:presence%20of%20dark-red%2C%20blood%20clot-like%20foci%20within%20the%20vaginal%20tunic
-  chemical_entity:
-    - NCIT:C18902
-  cancer_phenotype:
+    - AUTO:vaginal%20tunic
+    - UBERON:0001330
+    - UBERON:0001301
+    - UBERON:0000473
+  cancergenelocation:
     - cancer: NCIT:C18902
-      chemical_entity: NCIT:C18902
+      gene: AUTO:N/A
+      location: AUTO:N/A
+  phenotype:
+    - AUTO:dark-red%2C%20blood%20clot%E2%80%93like%20foci
+    - AUTO:disorderly%20growing%20blood%20vessels
+    - AUTO:distended%20vessels%20by%20erythrocytes
+  cancerphenotype:
+    - cancer: NCIT:C18902
+      phenotype: NCIT:C18902
+  bio_process: NCIT:C18902
+  cancerbio:
+    - cancer: NCIT:C18902
+      bioprocess: NCIT:C18902
 named_entities:
   - id: NCIT:C3438
     label: vascular hamartomas
   - id: AUTO:N/A
     label: N/A
-  - id: AUTO:testes%2C%20pampiniform%20plexus%2C%20epididymis
-    label: testes, pampiniform plexus, epididymis
+  - id: AUTO:vaginal%20tunic
+    label: vaginal tunic
+  - id: UBERON:0001330
+    label: pampiniform plexus
+  - id: UBERON:0001301
+    label: epididymis
+  - id: UBERON:0000473
+    label: testis
   - id: NCIT:C18902
     label: N/A
-  - id: 
-      AUTO:presence%20of%20dark-red%2C%20blood%20clot-like%20foci%20within%20the%20vaginal%20tunic
-    label: presence of dark-red, blood clot-like foci within the vaginal tunic
+  - id: AUTO:dark-red%2C%20blood%20clot%E2%80%93like%20foci
+    label: dark-red, blood clot–like foci
+  - id: AUTO:disorderly%20growing%20blood%20vessels
+    label: disorderly growing blood vessels
+  - id: AUTO:distended%20vessels%20by%20erythrocytes
+    label: distended vessels by erythrocytes

@@ -16,21 +16,22 @@ input_text: |2+
 
 raw_completion_output: |-
   cancer: hepatocellular carcinoma; hepatocellular adenoma; nodular hyperplasia
-  gene: Not specified
-  anatomical_entity: Liver
-  genecancer_links: Not specified
-  phenotype: Aberrant DNA methylation; diverse patterns of genome-wide DNA methylation
-  chemical_entity: Not specified
-  cancer_phenotype: DNA methylation changes; DNA methylation patterns
+  gene: not mentioned
+  anatomical_entity: liver
+  cancergenelocation: hepatocellular carcinoma - not mentioned
+  phenotype: not mentioned
+  cancerphenotype: not mentioned
+  bio_process: DNA methylation
+  cancerbio: hepatocellular carcinoma - DNA methylation
 prompt: |+
   Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  DNA methylation patterns
+  hepatocellular carcinoma - DNA methylation
 
   ===
 
@@ -40,21 +41,22 @@ extracted_object:
     - MONDO:0018902
     - NCIT:C131437
   gene:
-    - AUTO:Not%20specified
+    - AUTO:not%20mentioned
   anatomical_entity:
     - UBERON:0002107
-  genecancer_links:
-    - gene: AUTO:Not%20specified
-      cancer: NCIT:C149701
-      anatomical_entity: AUTO:Not%20specified
+  cancergenelocation:
+    - cancer: MESH:D006528
+      gene: AUTO:not%20mentioned
+      location: AUTO:not%20mentioned
   phenotype:
-    - NCIT:C36664
-    - AUTO:diverse%20patterns%20of%20genome-wide%20DNA%20methylation
-  chemical_entity:
-    - NCIT:C149701
-  cancer_phenotype:
-    - chemical_entity: AUTO:DNA%2C%20methylation
-    - chemical_entity: AUTO:DNA%20methylation%20patterns
+    - AUTO:not%20mentioned
+  cancerphenotype:
+    - cancer: AUTO:not%20mentioned
+      phenotype: AUTO:not%20mentioned
+  bio_process: NCIT:C17961
+  cancerbio:
+    - cancer: MESH:D006528
+      bioprocess: NCIT:C17961
 named_entities:
   - id: MESH:D006528
     label: hepatocellular carcinoma
@@ -62,17 +64,9 @@ named_entities:
     label: hepatocellular adenoma
   - id: NCIT:C131437
     label: nodular hyperplasia
-  - id: AUTO:Not%20specified
-    label: Not specified
+  - id: AUTO:not%20mentioned
+    label: not mentioned
   - id: UBERON:0002107
-    label: Liver
-  - id: NCIT:C149701
-    label: Not specified
-  - id: NCIT:C36664
-    label: Aberrant DNA methylation
-  - id: AUTO:diverse%20patterns%20of%20genome-wide%20DNA%20methylation
-    label: diverse patterns of genome-wide DNA methylation
-  - id: AUTO:DNA%2C%20methylation
-    label: DNA, methylation
-  - id: AUTO:DNA%20methylation%20patterns
-    label: DNA methylation patterns
+    label: liver
+  - id: NCIT:C17961
+    label: DNA methylation

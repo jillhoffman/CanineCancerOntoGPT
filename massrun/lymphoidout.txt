@@ -19,21 +19,22 @@ input_text: |2+
 
 raw_completion_output: |-
   cancer: T-cell lymphoid neoplasia
-  gene: N/A
+  gene: n/a
   anatomical_entity: bone marrow
-  genecancer_links: N/A
-  phenotype: hypercalcemia, polyuria, polydipsia, neutropenia, thrombocytopenia
-  chemical_entity: N/A
-  cancer_phenotype: N/A
+  cancergenelocation: T-cell lymphoid neoplasia; bone marrow
+  phenotype: hypercalcemia; polyuria; polydipsia; neutropenia; thrombocytopenia
+  cancerphenotype: T-cell lymphoid neoplasia; hypercalcemia, polyuria, polydipsia, neutropenia, thrombocytopenia
+  bio_process: expansion of neoplastic T cells in the bone marrow; expression of low-class-II major histocompatibility complex; expression of CD4 on neoplastic T cells
+  cancerbio: T-cell lymphoid neoplasia; expansion of neoplastic T cells in the bone marrow; expression of low-class-II major histocompatibility complex; expression of CD4 on neoplastic T cells
 prompt: |+
   Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  N/A
+  expression of CD4 on neoplastic T cells
 
   ===
 
@@ -41,29 +42,66 @@ extracted_object:
   cancer:
     - AUTO:T-cell%20lymphoid%20neoplasia
   gene:
-    - AUTO:N/A
+    - AUTO:n/a
   anatomical_entity:
     - UBERON:0002371
-  genecancer_links:
-    - gene: AUTO:N/A
-      cancer: NCIT:C18902
-      anatomical_entity: AUTO:N/A
+  cancergenelocation:
+    - cancer: AUTO:T-cell%20lymphoid%20neoplasia
+    - location: UBERON:0002371
   phenotype:
-    - AUTO:hypercalcemia%2C%20polyuria%2C%20polydipsia%2C%20neutropenia%2C%20thrombocytopenia
-  chemical_entity:
-    - NCIT:C18902
-  cancer_phenotype:
+    - HP:0003072
+    - HP:0000103
+    - HP:0001959
+    - HP:0001875
+    - HP:0001873
+  cancerphenotype:
+    - cancer: AUTO:T-cell%20lymphoid%20neoplasia
+      phenotype: NCIT:C18902
     - cancer: NCIT:C18902
-      chemical_entity: NCIT:C18902
+      phenotype: NCIT:C18902
+  bio_process: 
+    AUTO:expansion%20of%20neoplastic%20T%20cells%20in%20the%20bone%20marrow%3B%20expression%20of%20low-class-II%20major%20histocompatibility%20complex%3B%20expression%20of%20CD4%20on%20neoplastic%20T%20cells
+  cancerbio:
+    - cancer: AUTO:T-cell%20lymphoid%20neoplasia
+      bioprocess: NCIT:C48660
+    - cancer: MONDO:0015760
+      bioprocess: AUTO:neoplastic%20cell%20expansion%20in%20bone%20marrow
+    - cancer: NCIT:C18902
+      bioprocess: AUTO:immunological%20response
+    - cancer: AUTO:neoplastic%20T%20cells
+      bioprocess: AUTO:expression%20of%20CD4
 named_entities:
   - id: AUTO:T-cell%20lymphoid%20neoplasia
     label: T-cell lymphoid neoplasia
-  - id: AUTO:N/A
-    label: N/A
+  - id: AUTO:n/a
+    label: n/a
   - id: UBERON:0002371
     label: bone marrow
+  - id: HP:0003072
+    label: hypercalcemia
+  - id: HP:0000103
+    label: polyuria
+  - id: HP:0001959
+    label: polydipsia
+  - id: HP:0001875
+    label: neutropenia
+  - id: HP:0001873
+    label: thrombocytopenia
   - id: NCIT:C18902
-    label: N/A
+    label: n/a
   - id: 
-      AUTO:hypercalcemia%2C%20polyuria%2C%20polydipsia%2C%20neutropenia%2C%20thrombocytopenia
-    label: hypercalcemia, polyuria, polydipsia, neutropenia, thrombocytopenia
+      AUTO:expansion%20of%20neoplastic%20T%20cells%20in%20the%20bone%20marrow%3B%20expression%20of%20low-class-II%20major%20histocompatibility%20complex%3B%20expression%20of%20CD4%20on%20neoplastic%20T%20cells
+    label: expansion of neoplastic T cells in the bone marrow; expression of low-class-II
+      major histocompatibility complex; expression of CD4 on neoplastic T cells
+  - id: NCIT:C48660
+    label: Not applicable
+  - id: MONDO:0015760
+    label: T cell lymphoma
+  - id: AUTO:neoplastic%20cell%20expansion%20in%20bone%20marrow
+    label: neoplastic cell expansion in bone marrow
+  - id: AUTO:immunological%20response
+    label: immunological response
+  - id: AUTO:neoplastic%20T%20cells
+    label: neoplastic T cells
+  - id: AUTO:expression%20of%20CD4
+    label: expression of CD4

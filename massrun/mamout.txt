@@ -6,66 +6,123 @@ input_text: |
 
   If the tumor has metastasized (spread to other areas of the body), other signs may become evident. Your dog may generally feel unwell, eat less, become lethargic, and lose weight. If the lungs are involved, your dog may have problems with breathing or develop a cough.
 raw_completion_output: |-
-  cancer: mammary neoplasms; canine mammary tumors
+  cancer: mammary neoplasms; luminal A; luminal B; triple-negative; HER-2 positive
   gene: PIK3CA
   anatomical_entity: mammary gland
-  genecancer_links: PIK3CA linked to canine mammary tumors; mammary gland
-  phenotype: palpable masses, ulceration, bleeding, warmth, pain, discharge, feeling unwell, reduced appetite, lethargy, weight loss, breathing problems, cough
-  chemical_entity: estrogen receptor-α, progesterone receptor, human epidermal growth factor receptor 2 (HER-2)/neu, E-cadherin
-  cancer_phenotype: E-cadherin expression changes linked to mammary neoplasms; canine mammary tumors
+  cancergenelocation: mammary neoplasms- PIK3CA- mammary gland
+  phenotype: palpable masses; firm and nodular masses; ulceration and bleeding of skin; warmth and pain in affected area; discharge from mammary gland; lethargy; weight loss; breathing problems; cough
+  cancerphenotype: mammary neoplasms- palpable masses; mammary neoplasms- ulceration and bleeding of skin; mammary neoplasms- warmth and pain in affected area; mammary neoplasms- discharge from mammary gland; mammary neoplasms- lethargy; mammary neoplasms- weight loss; mammary neoplasms- breathing problems; mammary neoplasms- cough
+  bio_process: mutations in PIK3CA gene leading to development of mammary tumors; overexpression of estrogen receptor-α, progesterone receptor, HER-2/neu leading to different phenotypes of mammary tumors; upregulation of E-cadherin linked to improved prognosis in luminal A and B phenotypes
+  cancerbio: mammary neoplasms- mutations in PIK3CA gene leading to development of mammary tumors; mammary neoplasms- overexpression of estrogen receptor-α, progesterone receptor, HER-2/neu leading to different phenotypes of mammary tumors; mammary neoplasms- upregulation of E-cadherin linked to improved prognosis in luminal A and B phenotypes
 prompt: |+
-  Split the following piece of text into fields in the following format:
+  From the text below, extract the following entities in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  canine mammary tumors
+  mammary neoplasms- upregulation of E-cadherin linked to improved prognosis in luminal A and B phenotypes
 
   ===
 
 extracted_object:
   cancer:
     - MONDO:0007254
-    - AUTO:canine%20mammary%20tumors
+    - MONDO:0021116
+    - MONDO:0021115
+    - AUTO:triple-negative
+    - NCIT:C68748
   gene:
     - HGNC:8975
   anatomical_entity:
     - UBERON:0001911
-  genecancer_links:
-    - gene: HGNC:8975
-      cancer: AUTO:canine%20mammary%20tumors
-      anatomical_entity: AUTO:-
-    - anatomical_entity: UBERON:0001911
-  phenotype:
-    - AUTO:palpable%20masses%2C%20ulceration%2C%20bleeding%2C%20warmth%2C%20pain%2C%20discharge%2C%20feeling%20unwell%2C%20reduced%20appetite%2C%20lethargy%2C%20weight%20loss%2C%20breathing%20problems%2C%20cough
-  chemical_entity:
-    - PR:P34708
-  cancer_phenotype:
+  cancergenelocation:
     - cancer: MONDO:0007254
-      chemical_entity: PR:000001447
-    - cancer: AUTO:canine%20mammary%20tumors
-      chemical_entity: NCIT:C18902
+      gene: HGNC:8975
+      location: UBERON:0001911
+  phenotype:
+    - NCIT:C95097
+    - AUTO:firm%20and%20nodular%20masses
+    - AUTO:ulceration%20and%20bleeding%20of%20skin
+    - AUTO:warmth%20and%20pain%20in%20affected%20area
+    - AUTO:discharge%20from%20mammary%20gland
+    - HP:0001254
+    - HP:0001824
+    - AUTO:breathing%20problems
+    - HP:0012735
+  cancerphenotype:
+    - cancer: MONDO:0007254
+      phenotype: NCIT:C95097
+    - cancer: MONDO:0007254
+      phenotype: AUTO:ulceration%20and%20bleeding%20of%20skin
+    - cancer: MONDO:0007254
+      phenotype: NCIT:C18902
+    - cancer: MONDO:0007254
+      phenotype: NCIT:C9335
+    - cancer: MONDO:0007254
+      phenotype: HP:0001254
+    - cancer: MONDO:0007254
+      phenotype: HP:0001824
+    - cancer: MONDO:0007254
+      phenotype: AUTO:breathing%20problems
+    - cancer: MONDO:0007254
+      phenotype: HP:0012735
+  bio_process: 
+    AUTO:mutations%20in%20PIK3CA%20gene%20leading%20to%20development%20of%20mammary%20tumors%3B%20overexpression%20of%20estrogen%20receptor-%CE%B1%2C%20progesterone%20receptor%2C%20HER-2/neu%20leading%20to%20different%20phenotypes%20of%20mammary%20tumors%3B%20upregulation%20of%20E-cadherin%20linked%20to%20improved%20prognosis%20in%20luminal%20A%20and%20B%20phenotypes
+  cancerbio:
+    - cancer: MONDO:0007254
+      bioprocess: AUTO:development%20of%20mammary%20tumors
+    - cancer: MONDO:0007254
+      bioprocess: AUTO:overexpression%20of%20HER-2/neu.
+    - cancer: MONDO:0007254
+      bioprocess: AUTO:upregulation%20of%20E-cadherin
 named_entities:
   - id: MONDO:0007254
     label: mammary neoplasms
-  - id: AUTO:canine%20mammary%20tumors
-    label: canine mammary tumors
+  - id: MONDO:0021116
+    label: luminal A
+  - id: MONDO:0021115
+    label: luminal B
+  - id: AUTO:triple-negative
+    label: triple-negative
+  - id: NCIT:C68748
+    label: HER-2 positive
   - id: HGNC:8975
     label: PIK3CA
   - id: UBERON:0001911
     label: mammary gland
-  - id: AUTO:-
-    label: '-'
-  - id: 
-      AUTO:palpable%20masses%2C%20ulceration%2C%20bleeding%2C%20warmth%2C%20pain%2C%20discharge%2C%20feeling%20unwell%2C%20reduced%20appetite%2C%20lethargy%2C%20weight%20loss%2C%20breathing%20problems%2C%20cough
-    label: palpable masses, ulceration, bleeding, warmth, pain, discharge, feeling
-      unwell, reduced appetite, lethargy, weight loss, breathing problems, cough
-  - id: PR:P34708
-    label: estrogen receptor-α, progesterone receptor, human epidermal growth factor
-      receptor 2 (HER-2)/neu, E-cadherin
-  - id: PR:000001447
-    label: E-cadherin
+  - id: NCIT:C95097
+    label: palpable masses
+  - id: AUTO:firm%20and%20nodular%20masses
+    label: firm and nodular masses
+  - id: AUTO:ulceration%20and%20bleeding%20of%20skin
+    label: ulceration and bleeding of skin
+  - id: AUTO:warmth%20and%20pain%20in%20affected%20area
+    label: warmth and pain in affected area
+  - id: AUTO:discharge%20from%20mammary%20gland
+    label: discharge from mammary gland
+  - id: HP:0001254
+    label: lethargy
+  - id: HP:0001824
+    label: weight loss
+  - id: AUTO:breathing%20problems
+    label: breathing problems
+  - id: HP:0012735
+    label: cough
   - id: NCIT:C18902
     label: N/A
+  - id: NCIT:C9335
+    label: mammary neoplasms
+  - id: 
+      AUTO:mutations%20in%20PIK3CA%20gene%20leading%20to%20development%20of%20mammary%20tumors%3B%20overexpression%20of%20estrogen%20receptor-%CE%B1%2C%20progesterone%20receptor%2C%20HER-2/neu%20leading%20to%20different%20phenotypes%20of%20mammary%20tumors%3B%20upregulation%20of%20E-cadherin%20linked%20to%20improved%20prognosis%20in%20luminal%20A%20and%20B%20phenotypes
+    label: mutations in PIK3CA gene leading to development of mammary tumors; overexpression
+      of estrogen receptor-α, progesterone receptor, HER-2/neu leading to different
+      phenotypes of mammary tumors; upregulation of E-cadherin linked to improved
+      prognosis in luminal A and B phenotypes
+  - id: AUTO:development%20of%20mammary%20tumors
+    label: development of mammary tumors
+  - id: AUTO:overexpression%20of%20HER-2/neu.
+    label: overexpression of HER-2/neu.
+  - id: AUTO:upregulation%20of%20E-cadherin
+    label: upregulation of E-cadherin
