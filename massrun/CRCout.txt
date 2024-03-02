@@ -2,22 +2,23 @@
 input_text: |
   Colorectal cancer (CRC) in dogs has been shown to have similar molecular characteristics to human colorectal cancer. Although researchers have explored the pathogenesis and immune status of human CRC, the canine CRC has been far less studied. As a result, we analyzed canine colorectal tumors and normal canine intestinal samples by Gene Set Enrichment Analysis (GSEA) and found significant enrichment of immune-related pathways, including the TNF-α signaling pathway and IL6-STAT3 signaling pathway. In addition, the differential infiltration of naive B cells and regulatory T cells suggested that canine CRC was in a state of immunosuppression. Weighted gene co-expression network analysis (WGCNA) revealed the gene modules that contribute to differences in regulatory T cell inetfiltration, Further cross-validation of canine and human CRC differential genes obtained three core genes that are both species-conserved and differentially expressed, CD44, NAT10, and ETV4, of which NAT10 and ETV4 have been little studied in the immune status of colorectal cancer. Our findings may have implications for the pathogenesis and progression of CRC in dogs and could be a new potential therapeutic target for CMT and provide a bioinformatics foundation for later clinical experiment validation.
 raw_completion_output: |-
-  cancer: Colorectal cancer; canine CRC 
+  cancer: colorectal cancer; canine CRC; CMT
   gene: CD44; NAT10; ETV4
-  anatomical_entity: Intestinal 
-  genecancer_links: CD44-Colorectal cancer-Intestinal; NAT10-Colorectal cancer-Intestinal; ETV4-Colorectal cancer-Intestinal
+  anatomical_entity: colorectal tumors; canine intestinal samples
+  cancergenelocation: CRC - CD44 - colorectal tumors; CRC - NAT10 - colorectal tumors; CRC - ETV4 - colorectal tumors
   phenotype: immunosuppression
-  chemical_entity: TNF-α signaling pathway; IL6-STAT3 signaling pathway
-  cancer_phenotype: TNF-α signaling pathway-Colorectal cancer; IL6-STAT3 signaling pathway-Colorectal cancer
+  cancerphenotype: canine CRC - immunosuppression
+  bio_process: TNF-α signaling pathway; IL6-STAT3 signaling pathway
+  cancerbio: canine CRC - TNF-α signaling pathway; canine CRC - IL6-STAT3 signaling pathway
 prompt: |+
   Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  IL6-STAT3 signaling pathway-Colorectal cancer
+  canine CRC - IL6-STAT3 signaling pathway
 
   ===
 
@@ -25,50 +26,61 @@ extracted_object:
   cancer:
     - MESH:M0023327
     - AUTO:canine%20CRC
+    - MONDO:0015626
   gene:
     - HGNC:1681
     - HGNC:29830
     - HGNC:3493
   anatomical_entity:
-    - AUTO:Intestinal
-  genecancer_links:
-    - gene: HGNC:1681
-      cancer: MESH:M0023327
-      anatomical_entity: AUTO:Intestinal
-    - gene: HGNC:29830
-      cancer: MESH:M0023327
-      anatomical_entity: AUTO:Intestinal
-    - gene: HGNC:3493
-      cancer: MESH:M0023327
-      anatomical_entity: AUTO:Intestinal
+    - AUTO:colorectal%20tumors
+    - AUTO:canine%20intestinal%20samples
+  cancergenelocation:
+    - cancer: MONDO:0024331
+      gene: HGNC:1681
+      location: AUTO:colorectal%20tumors
+    - cancer: MONDO:0024331
+      gene: HGNC:29830
+      location: AUTO:colorectal%20tumors
+    - cancer: MONDO:0024331
+      gene: HGNC:3493
+      location: AUTO:colorectal%20tumors
   phenotype:
     - MESH:D007165
-  chemical_entity:
-    - AUTO:TNF-%CE%B1%20signaling%20pathway
-    - AUTO:IL6-STAT3%20signaling%20pathway
-  cancer_phenotype:
-    - cancer: MESH:M0023327
-      chemical_entity: AUTO:TNF-%CE%B1
-    - cancer: MESH:M0023327
-      chemical_entity: AUTO:IL6-STAT3%20signaling%20pathway
+  cancerphenotype:
+    - cancer: MONDO:0024331
+      phenotype: MESH:D003481
+  bio_process: AUTO:TNF-%CE%B1%20signaling%20pathway%3B%20IL6-STAT3%20signaling%20pathway
+  cancerbio:
+    - cancer: AUTO:canine%20CRC
+      bioprocess: AUTO:TNF-%CE%B1%20signaling%20pathway
+    - cancer: AUTO:canine%20CRC
+      bioprocess: AUTO:IL6-STAT3%20signaling%20pathway
 named_entities:
   - id: MESH:M0023327
-    label: Colorectal cancer
+    label: colorectal cancer
   - id: AUTO:canine%20CRC
     label: canine CRC
+  - id: MONDO:0015626
+    label: CMT
   - id: HGNC:1681
     label: CD44
   - id: HGNC:29830
     label: NAT10
   - id: HGNC:3493
     label: ETV4
-  - id: AUTO:Intestinal
-    label: Intestinal
+  - id: AUTO:colorectal%20tumors
+    label: colorectal tumors
+  - id: AUTO:canine%20intestinal%20samples
+    label: canine intestinal samples
+  - id: MONDO:0024331
+    label: CRC
   - id: MESH:D007165
     label: immunosuppression
+  - id: MESH:D003481
+    label: canine
+  - id: AUTO:TNF-%CE%B1%20signaling%20pathway%3B%20IL6-STAT3%20signaling%20pathway
+    label: TNF-α signaling pathway; IL6-STAT3 signaling pathway
   - id: AUTO:TNF-%CE%B1%20signaling%20pathway
     label: TNF-α signaling pathway
   - id: AUTO:IL6-STAT3%20signaling%20pathway
     label: IL6-STAT3 signaling pathway
-  - id: AUTO:TNF-%CE%B1
-    label: TNF-α

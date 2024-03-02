@@ -4,28 +4,29 @@ input_text: |+
 
 
 raw_completion_output: |-
-  cancer: soft tissue sarcomas; fibrosarcoma; undifferentiated pleomorphic sarcoma; peripheral nerve sheath tumors
+  cancer: soft tissue sarcomas (STS); fibrosarcoma; undifferentiated pleomorphic sarcoma; peripheral nerve sheath tumors
   gene: TP53; KMT2D
-  anatomical_entity: soft tissue
-  genecancer_links: TP53-21%-cell cycle/DNA repair-soft tissue; KMT2D-21%-chromatin organization/binding-soft tissue
-  phenotype: - 
-  chemical_entity: platelet derived growth factor B; collagen
-  cancer_phenotype: PDGFR inhibitors-soft tissue
+  anatomical_entity: soft tissues
+  cancergenelocation: STS - TP53 - cell cycle/DNA repair; STS - KMT2D - chromatin organization/binding
+  phenotype: non-specific symptoms
+  cancerphenotype: STS - non-specific symptoms
+  bio_process: cell cycle/DNA repair; chromatin organization/binding; extracellular matrix interactions; homeobox transcription factors; T-cell infiltration
+  cancerbio: STS - cell cycle/DNA repair; STS - chromatin organization/binding; STS - extracellular matrix interactions; STS - homeobox transcription factors; STS - T-cell infiltration
 prompt: |+
   Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  PDGFR inhibitors-soft tissue
+  STS - T-cell infiltration
 
   ===
 
 extracted_object:
   cancer:
-    - MONDO:0018078
+    - NCIT:C159109
     - MESH:D005354
     - MONDO:0002142
     - MESH:M0336464
@@ -33,24 +34,35 @@ extracted_object:
     - HGNC:11998
     - HGNC:7133
   anatomical_entity:
-    - AUTO:soft%20tissue
-  genecancer_links:
-    - gene: HGNC:11998
-      cancer: NCIT:C12471
-      anatomical_entity: AUTO:cell%20cycle/DNA%20repair
-    - gene: HGNC:7133
-      anatomical_entity: AUTO:soft%20tissue
+    - AUTO:soft%20tissues
+  cancergenelocation:
+    - cancer: NCIT:C159109
+      gene: HGNC:11998
+      location: AUTO:cell%20cycle/DNA%20repair
+    - cancer: NCIT:C159109
+      gene: HGNC:7133
+      location: AUTO:chromatin%20organization/binding
   phenotype:
-    - AUTO:-
-  chemical_entity:
-    - AUTO:platelet%20derived%20growth%20factor%20B
-    - CHEBI:3815
-  cancer_phenotype:
-    - cancer: NCIT:C12471
-      chemical_entity: CHEBI:62434
+    - AUTO:non-specific%20symptoms
+  cancerphenotype:
+    - cancer: NCIT:C149701
+      phenotype: HP:0030448
+  bio_process: 
+    AUTO:cell%20cycle/DNA%20repair%3B%20chromatin%20organization/binding%3B%20extracellular%20matrix%20interactions%3B%20homeobox%20transcription%20factors%3B%20T-cell%20infiltration
+  cancerbio:
+    - cancer: NCIT:C159109
+      bioprocess: AUTO:cell%20cycle/DNA%20repair
+    - cancer: NCIT:C18902
+      bioprocess: AUTO:chromatin%20organization/binding
+    - cancer: NCIT:C18902
+      bioprocess: AUTO:extracellular%20matrix%20interactions
+    - cancer: NCIT:C41132
+      bioprocess: NCIT:C17208
+    - cancer: NCIT:C159109
+      bioprocess: AUTO:T-cell%20infiltration
 named_entities:
-  - id: MONDO:0018078
-    label: soft tissue sarcomas
+  - id: NCIT:C159109
+    label: soft tissue sarcomas (STS)
   - id: MESH:D005354
     label: fibrosarcoma
   - id: MONDO:0002142
@@ -61,17 +73,29 @@ named_entities:
     label: TP53
   - id: HGNC:7133
     label: KMT2D
-  - id: AUTO:soft%20tissue
-    label: soft tissue
-  - id: NCIT:C12471
-    label: soft tissue
+  - id: AUTO:soft%20tissues
+    label: soft tissues
   - id: AUTO:cell%20cycle/DNA%20repair
     label: cell cycle/DNA repair
-  - id: AUTO:-
-    label: '-'
-  - id: AUTO:platelet%20derived%20growth%20factor%20B
-    label: platelet derived growth factor B
-  - id: CHEBI:3815
-    label: collagen
-  - id: CHEBI:62434
-    label: PDGFR inhibitors
+  - id: AUTO:chromatin%20organization/binding
+    label: chromatin organization/binding
+  - id: AUTO:non-specific%20symptoms
+    label: non-specific symptoms
+  - id: NCIT:C149701
+    label: not specified
+  - id: HP:0030448
+    label: soft tissue sarcoma
+  - id: 
+      AUTO:cell%20cycle/DNA%20repair%3B%20chromatin%20organization/binding%3B%20extracellular%20matrix%20interactions%3B%20homeobox%20transcription%20factors%3B%20T-cell%20infiltration
+    label: cell cycle/DNA repair; chromatin organization/binding; extracellular matrix
+      interactions; homeobox transcription factors; T-cell infiltration
+  - id: NCIT:C18902
+    label: N/A
+  - id: AUTO:extracellular%20matrix%20interactions
+    label: extracellular matrix interactions
+  - id: NCIT:C41132
+    label: none
+  - id: NCIT:C17208
+    label: transcription
+  - id: AUTO:T-cell%20infiltration
+    label: T-cell infiltration

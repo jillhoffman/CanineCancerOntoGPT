@@ -3,21 +3,22 @@ input_text: |
   The aim of the conducted investigations was to identify differences in the D-loop nucleotide sequence between neoplastic tissue, normal tissue, and blood and to determine their correlation with the type of cancer in dogs. In 62.5% of the analyzed tumors of epithelial origin and 25% tumors of mesenchymal origin, substitution was detected within the D-loop sequence between the neoplastic tissue, normal tissue, and blood. Two mutations occurring in the carcinogenic process in position T15620C have been identified in epithelioma glandulae sebacei and carcinoma planoepithelialae keratodes. Blood and cancer heteroplasmy was diagnosed for carcinoma planoepithelialae keratodes and “Comedo” carcinoma. The results of the study indicate that polymorphic changes in the D-loop sequence promote carcinogenesis in dogs. Heteroplasmy diagnosed in blood and tumor cells and absence thereof in normal tissue may imply mtDNA recombination. High prevalence of mtDNA mutations in canine tumors may suggest mtDNA genetic instability, which is likely to play a role in carcinogenesis.
 raw_completion_output: |-
   cancer: epithelioma glandulae sebacei; carcinoma planoepithelialae keratodes; Comedo carcinoma
-  gene: Not mentioned
-  anatomical_entity: neoplastic tissue; normal tissue; blood
-  genecancer_links: Not mentioned
-  phenotype: mtDNA recombination; mtDNA genetic instability
-  chemical_entity: D-loop nucleotide sequence
-  cancer_phenotype: carcinogenesis
+  gene: not mentioned
+  anatomical_entity: neoplastic tissue; normal tissue; blood; tumors
+  cancergenelocation: epithelioma glandulae sebacei - position T15620C; carcinoma planoepithelialae keratodes - blood and cancer
+  phenotype: not mentioned
+  cancerphenotype: not mentioned
+  bio_process: D-loop nucleotide sequence differences; mtDNA genetic instability; mtDNA recombination
+  cancerbio: D-loop sequence changes promote carcinogenesis in dogs; mtDNA mutations in canine tumors likely play a role in carcinogenesis
 prompt: |+
-  Split the following piece of text into fields in the following format:
+  From the text below, extract the following entities in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  carcinogenesis
+  mtDNA mutations in canine tumors likely play a role in carcinogenesis
 
   ===
 
@@ -27,23 +28,30 @@ extracted_object:
     - AUTO:carcinoma%20planoepithelialae%20keratodes
     - MONDO:0003575
   gene:
-    - AUTO:Not%20mentioned
+    - AUTO:not%20mentioned
   anatomical_entity:
     - AUTO:neoplastic%20tissue
     - AUTO:normal%20tissue
     - UBERON:0000178
-  genecancer_links:
-    - gene: AUTO:Not%20mentioned
-      cancer: AUTO:Not%20mentioned
-      anatomical_entity: AUTO:Not%20mentioned
+    - AUTO:tumors
+  cancergenelocation:
+    - cancer: AUTO:epithelioma%20glandulae%20sebacei
+      gene: AUTO:T15620C
+      location: AUTO:N/A
+    - cancer: AUTO:carcinoma%20planoepithelialae%20keratodes
+      location: UBERON:0000178
   phenotype:
-    - AUTO:mtDNA%20recombination
-    - AUTO:mtDNA%20genetic%20instability
-  chemical_entity:
-    - AUTO:D-loop%20nucleotide%20sequence
-  cancer_phenotype:
-    - cancer: MESH:D063646
-      chemical_entity: NCIT:C41132
+    - AUTO:not%20mentioned
+  cancerphenotype:
+    - cancer: AUTO:not%20mentioned
+      phenotype: AUTO:not%20mentioned
+  bio_process: 
+    AUTO:D-loop%20nucleotide%20sequence%20differences%3B%20mtDNA%20genetic%20instability%3B%20mtDNA%20recombination
+  cancerbio:
+    - cancer: NCIT:C14201
+      bioprocess: NCIT:C18078
+    - cancer: AUTO:canine%20tumors
+      bioprocess: NCIT:C18078
 named_entities:
   - id: AUTO:epithelioma%20glandulae%20sebacei
     label: epithelioma glandulae sebacei
@@ -51,21 +59,27 @@ named_entities:
     label: carcinoma planoepithelialae keratodes
   - id: MONDO:0003575
     label: Comedo carcinoma
-  - id: AUTO:Not%20mentioned
-    label: Not mentioned
+  - id: AUTO:not%20mentioned
+    label: not mentioned
   - id: AUTO:neoplastic%20tissue
     label: neoplastic tissue
   - id: AUTO:normal%20tissue
     label: normal tissue
   - id: UBERON:0000178
     label: blood
-  - id: AUTO:mtDNA%20recombination
-    label: mtDNA recombination
-  - id: AUTO:mtDNA%20genetic%20instability
-    label: mtDNA genetic instability
-  - id: AUTO:D-loop%20nucleotide%20sequence
-    label: D-loop nucleotide sequence
-  - id: MESH:D063646
+  - id: AUTO:tumors
+    label: tumors
+  - id: AUTO:T15620C
+    label: T15620C
+  - id: AUTO:N/A
+    label: N/A
+  - id: 
+      AUTO:D-loop%20nucleotide%20sequence%20differences%3B%20mtDNA%20genetic%20instability%3B%20mtDNA%20recombination
+    label: D-loop nucleotide sequence differences; mtDNA genetic instability; mtDNA
+      recombination
+  - id: NCIT:C14201
+    label: dogs
+  - id: NCIT:C18078
     label: carcinogenesis
-  - id: NCIT:C41132
-    label: None
+  - id: AUTO:canine%20tumors
+    label: canine tumors
