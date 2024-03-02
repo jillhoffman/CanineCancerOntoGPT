@@ -14,7 +14,7 @@ prompt: |+
   Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
-  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity
 
 
   Text:
