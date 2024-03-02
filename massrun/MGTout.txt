@@ -8,51 +8,64 @@ input_text: |
 
   The association between MGT development in male dogs and co-occurrence of testicular tumours (TTs) has been discussed for years. Thus, cases of development of both tumours were included in this study. As a result, only in 12.7% cases of MGTs also history of TTs was described. Therefore, no general association between these tumours should be assumed.
 raw_completion_output: |-
-  cancer: mammary gland tumours; 
-  gene: N/A 
-  anatomical_entity: mammary glands; 
-  genecancer_links: N/A 
-  phenotype: benign tumours; 
-  chemical_entity: N/A 
-  cancer_phenotype: N/A
+  cancer: mammary gland tumours (MGTs), adenomas  
+  gene: not mentioned  
+  anatomical_entity: mammary glands  
+  cancergenelocation: not applicable  
+  phenotype: benign tumours, co-occurrence of testicular tumours  
+  cancerphenotype: mammary gland tumours (MGTs)  
+  bio_process: tumour development, co-occurrence of testicular tumours  
+  cancerbio: mammary gland tumours (MGTs)
 prompt: |+
   Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  N/A
+  mammary gland tumours (MGTs)
 
   ===
 
 extracted_object:
   cancer:
-    - AUTO:mammary%20gland%20tumours
+    - AUTO:mammary%20gland%20tumours%20%28MGTs%29%2C%20adenomas
   gene:
-    - AUTO:N/A
+    - AUTO:not%20mentioned
   anatomical_entity:
     - UBERON:0001911
-  genecancer_links:
-    - gene: AUTO:N/A
-      cancer: NCIT:C18902
-      anatomical_entity: AUTO:N/A
+  cancergenelocation:
+    - cancer: NCIT:C48660
+      gene: AUTO:not%20applicable
+      location: AUTO:not%20applicable
   phenotype:
-    - NCIT:C3677
-  chemical_entity:
-    - NCIT:C18902
-  cancer_phenotype:
-    - cancer: NCIT:C18902
-      chemical_entity: NCIT:C18902
+    - AUTO:benign%20tumours%2C%20co-occurrence%20of%20testicular%20tumours
+  cancerphenotype:
+    - cancer: AUTO:mammary%20gland%20tumours
+      phenotype: MESH:D008321
+  bio_process: AUTO:tumour%20development%2C%20co-occurrence%20of%20testicular%20tumours
+  cancerbio:
+    - cancer: AUTO:mammary%20gland%20tumours
+      bioprocess: AUTO:mammary%20gland%20cancer
 named_entities:
-  - id: AUTO:mammary%20gland%20tumours
-    label: mammary gland tumours
-  - id: AUTO:N/A
-    label: N/A
+  - id: AUTO:mammary%20gland%20tumours%20%28MGTs%29%2C%20adenomas
+    label: mammary gland tumours (MGTs), adenomas
+  - id: AUTO:not%20mentioned
+    label: not mentioned
   - id: UBERON:0001911
     label: mammary glands
-  - id: NCIT:C18902
-    label: N/A
-  - id: NCIT:C3677
-    label: benign tumours
+  - id: NCIT:C48660
+    label: not applicable
+  - id: AUTO:not%20applicable
+    label: not applicable
+  - id: AUTO:benign%20tumours%2C%20co-occurrence%20of%20testicular%20tumours
+    label: benign tumours, co-occurrence of testicular tumours
+  - id: AUTO:mammary%20gland%20tumours
+    label: mammary gland tumours
+  - id: MESH:D008321
+    label: mammary gland
+  - id: AUTO:tumour%20development%2C%20co-occurrence%20of%20testicular%20tumours
+    label: tumour development, co-occurrence of testicular tumours
+  - id: AUTO:mammary%20gland%20cancer
+    label: mammary gland cancer

@@ -4,74 +4,92 @@ input_text: |+
 
 
 raw_completion_output: |-
-  cancer: soft tissue sarcomas; fibrosarcoma; undifferentiated pleomorphic sarcoma; peripheral nerve sheath tumors
-  gene: TP53; KMT2D
-  anatomical_entity: soft tissue
-  genecancer_links: TP53-21%-cell cycle/DNA repair-soft tissue; KMT2D-21%-chromatin organization/binding-soft tissue
-  phenotype: - 
-  chemical_entity: platelet derived growth factor B; collagen
-  cancer_phenotype: PDGFR inhibitors-soft tissue
+  cancer: soft tissue sarcomas (STS); fibrosarcoma; undifferentiated pleomorphic sarcoma; peripheral nerve sheath tumors
+  gene: TP53; KMT2D; platelet derived growth factor B
+  anatomical_entity: soft tissues
+  cancergenelocation: STS linked to TP53 in cell cycle/DNA repair; STS linked to KMT2D in chromatin organization/binding 
+  phenotype: non-specific anatomical locations; sensitivity to PDGFR inhibitors; elevated T-cell infiltration
+  cancerphenotype: STS linked to non-specific anatomical locations
+  bio_process: cell cycle/DNA repair; chromatin organization/binding; extracellular matrix interactions; homeobox transcription factors; T-cell infiltration
+  cancerbio: STS linked to cell cycle/DNA repair and chromatin organization/binding; STS linked to extracellular matrix interactions, homeobox transcription factors, and T-cell infiltration
 prompt: |+
-  Split the following piece of text into fields in the following format:
+  From the text below, extract the following entities in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  PDGFR inhibitors-soft tissue
+  STS linked to extracellular matrix interactions, homeobox transcription factors, and T-cell infiltration
 
   ===
 
 extracted_object:
   cancer:
-    - MONDO:0018078
-    - MESH:D005354
+    - NCIT:C159109
+    - MONDO:0005164
     - MONDO:0002142
     - MESH:M0336464
   gene:
-    - HGNC:11998
+    - PR:000003035
     - HGNC:7133
+    - HGNC:8800
   anatomical_entity:
-    - AUTO:soft%20tissue
-  genecancer_links:
-    - gene: HGNC:11998
-      cancer: NCIT:C12471
-      anatomical_entity: AUTO:cell%20cycle/DNA%20repair
+    - AUTO:soft%20tissues
+  cancergenelocation:
+    - cancer: NCIT:C159109
+      gene: PR:000003035
+      location: AUTO:cell%20cycle/DNA%20repair
     - gene: HGNC:7133
-      anatomical_entity: AUTO:soft%20tissue
+      location: AUTO:chromatin%20organization/binding
   phenotype:
-    - AUTO:-
-  chemical_entity:
-    - AUTO:platelet%20derived%20growth%20factor%20B
-    - CHEBI:3815
-  cancer_phenotype:
-    - cancer: NCIT:C12471
-      chemical_entity: CHEBI:62434
+    - AUTO:non-specific%20anatomical%20locations
+    - AUTO:sensitivity%20to%20PDGFR%20inhibitors
+    - AUTO:elevated%20T-cell%20infiltration
+  cancerphenotype:
+    - cancer: MONDO:0018078
+      phenotype: AUTO:non-specific%20anatomical%20locations
+  bio_process: 
+    AUTO:cell%20cycle/DNA%20repair%3B%20chromatin%20organization/binding%3B%20extracellular%20matrix%20interactions%3B%20homeobox%20transcription%20factors%3B%20T-cell%20infiltration
+  cancerbio:
+    - cancer: NCIT:C18902
+      bioprocess: AUTO:cell%20cycle/DNA%20repair
+    - cancer: NCIT:C159109
+      bioprocess: AUTO:T-cell%20infiltration
 named_entities:
-  - id: MONDO:0018078
-    label: soft tissue sarcomas
-  - id: MESH:D005354
+  - id: NCIT:C159109
+    label: soft tissue sarcomas (STS)
+  - id: MONDO:0005164
     label: fibrosarcoma
   - id: MONDO:0002142
     label: undifferentiated pleomorphic sarcoma
   - id: MESH:M0336464
     label: peripheral nerve sheath tumors
-  - id: HGNC:11998
+  - id: PR:000003035
     label: TP53
   - id: HGNC:7133
     label: KMT2D
-  - id: AUTO:soft%20tissue
-    label: soft tissue
-  - id: NCIT:C12471
-    label: soft tissue
+  - id: HGNC:8800
+    label: platelet derived growth factor B
+  - id: AUTO:soft%20tissues
+    label: soft tissues
   - id: AUTO:cell%20cycle/DNA%20repair
     label: cell cycle/DNA repair
-  - id: AUTO:-
-    label: '-'
-  - id: AUTO:platelet%20derived%20growth%20factor%20B
-    label: platelet derived growth factor B
-  - id: CHEBI:3815
-    label: collagen
-  - id: CHEBI:62434
-    label: PDGFR inhibitors
+  - id: AUTO:chromatin%20organization/binding
+    label: chromatin organization/binding
+  - id: AUTO:non-specific%20anatomical%20locations
+    label: non-specific anatomical locations
+  - id: AUTO:sensitivity%20to%20PDGFR%20inhibitors
+    label: sensitivity to PDGFR inhibitors
+  - id: AUTO:elevated%20T-cell%20infiltration
+    label: elevated T-cell infiltration
+  - id: MONDO:0018078
+    label: soft tissue sarcoma
+  - id: 
+      AUTO:cell%20cycle/DNA%20repair%3B%20chromatin%20organization/binding%3B%20extracellular%20matrix%20interactions%3B%20homeobox%20transcription%20factors%3B%20T-cell%20infiltration
+    label: cell cycle/DNA repair; chromatin organization/binding; extracellular matrix
+      interactions; homeobox transcription factors; T-cell infiltration
+  - id: NCIT:C18902
+    label: N/A
+  - id: AUTO:T-cell%20infiltration
+    label: T-cell infiltration

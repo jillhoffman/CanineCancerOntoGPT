@@ -6,66 +6,103 @@ input_text: |
 
   If the tumor has metastasized (spread to other areas of the body), other signs may become evident. Your dog may generally feel unwell, eat less, become lethargic, and lose weight. If the lungs are involved, your dog may have problems with breathing or develop a cough.
 raw_completion_output: |-
-  cancer: mammary neoplasms; canine mammary tumors
+  cancer: mammary neoplasms; luminal A; luminal B; triple-negative; HER-2-positive
   gene: PIK3CA
   anatomical_entity: mammary gland
-  genecancer_links: PIK3CA linked to canine mammary tumors; mammary gland
-  phenotype: palpable masses, ulceration, bleeding, warmth, pain, discharge, feeling unwell, reduced appetite, lethargy, weight loss, breathing problems, cough
-  chemical_entity: estrogen receptor-α, progesterone receptor, human epidermal growth factor receptor 2 (HER-2)/neu, E-cadherin
-  cancer_phenotype: E-cadherin expression changes linked to mammary neoplasms; canine mammary tumors
+  cancergenelocation: mammary neoplasms linked to PIK3CA gene and mammary gland
+  phenotype: palpable masses; firm and nodular masses; ulceration and bleeding of skin over mass; warmth and pain in affected area; discharge from mammary gland; general illness; decreased appetite; lethargy; weight loss; breathing problems; cough
+  cancerphenotype: mammary neoplasms linked to palpable masses, firm and nodular masses, ulceration and bleeding of skin over mass, warmth and pain in affected area, discharge from mammary gland, general illness, decreased appetite, lethargy, weight loss, breathing problems, cough
+  bio_process: mutation in PIK3CA gene leading to abnormal cell growth in mammary gland tumors; overexpression of estrogen receptor-α, progesterone receptor, HER-2/neu, and E-cadherin in different phenotypes of mammary tumors affecting cell behavior and growth
+  cancerbio: mammary neoplasms linked to mutation in PIK3CA gene and overexpression of estrogen receptor-α, progesterone receptor, HER-2/neu, and E-cadherin in different phenotypes of mammary tumors
 prompt: |+
-  Split the following piece of text into fields in the following format:
+  From the text below, extract the following entities in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  canine mammary tumors
+  mammary neoplasms linked to mutation in PIK3CA gene and overexpression of estrogen receptor-α, progesterone receptor, HER-2/neu, and E-cadherin in different phenotypes of mammary tumors
 
   ===
 
 extracted_object:
   cancer:
     - MONDO:0007254
-    - AUTO:canine%20mammary%20tumors
+    - MONDO:0021116
+    - MONDO:0021115
+    - AUTO:triple-negative
+    - AUTO:HER-2-positive
   gene:
     - HGNC:8975
   anatomical_entity:
     - UBERON:0001911
-  genecancer_links:
-    - gene: HGNC:8975
-      cancer: AUTO:canine%20mammary%20tumors
-      anatomical_entity: AUTO:-
-    - anatomical_entity: UBERON:0001911
-  phenotype:
-    - AUTO:palpable%20masses%2C%20ulceration%2C%20bleeding%2C%20warmth%2C%20pain%2C%20discharge%2C%20feeling%20unwell%2C%20reduced%20appetite%2C%20lethargy%2C%20weight%20loss%2C%20breathing%20problems%2C%20cough
-  chemical_entity:
-    - PR:P34708
-  cancer_phenotype:
+  cancergenelocation:
     - cancer: MONDO:0007254
-      chemical_entity: PR:000001447
-    - cancer: AUTO:canine%20mammary%20tumors
-      chemical_entity: NCIT:C18902
+      gene: HGNC:8975
+      location: UBERON:0001911
+  phenotype:
+    - NCIT:C95097
+    - AUTO:firm%20and%20nodular%20masses
+    - AUTO:ulceration%20and%20bleeding%20of%20skin%20over%20mass
+    - AUTO:warmth%20and%20pain%20in%20affected%20area
+    - AUTO:discharge%20from%20mammary%20gland
+    - AUTO:general%20illness
+    - HP:0004396
+    - HP:0001254
+    - HP:0001824
+    - AUTO:breathing%20problems
+    - HP:0012735
+  cancerphenotype:
+    - cancer: MONDO:0007254
+      phenotype: NCIT:C95097
+  bio_process: 
+    AUTO:mutation%20in%20PIK3CA%20gene%20leading%20to%20abnormal%20cell%20growth%20in%20mammary%20gland%20tumors%3B%20overexpression%20of%20estrogen%20receptor-%CE%B1%2C%20progesterone%20receptor%2C%20HER-2/neu%2C%20and%20E-cadherin%20in%20different%20phenotypes%20of%20mammary%20tumors%20affecting%20cell%20behavior%20and%20growth
+  cancerbio:
+    - cancer: MONDO:0007254
+      bioprocess: AUTO:mutation%20in%20PIK3CA%20gene
 named_entities:
   - id: MONDO:0007254
     label: mammary neoplasms
-  - id: AUTO:canine%20mammary%20tumors
-    label: canine mammary tumors
+  - id: MONDO:0021116
+    label: luminal A
+  - id: MONDO:0021115
+    label: luminal B
+  - id: AUTO:triple-negative
+    label: triple-negative
+  - id: AUTO:HER-2-positive
+    label: HER-2-positive
   - id: HGNC:8975
     label: PIK3CA
   - id: UBERON:0001911
     label: mammary gland
-  - id: AUTO:-
-    label: '-'
+  - id: NCIT:C95097
+    label: palpable masses
+  - id: AUTO:firm%20and%20nodular%20masses
+    label: firm and nodular masses
+  - id: AUTO:ulceration%20and%20bleeding%20of%20skin%20over%20mass
+    label: ulceration and bleeding of skin over mass
+  - id: AUTO:warmth%20and%20pain%20in%20affected%20area
+    label: warmth and pain in affected area
+  - id: AUTO:discharge%20from%20mammary%20gland
+    label: discharge from mammary gland
+  - id: AUTO:general%20illness
+    label: general illness
+  - id: HP:0004396
+    label: decreased appetite
+  - id: HP:0001254
+    label: lethargy
+  - id: HP:0001824
+    label: weight loss
+  - id: AUTO:breathing%20problems
+    label: breathing problems
+  - id: HP:0012735
+    label: cough
   - id: 
-      AUTO:palpable%20masses%2C%20ulceration%2C%20bleeding%2C%20warmth%2C%20pain%2C%20discharge%2C%20feeling%20unwell%2C%20reduced%20appetite%2C%20lethargy%2C%20weight%20loss%2C%20breathing%20problems%2C%20cough
-    label: palpable masses, ulceration, bleeding, warmth, pain, discharge, feeling
-      unwell, reduced appetite, lethargy, weight loss, breathing problems, cough
-  - id: PR:P34708
-    label: estrogen receptor-α, progesterone receptor, human epidermal growth factor
-      receptor 2 (HER-2)/neu, E-cadherin
-  - id: PR:000001447
-    label: E-cadherin
-  - id: NCIT:C18902
-    label: N/A
+      AUTO:mutation%20in%20PIK3CA%20gene%20leading%20to%20abnormal%20cell%20growth%20in%20mammary%20gland%20tumors%3B%20overexpression%20of%20estrogen%20receptor-%CE%B1%2C%20progesterone%20receptor%2C%20HER-2/neu%2C%20and%20E-cadherin%20in%20different%20phenotypes%20of%20mammary%20tumors%20affecting%20cell%20behavior%20and%20growth
+    label: mutation in PIK3CA gene leading to abnormal cell growth in mammary gland
+      tumors; overexpression of estrogen receptor-α, progesterone receptor, HER-2/neu,
+      and E-cadherin in different phenotypes of mammary tumors affecting cell behavior
+      and growth
+  - id: AUTO:mutation%20in%20PIK3CA%20gene
+    label: mutation in PIK3CA gene

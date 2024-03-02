@@ -2,113 +2,163 @@
 input_text: |
   Tri methylguanosine synthase 1 (TGS1) is the enzyme that hyper methylates the hallmark 7-methyl-guanosine cap (m7G-cap) appended to the transcription start site of RNAs. The m7G-cap and the eIF4E-cap binding protein guide canonical cap-dependent translation of mRNAs, whereas hyper methylated cap, m2,2,7G-cap (TMG) lacks adequate eIF4E affinity and licenses entry into a different translation initiation pathway. The potential role for TGS1 and TMG-capped mRNA in neoplastic growth is unknown. Canine sarcoma has high translational value to the human disease. Cumulative downregulation of protein synthesis in osteosarcoma OSCA-40 was achieved cooperatively by siTGS1 and Torin-1. Torin-1 inhibited the proliferation of three canine sarcoma explants in a reversible manner that was eliminated by siRNA-downregulation of TGS1. TGS1 failure prevented the anchorage-independent growth of osteo- and hemangio-sarcomas and curtailed sarcoma recovery from mTOR inhibition. RNA immunoprecipitation studies identified TMG-capped mRNAs encoding TGS1, DHX9 and JUND. TMG-tgs1 transcripts were downregulated by leptomycin B and TGS1 failure was compensated by eIF4E mRNP-dependent tgs1 mRNA translation affected by mTOR. The evidence documents TMG-capped mRNAs are hallmarks of the investigated neoplasms and synergy between TGS1 specialized translation and canonical translation is involved in sarcoma recovery from mTOR inhibition. Therapeutic targeting of TGS1 activity in cancer is ripe for future exploration.
 raw_completion_output: |-
-  cancer: canine sarcoma; osteosarcoma; hemangio-sarcoma
+  cancer: osteosarcoma; hemangiosarcoma; sarcoma
   gene: TGS1; DHX9; JUND
-  anatomical_entity: not mentioned
-  genecancer_links: TGS1-canine sarcoma, osteosarcoma, hemangio-sarcoma; DHX9-not mentioned; JUND-not mentioned
-  phenotype: high translational value; downregulation of protein synthesis; inhibited proliferation; prevention of anchorage-independent growth; curtailed sarcoma recovery
-  chemical_entity: m7G-cap; m2,2,7G-cap (TMG); Torin-1; leptomycin B; mTOR
-  cancer_phenotype: involvement of TMG-capped mRNAs in neoplastic growth; synergy between TGS1 specialized translation and canonical translation in sarcoma recovery; therapeutic targeting of TGS1 activity in cancer
+  anatomical_entity: osteo-; hemangio-
+  cancergenelocation: osteosarcoma-TGS1-osteo-; hemangiosarcoma-TGS1-hemangio-
+  phenotype: high translational value; downregulation of protein synthesis; inhibited proliferation; prevented anchorage-independent growth; curtailed recovery from mTOR inhibition
+  cancerphenotype: osteosarcoma-high translational value; osteosarcoma-downregulation of protein synthesis; osteosarcoma-inhibited proliferation; osteosarcoma-prevented anchorage-independent growth; osteosarcoma-curtailed recovery from mTOR inhibition; hemangiosarcoma-high translational value; hemangiosarcoma-downregulation of protein synthesis; hemangiosarcoma-inhibited proliferation; hemangiosarcoma-prevented anchorage-independent growth; hemangiosarcoma-curtailed recovery from mTOR inhibition; sarcoma-high translational value; sarcoma-downregulation of protein synthesis; sarcoma-inhibited proliferation; sarcoma-prevented anchorage-independent growth; sarcoma-curtailed recovery from mTOR inhibition
+  bio_process: hyper methylation of the cap; alternative translation initiation pathway; downregulation of protein synthesis; mRNA translation affected by mTOR
+  cancerbio: osteosarcoma-hyper methylation of the cap; osteosarcoma-alternative translation initiation pathway; osteosarcoma-downregulation of protein synthesis; osteosarcoma-mRNA translation affected by mTOR; hemangiosarcoma-hyper methylation of the cap; hemangiosarcoma-alternative translation initiation pathway; hemangiosarcoma-downregulation of protein synthesis; hemangiosarcoma-mRNA translation affected by mTOR; sarcoma-hyper methylation of the cap; sarcoma-alternative translation initiation pathway; sarcoma-downregulation of protein synthesis; sarcoma-mRNA translation affected by mTOR
 prompt: |+
   Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  therapeutic targeting of TGS1 activity in cancer
+  sarcoma-mRNA translation affected by mTOR
 
   ===
 
 extracted_object:
   cancer:
-    - MONDO:0700149
-    - MESH:D012516
-    - AUTO:hemangio-sarcoma
+    - MONDO:0009807
+    - MONDO:0016982
+    - MONDO:0005089
   gene:
     - HGNC:17843
     - HGNC:2750
     - HGNC:6206
   anatomical_entity:
-    - AUTO:not%20mentioned
-  genecancer_links:
-    - gene: HGNC:17843
-      cancer: AUTO:canine%20sarcoma%2C%20osteosarcoma%2C%20hemangio-sarcoma
-      anatomical_entity: AUTO:N/A
-    - gene: HGNC:2750
-      cancer: AUTO:not%20mentioned
-      anatomical_entity: AUTO:not%20mentioned
-    - gene: HGNC:6206
-      cancer: AUTO:not%20mentioned
-      anatomical_entity: AUTO:not%20mentioned
+    - AUTO:osteo-
+    - AUTO:hemangio-
+  cancergenelocation:
+    - cancer: MONDO:0009807
+      gene: HGNC:17843
+      location: AUTO:osteo
+    - cancer: MONDO:0016982
+      gene: HGNC:17843
+      location: AUTO:hemangio
   phenotype:
     - AUTO:high%20translational%20value
     - AUTO:downregulation%20of%20protein%20synthesis
     - AUTO:inhibited%20proliferation
-    - AUTO:prevention%20of%20anchorage-independent%20growth
-    - AUTO:curtailed%20sarcoma%20recovery
-  chemical_entity:
-    - AUTO:m7G-cap
-    - AUTO:m2%2C2%2C7G-cap%20%28TMG%29
-    - AUTO:Torin-1
-    - CHEBI:52646
-    - PR:000003041
-  cancer_phenotype:
-    - cancer: MONDO:0005070
-      chemical_entity: AUTO:TMG-capped%20mRNAs
-    - cancer: MESH:D012509
-      chemical_entity: NCIT:C41132
-    - cancer: MESH:M0014584
-      chemical_entity: PR:000016300
+    - AUTO:prevented%20anchorage-independent%20growth
+    - AUTO:curtailed%20recovery%20from%20mTOR%20inhibition
+  cancerphenotype:
+    - cancer: MONDO:0009807
+      phenotype: HP:0002669
+    - cancer: MONDO:0009807
+      phenotype: AUTO:downregulation%20of%20protein%20synthesis
+    - cancer: MONDO:0009807
+      phenotype: AUTO:inhibited%20proliferation
+    - cancer: MONDO:0009807
+      phenotype: AUTO:growth%20prevention
+    - cancer: MONDO:0009807
+      phenotype: AUTO:curtailed%20recovery%20from%20mTOR%20inhibition
+    - cancer: MONDO:0016982
+      phenotype: MONDO:0016982
+    - cancer: MONDO:0016982
+      phenotype: MONDO:0016982
+    - cancer: MONDO:0016982
+      phenotype: AUTO:inhibition%20of%20proliferation
+    - cancer: MONDO:0016982
+      phenotype: NCIT:C21224
+    - cancer: MONDO:0016982
+      phenotype: MONDO:0016982
+    - cancer: MONDO:0005089
+      phenotype: HP:0100242
+    - cancer: MONDO:0005089
+      phenotype: NCIT:C18902
+    - cancer: MONDO:0005089
+      phenotype: AUTO:inhibited%20proliferation
+    - cancer: MONDO:0005089
+      phenotype: NCIT:C21224
+    - cancer: MONDO:0005089
+      phenotype: HP:0100242
+  bio_process: 
+    AUTO:hyper%20methylation%20of%20the%20cap%3B%20alternative%20translation%20initiation%20pathway%3B%20downregulation%20of%20protein%20synthesis%3B%20mRNA%20translation%20affected%20by%20mTOR
+  cancerbio:
+    - cancer: MONDO:0009807
+      bioprocess: NCIT:C16848
+    - cancer: MONDO:0009807
+      bioprocess: AUTO:alternative%20translation%20initiation%20pathway
+    - cancer: MONDO:0009807
+      bioprocess: AUTO:downregulation%20of%20protein%20synthesis
+    - cancer: MONDO:0009807
+      bioprocess: AUTO:mRNA%20translation
+    - cancer: MONDO:0016982
+      bioprocess: AUTO:hyper%20methylation%20of%20the%20cap
+    - cancer: MONDO:0016982
+      bioprocess: AUTO:alternative%20translation%20initiation%20pathway
+    - cancer: MONDO:0016982
+      bioprocess: AUTO:downregulation%20of%20protein%20synthesis
+    - cancer: MONDO:0016982
+      bioprocess: AUTO:mRNA%20translation
+    - cancer: MONDO:0005089
+      bioprocess: AUTO:hyper%20methylation
+    - cancer: MONDO:0005089
+      bioprocess: AUTO:alternative%20translation%20initiation%20pathway
+    - cancer: MONDO:0005089
+      bioprocess: AUTO:downregulation%20of%20protein%20synthesis
+    - cancer: MONDO:0005089
+      bioprocess: AUTO:mRNA%20translation
 named_entities:
-  - id: MONDO:0700149
-    label: canine sarcoma
-  - id: MESH:D012516
+  - id: MONDO:0009807
     label: osteosarcoma
-  - id: AUTO:hemangio-sarcoma
-    label: hemangio-sarcoma
+  - id: MONDO:0016982
+    label: hemangiosarcoma
+  - id: MONDO:0005089
+    label: sarcoma
   - id: HGNC:17843
     label: TGS1
   - id: HGNC:2750
     label: DHX9
   - id: HGNC:6206
     label: JUND
-  - id: AUTO:not%20mentioned
-    label: not mentioned
-  - id: AUTO:canine%20sarcoma%2C%20osteosarcoma%2C%20hemangio-sarcoma
-    label: canine sarcoma, osteosarcoma, hemangio-sarcoma
-  - id: AUTO:N/A
-    label: N/A
+  - id: AUTO:osteo-
+    label: osteo-
+  - id: AUTO:hemangio-
+    label: hemangio-
+  - id: AUTO:osteo
+    label: osteo
+  - id: AUTO:hemangio
+    label: hemangio
   - id: AUTO:high%20translational%20value
     label: high translational value
   - id: AUTO:downregulation%20of%20protein%20synthesis
     label: downregulation of protein synthesis
   - id: AUTO:inhibited%20proliferation
     label: inhibited proliferation
-  - id: AUTO:prevention%20of%20anchorage-independent%20growth
-    label: prevention of anchorage-independent growth
-  - id: AUTO:curtailed%20sarcoma%20recovery
-    label: curtailed sarcoma recovery
-  - id: AUTO:m7G-cap
-    label: m7G-cap
-  - id: AUTO:m2%2C2%2C7G-cap%20%28TMG%29
-    label: m2,2,7G-cap (TMG)
-  - id: AUTO:Torin-1
-    label: Torin-1
-  - id: CHEBI:52646
-    label: leptomycin B
-  - id: PR:000003041
-    label: mTOR
-  - id: MONDO:0005070
-    label: neoplastic growth
-  - id: AUTO:TMG-capped%20mRNAs
-    label: TMG-capped mRNAs
-  - id: MESH:D012509
+  - id: AUTO:prevented%20anchorage-independent%20growth
+    label: prevented anchorage-independent growth
+  - id: AUTO:curtailed%20recovery%20from%20mTOR%20inhibition
+    label: curtailed recovery from mTOR inhibition
+  - id: HP:0002669
+    label: osteosarcoma
+  - id: AUTO:growth%20prevention
+    label: growth prevention
+  - id: AUTO:inhibition%20of%20proliferation
+    label: inhibition of proliferation
+  - id: NCIT:C21224
+    label: anchorage-independent growth
+  - id: HP:0100242
     label: sarcoma
-  - id: NCIT:C41132
-    label: None
-  - id: MESH:M0014584
-    label: cancer
-  - id: PR:000016300
-    label: TGS1
+  - id: NCIT:C18902
+    label: N/A
+  - id: 
+      AUTO:hyper%20methylation%20of%20the%20cap%3B%20alternative%20translation%20initiation%20pathway%3B%20downregulation%20of%20protein%20synthesis%3B%20mRNA%20translation%20affected%20by%20mTOR
+    label: hyper methylation of the cap; alternative translation initiation pathway;
+      downregulation of protein synthesis; mRNA translation affected by mTOR
+  - id: NCIT:C16848
+    label: methylation
+  - id: AUTO:alternative%20translation%20initiation%20pathway
+    label: alternative translation initiation pathway
+  - id: AUTO:mRNA%20translation
+    label: mRNA translation
+  - id: AUTO:hyper%20methylation%20of%20the%20cap
+    label: hyper methylation of the cap
+  - id: AUTO:hyper%20methylation
+    label: hyper methylation

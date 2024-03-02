@@ -21,19 +21,20 @@ raw_completion_output: |-
   cancer: T-cell lymphoid neoplasia
   gene: N/A
   anatomical_entity: bone marrow
-  genecancer_links: N/A
-  phenotype: hypercalcemia, polyuria, polydipsia, neutropenia, thrombocytopenia
-  chemical_entity: N/A
-  cancer_phenotype: N/A
+  cancergenelocation: N/A
+  phenotype: hypercalcemia; neutropenia; thrombocytopenia; polyuria; polydipsia
+  cancerphenotype: T-cell lymphoid neoplasia is linked to hypercalcemia, neutropenia, thrombocytopenia, polyuria, and polydipsia
+  bio_process: expansion of neoplastic small- to intermediate-sized T cells in the bone marrow that expressed low-class-II major histocompatibility complex
+  cancerbio: T-cell lymphoid neoplasia is linked to the expansion of neoplastic T cells in the bone marrow that express low-class-II major histocompatibility complex
 prompt: |+
-  Split the following piece of text into fields in the following format:
+  From the text below, extract the following entities in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  N/A
+  T-cell lymphoid neoplasia is linked to the expansion of neoplastic T cells in the bone marrow that express low-class-II major histocompatibility complex
 
   ===
 
@@ -44,17 +45,24 @@ extracted_object:
     - AUTO:N/A
   anatomical_entity:
     - UBERON:0002371
-  genecancer_links:
-    - gene: AUTO:N/A
-      cancer: NCIT:C18902
-      anatomical_entity: AUTO:N/A
-  phenotype:
-    - AUTO:hypercalcemia%2C%20polyuria%2C%20polydipsia%2C%20neutropenia%2C%20thrombocytopenia
-  chemical_entity:
-    - NCIT:C18902
-  cancer_phenotype:
+  cancergenelocation:
     - cancer: NCIT:C18902
-      chemical_entity: NCIT:C18902
+      gene: AUTO:N/A
+      location: AUTO:N/A
+  phenotype:
+    - HP:0003072
+    - HP:0001875
+    - HP:0001873
+    - HP:0000103
+    - HP:0001959
+  cancerphenotype:
+    - cancer: AUTO:T-cell%20lymphoid%20neoplasia
+      phenotype: HP:0003072
+  bio_process: 
+    AUTO:expansion%20of%20neoplastic%20small-%20to%20intermediate-sized%20T%20cells%20in%20the%20bone%20marrow%20that%20expressed%20low-class-II%20major%20histocompatibility%20complex
+  cancerbio:
+    - cancer: AUTO:T-cell%20lymphoid%20neoplasia
+      bioprocess: AUTO:expansion%20of%20neoplastic%20T%20cells%20in%20the%20bone%20marrow
 named_entities:
   - id: AUTO:T-cell%20lymphoid%20neoplasia
     label: T-cell lymphoid neoplasia
@@ -64,6 +72,19 @@ named_entities:
     label: bone marrow
   - id: NCIT:C18902
     label: N/A
+  - id: HP:0003072
+    label: hypercalcemia
+  - id: HP:0001875
+    label: neutropenia
+  - id: HP:0001873
+    label: thrombocytopenia
+  - id: HP:0000103
+    label: polyuria
+  - id: HP:0001959
+    label: polydipsia
   - id: 
-      AUTO:hypercalcemia%2C%20polyuria%2C%20polydipsia%2C%20neutropenia%2C%20thrombocytopenia
-    label: hypercalcemia, polyuria, polydipsia, neutropenia, thrombocytopenia
+      AUTO:expansion%20of%20neoplastic%20small-%20to%20intermediate-sized%20T%20cells%20in%20the%20bone%20marrow%20that%20expressed%20low-class-II%20major%20histocompatibility%20complex
+    label: expansion of neoplastic small- to intermediate-sized T cells in the bone
+      marrow that expressed low-class-II major histocompatibility complex
+  - id: AUTO:expansion%20of%20neoplastic%20T%20cells%20in%20the%20bone%20marrow
+    label: expansion of neoplastic T cells in the bone marrow

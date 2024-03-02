@@ -3,21 +3,22 @@ input_text: |
   A 12-y-old, male Dachshund was presented for elective orchiectomy. The testes were of normal size. The left testis had numerous dark-red, blood clot–like foci within the vaginal tunic over the pampiniform plexus, epididymis, and testis. Histologically, the red foci were limited to the vaginal tunic and consisted of disorderly growing, variably sized, thin-walled blood vessels lined by a single layer of endothelial cells without mitoses and supported by a thin layer of pericytes. The blood vessels were distended by erythrocytes without thrombus formation. Endothelial cells had cytoplasmic immunolabeling for CD31; pericytes had strong cytoplasmic immunolabeling for α–smooth muscle actin. Our case of subclinical unilateral vascular hamartomas of the vaginal tunic in a dog has not been reported previously in domestic animals or humans, to our knowledge.
 raw_completion_output: |-
   cancer: vascular hamartomas
-  gene: N/A
-  anatomical_entity: testes, pampiniform plexus, epididymis
-  genecancer_links: N/A
-  phenotype: presence of dark-red, blood clot-like foci within the vaginal tunic
-  chemical_entity: N/A
-  cancer_phenotype: N/A
+  gene: None mentioned
+  anatomical_entity: vaginal tunic; pampiniform plexus; epididymis; testis
+  cancergenelocation: vascular hamartomas; Not applicable; vaginal tunic
+  phenotype: dark-red, blood clot-like foci
+  cancerphenotype: vascular hamartomas; dark-red, blood clot-like foci
+  bio_process: disorderly growing of thin-walled blood vessels
+  cancerbio: vascular hamartomas; disorderly growing of thin-walled blood vessels
 prompt: |+
   Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  N/A
+  disorderly growing of thin-walled blood vessels
 
   ===
 
@@ -25,29 +26,59 @@ extracted_object:
   cancer:
     - NCIT:C3438
   gene:
-    - AUTO:N/A
+    - AUTO:None%20mentioned
   anatomical_entity:
-    - AUTO:testes%2C%20pampiniform%20plexus%2C%20epididymis
-  genecancer_links:
-    - gene: AUTO:N/A
-      cancer: NCIT:C18902
-      anatomical_entity: AUTO:N/A
+    - AUTO:vaginal%20tunic
+    - UBERON:0001330
+    - UBERON:0001301
+    - UBERON:0000473
+  cancergenelocation:
+    - location: AUTO:vascular%20hamartomas
+    - cancer: NCIT:C48660
+      gene: AUTO:Not%20applicable
+      location: AUTO:Not%20applicable
+    - location: AUTO:vaginal%20tunic
   phenotype:
-    - AUTO:presence%20of%20dark-red%2C%20blood%20clot-like%20foci%20within%20the%20vaginal%20tunic
-  chemical_entity:
-    - NCIT:C18902
-  cancer_phenotype:
+    - AUTO:dark-red%2C%20blood%20clot-like%20foci
+  cancerphenotype:
+    - cancer: NCIT:C41132
+      phenotype: HP:0032579
     - cancer: NCIT:C18902
-      chemical_entity: NCIT:C18902
+      phenotype: NCIT:C18902
+  bio_process: AUTO:disorderly%20growing%20of%20thin-walled%20blood%20vessels
+  cancerbio:
+    - cancer: NCIT:C18902
+      bioprocess: NCIT:C13311
+    - cancer: NCIT:C41132
+      bioprocess: NCIT:C41132
 named_entities:
   - id: NCIT:C3438
     label: vascular hamartomas
-  - id: AUTO:N/A
-    label: N/A
-  - id: AUTO:testes%2C%20pampiniform%20plexus%2C%20epididymis
-    label: testes, pampiniform plexus, epididymis
+  - id: AUTO:None%20mentioned
+    label: None mentioned
+  - id: AUTO:vaginal%20tunic
+    label: vaginal tunic
+  - id: UBERON:0001330
+    label: pampiniform plexus
+  - id: UBERON:0001301
+    label: epididymis
+  - id: UBERON:0000473
+    label: testis
+  - id: AUTO:vascular%20hamartomas
+    label: vascular hamartomas
+  - id: NCIT:C48660
+    label: Not applicable
+  - id: AUTO:Not%20applicable
+    label: Not applicable
+  - id: AUTO:dark-red%2C%20blood%20clot-like%20foci
+    label: dark-red, blood clot-like foci
+  - id: NCIT:C41132
+    label: none
+  - id: HP:0032579
+    label: vascular hamartomas
   - id: NCIT:C18902
     label: N/A
-  - id: 
-      AUTO:presence%20of%20dark-red%2C%20blood%20clot-like%20foci%20within%20the%20vaginal%20tunic
-    label: presence of dark-red, blood clot-like foci within the vaginal tunic
+  - id: AUTO:disorderly%20growing%20of%20thin-walled%20blood%20vessels
+    label: disorderly growing of thin-walled blood vessels
+  - id: NCIT:C13311
+    label: vascular

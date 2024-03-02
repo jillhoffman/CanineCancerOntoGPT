@@ -15,64 +15,67 @@ input_text: |2+
   Although a large fraction of CpG sites that were highly methylated in the normal liver became hypomethylated in tumours from most patients, we also found some patients with less remarkable change or no change in DNA methylation. Hierarchical clustering analysis revealed that 32 of 37 tumour samples differed from normal livers, although the remaining 5 tumour livers fell into the same cluster as normal livers. In addition, the number of hypermethylated genes in tumour livers varied among tumour cases, suggesting various DNA methylation patterns in different tumour groups. However, patient and clinical parameters, such as age, were not associated with DNA methylation status. In conclusion, we found that HCTs undergo aberrant and diverse patterns of genome-wide DNA methylation compared with normal liver tissue, suggesting a complex epigenetic mechanism in canine HCT.
 
 raw_completion_output: |-
-  cancer: hepatocellular carcinoma; hepatocellular adenoma; nodular hyperplasia
-  gene: Not specified
-  anatomical_entity: Liver
-  genecancer_links: Not specified
-  phenotype: Aberrant DNA methylation; diverse patterns of genome-wide DNA methylation
-  chemical_entity: Not specified
-  cancer_phenotype: DNA methylation changes; DNA methylation patterns
+  cancer: hepatocellular carcinomas; hepatocellular adenomas; nodular hyperplasia
+  gene: not specified
+  anatomical_entity: liver
+  cancergenelocation: hepatocellular carcinomas - liver; hepatocellular adenomas - liver; nodular hyperplasia - liver
+  phenotype: not specified
+  cancerphenotype: not specified
+  bio_process: DNA methylation alterations in tumourigenesis
+  cancerbio: DNA methylation status of canine HCT
 prompt: |+
   Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  DNA methylation patterns
+  DNA methylation status of canine HCT
 
   ===
 
 extracted_object:
   cancer:
-    - MESH:D006528
+    - MONDO:0007256
     - MONDO:0018902
     - NCIT:C131437
   gene:
-    - AUTO:Not%20specified
+    - AUTO:not%20specified
   anatomical_entity:
     - UBERON:0002107
-  genecancer_links:
-    - gene: AUTO:Not%20specified
-      cancer: NCIT:C149701
-      anatomical_entity: AUTO:Not%20specified
+  cancergenelocation:
+    - cancer: MONDO:0007256
+      location: UBERON:0002107
+    - cancer: MONDO:0018902
+      location: UBERON:0002107
+    - cancer: NCIT:C131437
+      location: UBERON:0002107
   phenotype:
-    - NCIT:C36664
-    - AUTO:diverse%20patterns%20of%20genome-wide%20DNA%20methylation
-  chemical_entity:
     - NCIT:C149701
-  cancer_phenotype:
-    - chemical_entity: AUTO:DNA%2C%20methylation
-    - chemical_entity: AUTO:DNA%20methylation%20patterns
+  cancerphenotype:
+    - cancer: NCIT:C149701
+      phenotype: NCIT:C149701
+  bio_process: AUTO:DNA%20methylation%20alterations%20in%20tumourigenesis
+  cancerbio:
+    - cancer: NCIT:C41132
+      bioprocess: AUTO:Canine%20HCT
 named_entities:
-  - id: MESH:D006528
-    label: hepatocellular carcinoma
+  - id: MONDO:0007256
+    label: hepatocellular carcinomas
   - id: MONDO:0018902
-    label: hepatocellular adenoma
+    label: hepatocellular adenomas
   - id: NCIT:C131437
     label: nodular hyperplasia
-  - id: AUTO:Not%20specified
-    label: Not specified
+  - id: AUTO:not%20specified
+    label: not specified
   - id: UBERON:0002107
-    label: Liver
+    label: liver
   - id: NCIT:C149701
-    label: Not specified
-  - id: NCIT:C36664
-    label: Aberrant DNA methylation
-  - id: AUTO:diverse%20patterns%20of%20genome-wide%20DNA%20methylation
-    label: diverse patterns of genome-wide DNA methylation
-  - id: AUTO:DNA%2C%20methylation
-    label: DNA, methylation
-  - id: AUTO:DNA%20methylation%20patterns
-    label: DNA methylation patterns
+    label: not specified
+  - id: AUTO:DNA%20methylation%20alterations%20in%20tumourigenesis
+    label: DNA methylation alterations in tumourigenesis
+  - id: NCIT:C41132
+    label: None
+  - id: AUTO:Canine%20HCT
+    label: Canine HCT

@@ -2,22 +2,23 @@
 input_text: |
   The aim of the conducted investigations was to identify differences in the D-loop nucleotide sequence between neoplastic tissue, normal tissue, and blood and to determine their correlation with the type of cancer in dogs. In 62.5% of the analyzed tumors of epithelial origin and 25% tumors of mesenchymal origin, substitution was detected within the D-loop sequence between the neoplastic tissue, normal tissue, and blood. Two mutations occurring in the carcinogenic process in position T15620C have been identified in epithelioma glandulae sebacei and carcinoma planoepithelialae keratodes. Blood and cancer heteroplasmy was diagnosed for carcinoma planoepithelialae keratodes and “Comedo” carcinoma. The results of the study indicate that polymorphic changes in the D-loop sequence promote carcinogenesis in dogs. Heteroplasmy diagnosed in blood and tumor cells and absence thereof in normal tissue may imply mtDNA recombination. High prevalence of mtDNA mutations in canine tumors may suggest mtDNA genetic instability, which is likely to play a role in carcinogenesis.
 raw_completion_output: |-
-  cancer: epithelioma glandulae sebacei; carcinoma planoepithelialae keratodes; Comedo carcinoma
-  gene: Not mentioned
+  cancer: epithelioma glandulae sebacei; carcinoma planoepithelialae keratodes; "Comedo" carcinoma
+  gene: mtDNA
   anatomical_entity: neoplastic tissue; normal tissue; blood
-  genecancer_links: Not mentioned
-  phenotype: mtDNA recombination; mtDNA genetic instability
-  chemical_entity: D-loop nucleotide sequence
-  cancer_phenotype: carcinogenesis
+  cancergenelocation: mtDNA linked to epithelioma glandulae sebacei and carcinoma planoepithelialae keratodes
+  phenotype: polymorphic changes; heteroplasmy; mtDNA mutations
+  cancerphenotype: epithelioma glandulae sebacei linked to polymorphic changes; carcinoma planoepithelialae keratodes linked to heteroplasmy; "Comedo" carcinoma linked to mtDNA mutations
+  bio_process: carcinogenesis; mtDNA recombination; mtDNA genetic instability
+  cancerbio: epithelioma glandulae sebacei linked to carcinogenesis; carcinoma planoepithelialae keratodes linked to mtDNA recombination; "Comedo" carcinoma linked to mtDNA genetic instability
 prompt: |+
   Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  carcinogenesis
+  "Comedo" carcinoma linked to mtDNA genetic instability
 
   ===
 
@@ -25,47 +26,76 @@ extracted_object:
   cancer:
     - AUTO:epithelioma%20glandulae%20sebacei
     - AUTO:carcinoma%20planoepithelialae%20keratodes
-    - MONDO:0003575
+    - AUTO:%22Comedo%22%20carcinoma
   gene:
-    - AUTO:Not%20mentioned
+    - GO:0000262
   anatomical_entity:
     - AUTO:neoplastic%20tissue
     - AUTO:normal%20tissue
     - UBERON:0000178
-  genecancer_links:
-    - gene: AUTO:Not%20mentioned
-      cancer: AUTO:Not%20mentioned
-      anatomical_entity: AUTO:Not%20mentioned
+  cancergenelocation:
+    - cancer: 
+        AUTO:epithelioma%20glandulae%20sebacei%20and%20carcinoma%20planoepithelialae%20keratodes
+      gene: GO:0000262
+      location: AUTO:N/A
   phenotype:
-    - AUTO:mtDNA%20recombination
-    - AUTO:mtDNA%20genetic%20instability
-  chemical_entity:
-    - AUTO:D-loop%20nucleotide%20sequence
-  cancer_phenotype:
-    - cancer: MESH:D063646
-      chemical_entity: NCIT:C41132
+    - AUTO:polymorphic%20changes
+    - AUTO:heteroplasmy
+    - NCIT:C181352
+  cancerphenotype:
+    - cancer: AUTO:epithelioma%20glandulae%20sebacei
+      phenotype: NCIT:C18902
+    - cancer: AUTO:carcinoma%20planoepithelialae%20keratodes
+      phenotype: NCIT:C18902
+    - cancer: MONDO:0004993
+      phenotype: HP:0025249
+  bio_process: 
+    AUTO:carcinogenesis%3B%20mtDNA%20recombination%3B%20mtDNA%20genetic%20instability
+  cancerbio:
+    - cancer: AUTO:epithelioma%20glandulae%20sebacei
+      bioprocess: NCIT:C18078
+    - cancer: AUTO:carcinoma%20planoepithelialae%20keratodes
+      bioprocess: AUTO:mtDNA%20recombination
+    - cancer: MONDO:0004993
+      bioprocess: AUTO:genetic%20instability
 named_entities:
   - id: AUTO:epithelioma%20glandulae%20sebacei
     label: epithelioma glandulae sebacei
   - id: AUTO:carcinoma%20planoepithelialae%20keratodes
     label: carcinoma planoepithelialae keratodes
-  - id: MONDO:0003575
-    label: Comedo carcinoma
-  - id: AUTO:Not%20mentioned
-    label: Not mentioned
+  - id: AUTO:%22Comedo%22%20carcinoma
+    label: '"Comedo" carcinoma'
+  - id: GO:0000262
+    label: mtDNA
   - id: AUTO:neoplastic%20tissue
     label: neoplastic tissue
   - id: AUTO:normal%20tissue
     label: normal tissue
   - id: UBERON:0000178
     label: blood
+  - id: 
+      AUTO:epithelioma%20glandulae%20sebacei%20and%20carcinoma%20planoepithelialae%20keratodes
+    label: epithelioma glandulae sebacei and carcinoma planoepithelialae keratodes
+  - id: AUTO:N/A
+    label: N/A
+  - id: AUTO:polymorphic%20changes
+    label: polymorphic changes
+  - id: AUTO:heteroplasmy
+    label: heteroplasmy
+  - id: NCIT:C181352
+    label: mtDNA mutations
+  - id: NCIT:C18902
+    label: N/A
+  - id: MONDO:0004993
+    label: carcinoma
+  - id: HP:0025249
+    label: Comedo
+  - id: 
+      AUTO:carcinogenesis%3B%20mtDNA%20recombination%3B%20mtDNA%20genetic%20instability
+    label: carcinogenesis; mtDNA recombination; mtDNA genetic instability
+  - id: NCIT:C18078
+    label: carcinogenesis
   - id: AUTO:mtDNA%20recombination
     label: mtDNA recombination
-  - id: AUTO:mtDNA%20genetic%20instability
-    label: mtDNA genetic instability
-  - id: AUTO:D-loop%20nucleotide%20sequence
-    label: D-loop nucleotide sequence
-  - id: MESH:D063646
-    label: carcinogenesis
-  - id: NCIT:C41132
-    label: None
+  - id: AUTO:genetic%20instability
+    label: genetic instability

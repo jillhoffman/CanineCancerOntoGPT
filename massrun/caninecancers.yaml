@@ -1,0 +1,181 @@
+#run on multiple diff texts NEW
+
+id:  "id"
+name: trial1
+title: trial1
+description: >-
+  A template to start working with
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  linkml: https://w3id.org/linkml/
+  t1: "id"
+
+default_prefix: t1
+default_range: string
+
+imports:
+  - linkml:types
+  - core
+
+classes:
+  CancerGenes:
+    tree_root: true
+    attributes:
+      cancer:
+        description: semicolon-separated list of the names of the canine cancers being described, there maybe subtypes of the cancers too which should be included
+        multivalued: true
+        range: Cancer
+
+      gene:
+        description: semicolon-separated list of the list of the genes that are linked to the cancer 
+        multivalued: true
+        range: Gene
+            
+      anatomical_entity:
+        description:  semicolon-separated list of the anatomical locations that the cancers effect
+        multivalued: true
+        range: AnatomicalEntity
+
+      cancergenelocation:
+        description: the cancer linked to causal gene and anatomical location of cancer
+        multivalued: true
+        range: CancerGene
+
+      phenotype:
+        description: semicolon-separated list of the physical symptoms that indicate the presence of cancer
+        multivalued: true
+        range: Phenotype
+      
+      cancerphenotype:
+        description: link the cancer to the corresponding phenotype
+        multivalued: true
+        range: CancerPhenotype
+
+      bio_process:
+        description: list of biological processes and chemical entities that are effected by cancer and how
+        range: BiologicalProcess
+
+      cancerbio:
+        description: link the cancer to the corresponding effected biological processes
+        multivalued: true
+        range: CancerBioProcess
+      
+  
+  Cancer:
+    is_a: NamedEntity
+    id_prefixes:
+      - MONDO
+      - MESH
+      - NCIT
+    annotations:
+      annotators: sqlite:obo:mondo, sqlite:obo:mesh, sqlite:obo:ncit
+      prompt: the names of the canine cancers being described
+      prompt.example: melanoma, canine carcinoma
+  
+  Gene:
+    is_a: NamedEntity
+    id_prefixes:
+      - GO
+      - HGNC
+      - PR
+      - UniProtKB
+    annotations:
+      annotators: sqlite:obo:go, gilda:, bioportal:hgnc-nr, sqlite:obo:pr
+      prompt: the name of the gene that is linked to causing cancer
+
+  AnatomicalEntity:
+    is_a: NamedEntity
+    id_prefixes:
+      - UBERON
+    annotations:
+      annotators: sqlite:obo:uberon
+      prompt: the anatomical location the cancer is presented
+      prompt.examples: skin, lung, bladder
+    
+  CancerGene:
+    is_a: CompoundExpression
+    attributes:
+      cancer:
+        range: Cancer
+      gene:
+        range: Gene
+      location:
+        range: AnatomicalEntity
+
+  Phenotype:
+    is_a: NamedEntity
+    id_prefixes:
+      - UPHENO
+      - HP
+      - PATO
+      - MONDO
+      - NCIT
+      - MESH
+      - GO
+    annotations: 
+      annotators: sqlite:obo:upheno, sqlite:obo:hp, sqlite:obo:pato, sqlite:obo:mondo, sqlite:obo:ncit, sqlite:obo:mesh, sqlite:obo:go
+      prompt: physical qualities and characteristics caused by the cancer that indicate disease
+      prompt.example: fatigue, weakness, bleeding
+
+  CancerPhenotype:
+      is_a: CompoundExpression
+      attributes:
+        cancer:
+          range: Cancer
+          annotations:
+            prompt: cancer related to the specific phenotype
+        phenotype:
+          range: Phenotype
+          annotations:
+            prompt: if multiple cancers are mentioned in text specify one related to phenotype
+
+  BiologicalProcess:
+    is_a: NamedEntity
+    id_prefixes:
+      - CHEBI
+      - PATO
+      - NCIT
+      - GO
+      - PR
+      - UPHENO
+    annotations:
+      annotators: sqlite:obo:chebi, sqlite:obo:pato, sqlite:obo:ncit, sqlite:obo:go, sqlite:obo:pr, sqlite:obo:upheno
+      prompt: chemical entity or biological process and how it is changed with the cancer
+      prompt.example: upregulated E-cadherin in A, downregulated K in B, interrupted pathway
+   
+
+  CancerBioProcess:
+    is_a: CompoundExpression
+    attributes:
+      cancer:
+        range: Cancer
+      bioprocess:
+        range: BiologicalProcess
+        annotations:
+            prompt: if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity
+
+
+
+        
+      
+      
+      
+    
+
+      
+      
+          
+  
+
+
+      
+  
+
+      
+  
+  
+  
+  
+
+
+      

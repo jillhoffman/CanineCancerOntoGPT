@@ -14,22 +14,23 @@ input_text: |2
 
     “Dogs with the most common splenic form of hemangiosarcoma will usually arrive at an emergency clinic having suddenly collapsed and with pale gums due to internal bleeding from a previously undetected and now ruptured tumor,” says Kelly Sams, lab manager at the Coonrod Lab at Cornell College of Veterinary Medicine’s Baker Institute for Animal Health. Internal bleeding sometimes results in sudden death.
 raw_completion_output: |-
-  cancer: anal sac carcinoma; neuroendocrine carcinoma; thyroid carcinoma; soft tissue sarcoma; hepatocellular carcinoma; hemangiosarcoma; pulmonary carcinoma; splenic form of hemangiosarcoma; urothelial carcinoma
+  cancer: anal sac carcinoma; neuroendocrine carcinoma; thyroid carcinoma; soft tissue sarcoma; hepatocellular carcinoma; hemangiosarcoma; pulmonary carcinoma; urothelial carcinoma
   gene: TP53; PIK3CA; KRAS; NRAS; BRAF; KIT; EGFR; ERBB2
-  anatomical_entity: anal sac; neuroendocrine; thyroid; soft tissue; hepatocellular; hemangiosarcoma; pulmonary; splenic; urothelial
-  genecancer_links: TP53-anal sac carcinoma, neuroendocrine carcinoma, thyroid carcinoma, soft tissue sarcoma, hepatocellular carcinoma, hemangiosarcoma, pulmonary carcinoma, splenic form of hemangiosarcoma, urothelial carcinoma; PIK3CA-hemangiosarcoma; NRAS-hemangiosarcoma; BRAF-urothelial carcinoma
+  anatomical_entity: anal sac; thyroid; soft tissue; liver; spleen; lungs; bladder
+  cancergenelocation: anal sac carcinoma - unknown - anal sac; neuroendocrine carcinoma - unknown - not specified; thyroid carcinoma - unknown - thyroid; soft tissue sarcoma - unknown - soft tissue; hepatocellular carcinoma - unknown - liver; hemangiosarcoma - NRAS G61R, PIK3CA H1047R - spleen; pulmonary carcinoma - ERBB2 V659E - lungs; urothelial carcinoma - BRAF V588E - bladder
   phenotype: sudden collapse; pale gums; internal bleeding; ruptured tumor; sudden death
-  chemical_entity: unknown
-  cancer_phenotype: unknown
+  cancerphenotype: hemangiosarcoma - sudden collapse, pale gums, internal bleeding, ruptured tumor, sudden death
+  bio_process: targeted therapies; mutational hotspots; oncogenes and tumor suppressors
+  cancerbio: hemangiosarcoma - targeted therapies; pulmonary carcinoma - targeted therapies; urothelial carcinoma - targeted therapies
 prompt: |+
   Split the following piece of text into fields in the following format:
 
   cancer: <the value for cancer>
-  chemical_entity: <the value for chemical_entity>
+  bioprocess: <if multiple cancers are mentioned in text specify one related to the observed change in biological process or chemical entity>
 
 
   Text:
-  unknown
+  urothelial carcinoma - targeted therapies
 
   ===
 
@@ -37,77 +38,90 @@ extracted_object:
   cancer:
     - AUTO:anal%20sac%20carcinoma
     - MONDO:0002120
-    - MESH:M0333546
+    - MONDO:0015075
     - MONDO:0018078
-    - MESH:D006528
-    - MESH:D006394
+    - MONDO:0007256
+    - MONDO:0016982
     - AUTO:pulmonary%20carcinoma
-    - AUTO:splenic%20form%20of%20hemangiosarcoma
     - MONDO:0040679
   gene:
-    - HGNC:11998
+    - PR:000003035
     - HGNC:8975
     - PR:Q9VNE2
     - HGNC:7989
     - HGNC:1097
-    - HGNC:6342
-    - HGNC:3236
+    - PR:000002065
+    - GO:0005006
     - HGNC:3430
   anatomical_entity:
     - UBERON:0008978
-    - AUTO:neuroendocrine
     - UBERON:0002046
     - AUTO:soft%20tissue
-    - AUTO:hepatocellular
-    - AUTO:hemangiosarcoma
-    - AUTO:pulmonary
-    - AUTO:splenic
-    - AUTO:urothelial
-  genecancer_links:
-    - gene: HGNC:11998
-      cancer: 
-        AUTO:anal%20sac%20carcinoma%2C%20neuroendocrine%20carcinoma%2C%20thyroid%20carcinoma%2C%20soft%20tissue%20sarcoma%2C%20hepatocellular%20carcinoma%2C%20hemangiosarcoma%2C%20pulmonary%20carcinoma%2C%20splenic%20form%20of%20hemangiosarcoma%2C%20urothelial%20carcinoma
-      anatomical_entity: AUTO:not%20mentioned
-    - gene: HGNC:8975
-      cancer: MESH:D006394
-      anatomical_entity: AUTO:N/A
-    - gene: HGNC:7989
-      cancer: MESH:D006394
-      anatomical_entity: AUTO:N/A
-    - gene: HGNC:1097
-      cancer: MONDO:0040679
-      anatomical_entity: AUTO:Not%20provided
+    - UBERON:0002107
+    - UBERON:0002106
+    - UBERON:0002048
+    - 'LIKELY HALLUCINATION: bladder'
+  cancergenelocation:
+    - cancer: AUTO:anal%20sac%20carcinoma
+      gene: AUTO:unknown
+      location: UBERON:0008978
+    - cancer: MONDO:0002120
+      gene: AUTO:unknown
+      location: AUTO:not%20specified
+    - cancer: MONDO:0015075
+      gene: AUTO:unknown
+      location: UBERON:0002046
+    - cancer: MONDO:0018078
+      gene: AUTO:unknown
+      location: AUTO:soft%20tissue
+    - cancer: MONDO:0007256
+      gene: AUTO:unknown
+      location: UBERON:0002107
+    - cancer: MONDO:0016982
+      gene: AUTO:NRAS%20G61R%2C%20PIK3CA%20H1047R
+      location: UBERON:0002106
+    - cancer: AUTO:pulmonary%20carcinoma
+      gene: HGNC:3430
+      location: UBERON:0002048
+    - cancer: MONDO:0040679
+      gene: AUTO:BRAF%20V588E
+      location: 'LIKELY HALLUCINATION: bladder'
   phenotype:
     - AUTO:sudden%20collapse
     - AUTO:pale%20gums
     - HP:0011029
     - AUTO:ruptured%20tumor
     - HP:0001699
-  chemical_entity:
-    - NCIT:C17998
-  cancer_phenotype:
-    - cancer: NCIT:C17998
-      chemical_entity: NCIT:C17998
+  cancerphenotype:
+    - cancer: MONDO:0016982
+      phenotype: AUTO:sudden%20collapse
+  bio_process: 
+    AUTO:targeted%20therapies%3B%20mutational%20hotspots%3B%20oncogenes%20and%20tumor%20suppressors
+  cancerbio:
+    - cancer: MONDO:0016982
+      bioprocess: NCIT:C18902
+    - cancer: AUTO:pulmonary%20carcinoma
+      bioprocess: NCIT:C93352
+    - cancer: MONDO:0040679
+      bioprocess: NCIT:C93352
 named_entities:
   - id: AUTO:anal%20sac%20carcinoma
     label: anal sac carcinoma
   - id: MONDO:0002120
     label: neuroendocrine carcinoma
-  - id: MESH:M0333546
+  - id: MONDO:0015075
     label: thyroid carcinoma
   - id: MONDO:0018078
     label: soft tissue sarcoma
-  - id: MESH:D006528
+  - id: MONDO:0007256
     label: hepatocellular carcinoma
-  - id: MESH:D006394
+  - id: MONDO:0016982
     label: hemangiosarcoma
   - id: AUTO:pulmonary%20carcinoma
     label: pulmonary carcinoma
-  - id: AUTO:splenic%20form%20of%20hemangiosarcoma
-    label: splenic form of hemangiosarcoma
   - id: MONDO:0040679
     label: urothelial carcinoma
-  - id: HGNC:11998
+  - id: PR:000003035
     label: TP53
   - id: HGNC:8975
     label: PIK3CA
@@ -117,41 +131,32 @@ named_entities:
     label: NRAS
   - id: HGNC:1097
     label: BRAF
-  - id: HGNC:6342
+  - id: PR:000002065
     label: KIT
-  - id: HGNC:3236
+  - id: GO:0005006
     label: EGFR
   - id: HGNC:3430
     label: ERBB2
   - id: UBERON:0008978
     label: anal sac
-  - id: AUTO:neuroendocrine
-    label: neuroendocrine
   - id: UBERON:0002046
     label: thyroid
   - id: AUTO:soft%20tissue
     label: soft tissue
-  - id: AUTO:hepatocellular
-    label: hepatocellular
-  - id: AUTO:hemangiosarcoma
-    label: hemangiosarcoma
-  - id: AUTO:pulmonary
-    label: pulmonary
-  - id: AUTO:splenic
-    label: splenic
-  - id: AUTO:urothelial
-    label: urothelial
-  - id: 
-      AUTO:anal%20sac%20carcinoma%2C%20neuroendocrine%20carcinoma%2C%20thyroid%20carcinoma%2C%20soft%20tissue%20sarcoma%2C%20hepatocellular%20carcinoma%2C%20hemangiosarcoma%2C%20pulmonary%20carcinoma%2C%20splenic%20form%20of%20hemangiosarcoma%2C%20urothelial%20carcinoma
-    label: anal sac carcinoma, neuroendocrine carcinoma, thyroid carcinoma, soft tissue
-      sarcoma, hepatocellular carcinoma, hemangiosarcoma, pulmonary carcinoma, splenic
-      form of hemangiosarcoma, urothelial carcinoma
-  - id: AUTO:not%20mentioned
-    label: not mentioned
-  - id: AUTO:N/A
-    label: N/A
-  - id: AUTO:Not%20provided
-    label: Not provided
+  - id: UBERON:0002107
+    label: liver
+  - id: UBERON:0002106
+    label: spleen
+  - id: UBERON:0002048
+    label: lungs
+  - id: AUTO:unknown
+    label: unknown
+  - id: AUTO:not%20specified
+    label: not specified
+  - id: AUTO:NRAS%20G61R%2C%20PIK3CA%20H1047R
+    label: NRAS G61R, PIK3CA H1047R
+  - id: AUTO:BRAF%20V588E
+    label: BRAF V588E
   - id: AUTO:sudden%20collapse
     label: sudden collapse
   - id: AUTO:pale%20gums
@@ -162,5 +167,10 @@ named_entities:
     label: ruptured tumor
   - id: HP:0001699
     label: sudden death
-  - id: NCIT:C17998
-    label: unknown
+  - id: 
+      AUTO:targeted%20therapies%3B%20mutational%20hotspots%3B%20oncogenes%20and%20tumor%20suppressors
+    label: targeted therapies; mutational hotspots; oncogenes and tumor suppressors
+  - id: NCIT:C18902
+    label: N/A
+  - id: NCIT:C93352
+    label: targeted therapies
