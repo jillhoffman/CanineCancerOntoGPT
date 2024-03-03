@@ -64,22 +64,23 @@ classes:
   Cancer:
     is_a: NamedEntity
     id_prefixes:
-      - MESH
       - MONDO
+      - MESH
       - NCIT
     annotations:
-      annotators: sqlite:obo:mesh, sqlite:obo:mondo, sqlite:obo:ncit
+      annotators: sqlite:obo:mondo, sqlite:obo:mesh, sqlite:obo:ncit
       prompt: the names of the canine cancers being described
       prompt.example: melanoma, canine carcinoma
   
   Gene:
     is_a: NamedEntity
     id_prefixes:
+      - GO
       - HGNC
       - PR
       - UniProtKB
     annotations:
-      annotators: gilda:, bioportal:hgnc-nr, sqlite:obo:pr
+      annotators: gilda:, sqlite:obo:go, bioportal:hgnc-nr, sqlite:obo:pr
       prompt: the name of the gene that is linked to causing cancer
 
   AnatomicalEntity:
@@ -106,11 +107,13 @@ classes:
     id_prefixes:
       - UPHENO
       - HP
-      - MESH
+      - PATO
+      - MONDO
       - NCIT
+      - MESH
       - GO
     annotations: 
-      annotators: sqlite:obo:upheno, sqlite:obo:hp, sqlite:obo:mondo, sqlite:obo:mesh, sqlite:obo:ncit, sqlite:obo:go
+      annotators: sqlite:obo:upheno, sqlite:obo:hp, sqlite:obo:pato, sqlite:obo:mondo, sqlite:obo:ncit, sqlite:obo:mesh, sqlite:obo:go
       prompt: physical qualities and characteristics caused by the cancer that indicate disease
       prompt.example: fatigue, weakness, bleeding
 
@@ -130,13 +133,14 @@ classes:
     is_a: NamedEntity
     id_prefixes:
       - CHEBI
-      - PR
       - PATO
       - NCIT
+      - PW
       - GO
-      - HP
+      - PR
+      - UPHENO
     annotations:
-      annotators: sqlite:obo:chebi, sqlite:obo:pato, sqlite:obo:pr, sqlite:obo:ncit, sqlite:obo:go, sqlite:obo:hp
+      annotators: gilda:, sqlite:obo:chebi, sqlite:obo:pato, sqlite:obo:ncit, sqlite:obo:pw, sqlite:obo:go, sqlite:obo:pr, sqlite:obo:upheno
       prompt: chemical entity or biological process and how it is changed with the cancer
       prompt.example: upregulated E-cadherin in A, downregulated K in B, interrupted pathway
    

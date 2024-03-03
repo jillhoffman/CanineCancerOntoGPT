@@ -24,7 +24,7 @@ prompt: |+
 
 extracted_object:
   cancer:
-    - MESH:M0023327
+    - MONDO:0005575
     - AUTO:canine%20CRC
     - MONDO:0015626
   gene:
@@ -45,7 +45,7 @@ extracted_object:
       gene: HGNC:3493
       location: AUTO:colorectal%20tumors
   phenotype:
-    - MESH:D007165
+    - NCIT:C15261
   cancerphenotype:
     - cancer: MONDO:0024331
       phenotype: MESH:D003481
@@ -56,7 +56,7 @@ extracted_object:
     - cancer: AUTO:canine%20CRC
       bioprocess: AUTO:IL6-STAT3%20signaling%20pathway
 named_entities:
-  - id: MESH:M0023327
+  - id: MONDO:0005575
     label: colorectal cancer
   - id: AUTO:canine%20CRC
     label: canine CRC
@@ -74,7 +74,7 @@ named_entities:
     label: canine intestinal samples
   - id: MONDO:0024331
     label: CRC
-  - id: MESH:D007165
+  - id: NCIT:C15261
     label: immunosuppression
   - id: MESH:D003481
     label: canine

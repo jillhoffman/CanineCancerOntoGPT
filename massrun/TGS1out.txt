@@ -25,8 +25,8 @@ prompt: |+
 extracted_object:
   cancer:
     - MONDO:0700149
-    - MESH:D012516
-    - MESH:D006394
+    - MONDO:0009807
+    - MONDO:0016982
   gene:
     - HGNC:17843
     - HGNC:2750
@@ -34,13 +34,13 @@ extracted_object:
   anatomical_entity:
     - AUTO:not%20mentioned
   cancergenelocation:
-    - cancer: MESH:D012509
+    - cancer: MONDO:0005089
       gene: HGNC:17843
       location: UBERON:0003674
-    - cancer: MESH:D012516
+    - cancer: MONDO:0009807
       gene: HGNC:2750
       location: AUTO:N/A
-    - cancer: MESH:D006394
+    - cancer: MONDO:0016982
       gene: HGNC:6206
       location: AUTO:N/A
   phenotype:
@@ -49,31 +49,31 @@ extracted_object:
     - AUTO:prevented%20anchorage-independent%20growth
     - AUTO:curtailed%20recovery%20from%20mTOR%20inhibition
   cancerphenotype:
-    - cancer: MESH:D012509
+    - cancer: MONDO:0005089
       phenotype: MESH:D003481
-    - cancer: MESH:D012516
+    - cancer: MONDO:0009807
       phenotype: AUTO:inhibited%20proliferation
-    - cancer: MESH:D006394
+    - cancer: MONDO:0016982
       phenotype: NCIT:C21224
     - cancer: NCIT:C149701
       phenotype: AUTO:mTOR%20inhibition
   bio_process: 
     AUTO:hyper%20methylation%20of%20m7G-cap%3B%20translation%20initiation%20pathway%3B%20protein%20synthesis%3B%20mRNA%20translation%3B%20mTOR%20inhibition
   cancerbio:
-    - cancer: MESH:D012509
-      bioprocess: NCIT:C17961
-    - cancer: MESH:D012516
+    - cancer: MONDO:0005089
+      bioprocess: GO:0006306
+    - cancer: MONDO:0009807
       bioprocess: GO:0006412
-    - cancer: MESH:D006394
-      bioprocess: AUTO:mRNA%20translation
-    - cancer: MESH:D012509
+    - cancer: MONDO:0016982
+      bioprocess: GO:0006412
+    - cancer: MONDO:0005089
       bioprocess: AUTO:mTOR%20inhibition
 named_entities:
   - id: MONDO:0700149
     label: canine sarcoma
-  - id: MESH:D012516
+  - id: MONDO:0009807
     label: osteosarcoma
-  - id: MESH:D006394
+  - id: MONDO:0016982
     label: hemangiosarcoma
   - id: HGNC:17843
     label: TGS1
@@ -83,7 +83,7 @@ named_entities:
     label: JUND
   - id: AUTO:not%20mentioned
     label: not mentioned
-  - id: MESH:D012509
+  - id: MONDO:0005089
     label: sarcoma
   - id: UBERON:0003674
     label: canine
@@ -109,9 +109,7 @@ named_entities:
       AUTO:hyper%20methylation%20of%20m7G-cap%3B%20translation%20initiation%20pathway%3B%20protein%20synthesis%3B%20mRNA%20translation%3B%20mTOR%20inhibition
     label: hyper methylation of m7G-cap; translation initiation pathway; protein synthesis;
       mRNA translation; mTOR inhibition
-  - id: NCIT:C17961
+  - id: GO:0006306
     label: DNA methylation
   - id: GO:0006412
     label: protein synthesis
-  - id: AUTO:mRNA%20translation
-    label: mRNA translation

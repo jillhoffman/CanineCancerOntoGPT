@@ -37,7 +37,7 @@ prompt: |+
 
 extracted_object:
   cancer:
-    - MESH:D006528
+    - MONDO:0007256
     - MONDO:0018902
     - NCIT:C131437
   gene:
@@ -45,7 +45,7 @@ extracted_object:
   anatomical_entity:
     - UBERON:0002107
   cancergenelocation:
-    - cancer: MESH:D006528
+    - cancer: MONDO:0007256
       gene: AUTO:not%20mentioned
       location: AUTO:not%20mentioned
   phenotype:
@@ -53,12 +53,12 @@ extracted_object:
   cancerphenotype:
     - cancer: AUTO:not%20mentioned
       phenotype: AUTO:not%20mentioned
-  bio_process: NCIT:C17961
+  bio_process: GO:0006306
   cancerbio:
-    - cancer: MESH:D006528
-      bioprocess: NCIT:C17961
+    - cancer: MONDO:0007256
+      bioprocess: GO:0006306
 named_entities:
-  - id: MESH:D006528
+  - id: MONDO:0007256
     label: hepatocellular carcinoma
   - id: MONDO:0018902
     label: hepatocellular adenoma
@@ -68,5 +68,5 @@ named_entities:
     label: not mentioned
   - id: UBERON:0002107
     label: liver
-  - id: NCIT:C17961
+  - id: GO:0006306
     label: DNA methylation

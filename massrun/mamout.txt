@@ -59,7 +59,7 @@ extracted_object:
     - cancer: MONDO:0007254
       phenotype: NCIT:C18902
     - cancer: MONDO:0007254
-      phenotype: NCIT:C9335
+      phenotype: MONDO:0007254
     - cancer: MONDO:0007254
       phenotype: HP:0001254
     - cancer: MONDO:0007254
@@ -112,8 +112,6 @@ named_entities:
     label: cough
   - id: NCIT:C18902
     label: N/A
-  - id: NCIT:C9335
-    label: mammary neoplasms
   - id: 
       AUTO:mutations%20in%20PIK3CA%20gene%20leading%20to%20development%20of%20mammary%20tumors%3B%20overexpression%20of%20estrogen%20receptor-%CE%B1%2C%20progesterone%20receptor%2C%20HER-2/neu%20leading%20to%20different%20phenotypes%20of%20mammary%20tumors%3B%20upregulation%20of%20E-cadherin%20linked%20to%20improved%20prognosis%20in%20luminal%20A%20and%20B%20phenotypes
     label: mutations in PIK3CA gene leading to development of mammary tumors; overexpression
