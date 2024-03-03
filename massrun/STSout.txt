@@ -27,7 +27,7 @@ prompt: |+
 extracted_object:
   cancer:
     - NCIT:C159109
-    - MESH:D005354
+    - MONDO:0005164
     - MONDO:0002142
     - MESH:M0336464
   gene:
@@ -57,13 +57,13 @@ extracted_object:
     - cancer: NCIT:C18902
       bioprocess: AUTO:extracellular%20matrix%20interactions
     - cancer: NCIT:C41132
-      bioprocess: NCIT:C17208
+      bioprocess: GO:0006351
     - cancer: NCIT:C159109
       bioprocess: AUTO:T-cell%20infiltration
 named_entities:
   - id: NCIT:C159109
     label: soft tissue sarcomas (STS)
-  - id: MESH:D005354
+  - id: MONDO:0005164
     label: fibrosarcoma
   - id: MONDO:0002142
     label: undifferentiated pleomorphic sarcoma
@@ -95,7 +95,7 @@ named_entities:
     label: extracellular matrix interactions
   - id: NCIT:C41132
     label: none
-  - id: NCIT:C17208
+  - id: GO:0006351
     label: transcription
   - id: AUTO:T-cell%20infiltration
     label: T-cell infiltration

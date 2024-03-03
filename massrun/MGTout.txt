@@ -41,8 +41,8 @@ extracted_object:
       gene: AUTO:N/A
       location: AUTO:N/A
   phenotype:
-    - NCIT:C3677
-    - MESH:D000236
+    - MONDO:0005165
+    - MONDO:0004972
     - AUTO:age%20peak%20at%2011%20years
   cancerphenotype:
     - cancer: AUTO:Mammary%20gland%20tumours
@@ -62,9 +62,9 @@ named_entities:
     label: mammary glands
   - id: NCIT:C18902
     label: N/A
-  - id: NCIT:C3677
+  - id: MONDO:0005165
     label: benign tumours
-  - id: MESH:D000236
+  - id: MONDO:0004972
     label: adenomas
   - id: AUTO:age%20peak%20at%2011%20years
     label: age peak at 11 years

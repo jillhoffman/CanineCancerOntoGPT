@@ -26,10 +26,10 @@ extracted_object:
   cancer:
     - AUTO:anal%20sac%20carcinoma
     - MONDO:0002120
-    - MESH:M0333546
+    - MONDO:0015075
     - MONDO:0018078
-    - MESH:D006528
-    - MESH:D006394
+    - MONDO:0007256
+    - MONDO:0016982
     - AUTO:pulmonary%20carcinoma
     - MONDO:0040679
     - AUTO:splenic%20form%20of%20hemangiosarcoma
@@ -55,10 +55,10 @@ extracted_object:
     - cancer: AUTO:overall%20tumors
       gene: HGNC:11998
       location: AUTO:not%20specified
-    - cancer: MESH:D006394
+    - cancer: MONDO:0016982
       gene: HGNC:7989
       location: AUTO:G61R
-    - cancer: MESH:D006394
+    - cancer: MONDO:0016982
       gene: HGNC:8975
       location: AUTO:H1047R
     - cancer: AUTO:pulmonary%20carcinoma
@@ -73,26 +73,26 @@ extracted_object:
     - HP:0011029
     - HP:0001699
   cancerphenotype:
-    - cancer: MESH:D006394
+    - cancer: MONDO:0016982
       phenotype: 
         AUTO:sudden%20collapse%2C%20pale%20gums%2C%20internal%20bleeding%2C%20sudden%20death
   bio_process: 
     AUTO:mutation%3B%20targeted%20therapies%3B%20internal%20bleeding%3B%20ruptured%20tumor
   cancerbio:
-    - cancer: MESH:D006394
-      bioprocess: HP:0011029
+    - cancer: MONDO:0016982
+      bioprocess: AUTO:internal%20bleeding
 named_entities:
   - id: AUTO:anal%20sac%20carcinoma
     label: anal sac carcinoma
   - id: MONDO:0002120
     label: neuroendocrine carcinoma
-  - id: MESH:M0333546
+  - id: MONDO:0015075
     label: thyroid carcinoma
   - id: MONDO:0018078
     label: soft tissue sarcoma
-  - id: MESH:D006528
+  - id: MONDO:0007256
     label: hepatocellular carcinoma
-  - id: MESH:D006394
+  - id: MONDO:0016982
     label: hemangiosarcoma
   - id: AUTO:pulmonary%20carcinoma
     label: pulmonary carcinoma
@@ -160,3 +160,5 @@ named_entities:
   - id: 
       AUTO:mutation%3B%20targeted%20therapies%3B%20internal%20bleeding%3B%20ruptured%20tumor
     label: mutation; targeted therapies; internal bleeding; ruptured tumor
+  - id: AUTO:internal%20bleeding
+    label: internal bleeding
