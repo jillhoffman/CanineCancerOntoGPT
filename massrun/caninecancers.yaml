@@ -138,9 +138,10 @@ classes:
       - PW
       - GO
       - PR
+      - HP
       - UPHENO
     annotations:
-      annotators: gilda:, sqlite:obo:chebi, sqlite:obo:pato, sqlite:obo:ncit, sqlite:obo:pw, sqlite:obo:go, sqlite:obo:pr, sqlite:obo:upheno
+      annotators: gilda:, sqlite:obo:chebi, sqlite:obo:pato, sqlite:obo:ncit, sqlite:obo:pw, sqlite:obo:go, sqlite:obo:pr, sqlite:obo:hp, sqlite:obo:upheno
       prompt: chemical entity or biological process and how it is changed with the cancer
       prompt.example: upregulated E-cadherin in A, downregulated K in B, interrupted pathway
    

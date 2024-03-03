@@ -80,7 +80,7 @@ extracted_object:
     AUTO:mutation%3B%20targeted%20therapies%3B%20internal%20bleeding%3B%20ruptured%20tumor
   cancerbio:
     - cancer: MONDO:0016982
-      bioprocess: AUTO:internal%20bleeding
+      bioprocess: HP:0011029
 named_entities:
   - id: AUTO:anal%20sac%20carcinoma
     label: anal sac carcinoma
@@ -160,5 +160,3 @@ named_entities:
   - id: 
       AUTO:mutation%3B%20targeted%20therapies%3B%20internal%20bleeding%3B%20ruptured%20tumor
     label: mutation; targeted therapies; internal bleeding; ruptured tumor
-  - id: AUTO:internal%20bleeding
-    label: internal bleeding
